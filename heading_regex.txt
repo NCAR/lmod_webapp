@@ -1,0 +1,8 @@
+Thomas Johnson III
+6/10/2019
+SIParCS
+Regular Expression
+
+Will grab the glade headings from the modules:
+(\/glade[\/a-z0-9\.]*)
+

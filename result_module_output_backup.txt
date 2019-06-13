@@ -1,0 +1,50 @@
+
+--------------------------------- /glade/u/apps/ch/modulefiles/default/compilers ----------------------------------
+   gnu/4.9.2        gnu/6.4.0    gnu/7.3.0       intel/16.0.3          intel/18.0.5    pgi/17.5
+   gnu/6.2.0        gnu/7.1.0    gnu/8.1.0       intel/17.0.1 (L,D)    intel/19.0.2    pgi/17.9 (D)
+   gnu/6.3.0 (D)    gnu/7.2.0    intel/16.0.1    intel/18.0.1          pgi/16.5
+
+------------------------------------ /glade/u/apps/ch/modulefiles/default/idep ------------------------------------
+   R/3.3.2                       cmake/3.7.2            joe/4.1                    peak_memusage/2.0 (D)
+   R/3.4.0                       cmake/3.9.1     (D)    julia/0.6.2       (D)      perlmods/5.18.2
+   R/3.5.2                (D)    cmake/3.12.1           julia/1.0.0                proj/4.9.3
+   allinea-forge/7.0.4           diffuse/0.4.8          matlab/R2015b              python/2.7.13
+   allinea-forge/7.1             emacs/25.3             matlab/R2016b              python/2.7.14
+   allinea-forge/18.0.2   (D)    ferret/7.1             matlab/R2018a              python/2.7.15
+   allinea-reports/7.0.4         ffmpeg/3.3.4    (D)    matlab/R2019a     (D)      python/3.6.2
+   allinea-reports/7.1           ffmpeg/4.0.2           multijob/1.0               python/3.6.4
+   allinea-reports/18.0.2 (D)    ftools/1.0             nano/2.7.4                 python/3.6.8      (D)
+   arm-forge/18.1.2              git/2.10.2             ncarenv/1.0                slatec/4.1
+   arm-forge/19.0.3       (D)    grace/5.1.25           ncarenv/1.1                slurm/17
+   arm-reports/18.1.2            grads/2.1.1.b0         ncarenv/1.2       (L,D)    spark/2.2.0
+   arm-reports/19.0.3     (D)    grads/2.2.1     (D)    nco/4.6.2                  texlive/2017
+   atlas/3.10.3                  graphviz/2.40.1        nco/4.6.9                  tkdiff/4.2
+   bbcp/1.0.0                    grib-api/1.25.0        nco/4.7.4         (D)      tmux/2.7
+   boost/1.59.0                  grib-bins/1.0          ncview/2.1.7               udunits/2.2.20
+   boost/1.65.1           (D)    grib-bins/1.1   (D)    nedit/5.7                  vim/8.0
+   cdo/1.7.2              (D)    grib-libs/1.0          octave/4.2                 xerces-c/3.2.1
+   cdo/1.9.3                     idl/8.6                parallel/20170522          xxdiff/4.0.1
+   cdo/1.9.4                     java/1.8.0             peak_memusage/1.1
+
+-------------------------------- /glade/u/apps/ch/modulefiles/default/intel/17.0.1 --------------------------------
+   eccodes/2.12.0          hdf5/1.8.18              mvapich2/2.2                 netcdf/4.5.0
+   esmf_libs/7.0.0  (D)    impi/2017.1.132          ncarcompilers/0.3.5          netcdf/4.6.0
+   esmf_libs/7.1.0r        mkl/2017.0.1             ncarcompilers/0.4            netcdf/4.6.1  (L,D)
+   fftw/3.3.6-pl2          mpt/2.15f                ncarcompilers/0.4.1 (L,D)    openmpi/3.0.0
+   fftw/3.3.7       (D)    mpt/2.15                 ncl/6.4.0                    openmpi/3.0.1 (D)
+   grib-libs/1.1    (D)    mpt/2.16                 ncl/6.5.0                    vtune/1.0
+   hdf-eos/2.20            mpt/2.18                 ncl/6.6.2           (D)
+   hdf/4.2.12              mpt/2.19        (L,D)    netcdf/4.4.1.1
+
+--------------------------- /glade/u/apps/ch/modulefiles/default/mpt/2.19/intel/17.0.1 ----------------------------
+   fftw-mpi/3.3.8     netcdf-mpi/4.4.1.1    netcdf-mpi/4.6.1 (D)    pio/2.4.1     (D)    pnetcdf/1.9.0
+   hdf5-mpi/1.8.21    netcdf-mpi/4.5.0      pio/1.10.1              pnetcdf/1.8.0        pnetcdf/1.11.0 (D)
+
+  Where:
+   D:  Default Module
+   L:  Module is loaded
+
+Use "module spider" to find all possible modules.
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+
+
