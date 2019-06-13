@@ -8,3 +8,5 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Glo
 Reference: http://www.java2s.com/Tutorial/JavaScript/0220__Array/Outputallarrayelementwithdocumentwrite.htm
 Reference: https://www.jqueryscript.net/other/hierarchical-searchable-tree.html
 Reference: https://stackoverflow.com/questions/15600958/transform-an-object-in-javascript
+Reference: https://stackoverflow.com/questions/19795012/how-to-convert-a-list-to-jsonarray-in-python
+Reference: https://stackoverflow.com/questions/3559070/are-there-dictionaries-in-javascript-like-python
