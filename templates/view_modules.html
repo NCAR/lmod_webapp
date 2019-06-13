@@ -32,45 +32,10 @@
 <div>
 <p id="display"></p>
 </div>
-<script>
-var treeData = tree_content;
-document.getElementById('display').innerHTML = JSON.parse(treeData);
-</script>
+
 <!--<script>
 
-let data = [
-   {
-       label: 'HTML',
-       value: 'html',
-       children: [
-           {
-               label: 'HTML5',
-               value: 'html5'
-           }, {
-               label: 'XML',
-               value: 'xml'
-           }
-       ]
-   }, {
-       label: 'JavaScript',
-       value: 'javaScript',
-       children: [
-           {
-               label: 'React',
-               value: 'react',
-               children: [
-                   {
-                       label: 'React Native',
-                       value: 'reactnative'
-                   }
-               ]
-           }, {
-               label: 'Angular',
-               value: 'angular'
-           }
-       ]
-   }
-];
+data ={{tree_content|safe}}
 
 var options = {
         // Optionally provide here the jQuery element that you use as the search box for filtering the tree. simpleTree then takes control over the provided box, handling user input

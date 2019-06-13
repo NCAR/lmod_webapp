@@ -27,15 +27,19 @@
   <p>No text to display</p>
  {% endif %}
 <input type="search" id="test">
-
-<div id="mytree"></div>
-<div>
+<div class ="outer-module-block">
+  <h2>Module Information</h2>
+  <div class="inner-module-block">
+   <div id="moduletree"></div>
+  </div>
+</div>
+<!--<div>
 <p id="display"></p>
 <p id="displayA"></p>
 <p id="displayB"></p>
 
-</div>
-<script>
+</div>-->
+<!--<script>
 var treeData = {{tree_content|safe}};
 
 document.getElementById('display').innerHTML = JSON.stringify(treeData);
@@ -51,46 +55,11 @@ for ([heading, content] of Object.entries(treeData))
   console.log(heading,content);
 }
 
-
-
-
-</script>
+</script>-->
 <script>
 
-let data = [
-   {
-       label: 'HTML',
-       value: 'html',
-       children: [
-           {
-               label: 'HTML5',
-               value: 'html5'
-           }, {
-               label: 'XML',
-               value: 'xml'
-           }
-       ]
-   }, {
-       label: 'JavaScript',
-       value: 'javaScript',
-       children: [
-           {
-               label: 'React',
-               value: 'react',
-               children: [
-                   {
-                       label: 'React Native',
-                       value: 'reactnative'
-                   }
-               ]
-           }, {
-               label: 'Angular',
-               value: 'angular'
-           }
-       ]
-   }
-];
 
+let data ={{tree_content|safe}}// Received from document.py
 var options = {
         // Optionally provide here the jQuery element that you use as the search box for filtering the tree. simpleTree then takes control over the provided box, handling user input
         searchBox: $('#test'),
@@ -123,7 +92,7 @@ var options = {
             toggle: 'simpleTree-toggle'
         }
     };
-$('#mytree').simpleTree(options, data);
+$('#moduletree').simpleTree(options, data);
 </script>
 </body>
 </html>

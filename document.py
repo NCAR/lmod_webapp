@@ -15,7 +15,7 @@ from flask import Flask
 import flask
 import reg_expression
 import dict_to_json
-
+import test_js_dict
 app = Flask("document")
 
 #def read_content():
@@ -24,14 +24,15 @@ app = Flask("document")
 
 @app.route("/")# Default url route for app
 def display(): #For rendering the template and sending the necessary data to said template
-    dictionary_content = reg_expression.main() # saves the dictionary content of the compilers and the modules
+    dictionary_content = reg_expression.main_dict() # saves the dictionary content of the compilers and the modules
     html_content = dictionary_content #html_content now stores the value of dictionary_content
     return flask.render_template("view_modules.html", text_html = html_content) #Renders the template and passes the data to the webpage
 
 @app.route("/json/")
 def display_json_tree():
-    dictionary_content = reg_expression.main()
-    javascript_content = dict_to_json.dictionary_to_json(dictionary_content)#javascript_content now stores a JSON object of dictionary_content
+    #dictionary_content = reg_expression.main()
+    javascript_content = reg_expression.main()
+    #javascript_content = test_js_dict.commence_test()#dict_to_json.dictionary_to_json(dictionary_content)#javascript_content now stores a JSON object of dictionary_content
     return flask.render_template("json_modules.html", tree_content = javascript_content)
 
 if "update_webpage" == "__main__":

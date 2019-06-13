@@ -3,3 +3,8 @@ Additional References and/or citations
 
 JavaScript
 Reference: https://stackoverflow.com/questions/8763125/get-array-of-objects-keys/8763227
+Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values
+Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
+Reference: http://www.java2s.com/Tutorial/JavaScript/0220__Array/Outputallarrayelementwithdocumentwrite.htm
+Reference: https://www.jqueryscript.net/other/hierarchical-searchable-tree.html
+Reference: https://stackoverflow.com/questions/15600958/transform-an-object-in-javascript

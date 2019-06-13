@@ -126,6 +126,20 @@ def view_content_containing_dict(content_containing_dict):
         print(headings, content)
 
 # text_to_dict function constructs a dictionary of headings and a list of associated content
+def text_to_json_list(list_of_headings, full_list_of_content):
+    track_list = [] #Initializes the track_list which will store the indexes of content in between headings
+    content_containing_dict = {} #Constructs a dictionary that will use the headings as keys and the lists containing content as the values
+    print_heading_and_full_content_lists(list_of_headings, full_list_of_content)
+    track_list = track_list_build(track_list, list_of_headings, full_list_of_content)
+    list_of_lists = build_lists_of_lists(full_list_of_content, track_list) #Initializes the a list that will contain lists as elements
+    heading_list_of_lists_print(list_of_headings, list_of_lists)
+    compiled_for_json_list = assign_heading_level_dict(list_of_lists, list_of_headings)
+    return compiled_for_json_list
+    #content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings)
+    #print("\n\n A dictionary containing headings with their respective content:")
+    #view_content_containing_dict(content_containing_dict)
+    #return content_containing_dict
+
 def text_to_dict(list_of_headings, full_list_of_content):
     track_list = [] #Initializes the track_list which will store the indexes of content in between headings
     content_containing_dict = {} #Constructs a dictionary that will use the headings as keys and the lists containing content as the values
@@ -133,8 +147,6 @@ def text_to_dict(list_of_headings, full_list_of_content):
     track_list = track_list_build(track_list, list_of_headings, full_list_of_content)
     list_of_lists = build_lists_of_lists(full_list_of_content, track_list) #Initializes the a list that will contain lists as elements
     heading_list_of_lists_print(list_of_headings, list_of_lists)
-    #list_of_headings = remove_slash(list_of_headings)
-    #list_of_lists = remove_zeros(list_of_lists)
     content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings)
     print("\n\n A dictionary containing headings with their respective content:")
     view_content_containing_dict(content_containing_dict)
@@ -164,6 +176,25 @@ def huge_list_generator(heading_list,content_list):
     heading_list.append(content_list)
     return heading_list
 
+def assign_module_level_dict(list_of_content, heading):
+    dict_of_heading = {}
+    heading_list = []
+    for module in list_of_content:
+        module_list = []
+        description_dict = {"label": str(module +" Description:"), "value": str(module + "descriptionvalue")}
+        module_list.append(description_dict)
+        module_dict ={"label":str(module), "value": str(module +"_value"), "children": module_list}#, "children": module_list
+        heading_list.append(module_dict)
+    temp_heading_dict = {"label": heading, "value": heading, "children": heading_list}
+    return temp_heading_dict
+
+def assign_heading_level_dict(list_of_lists, list_of_headings):
+    compiled_list= []
+    for data_list, heading_index in zip(list_of_lists, list_of_headings):
+        compiled_list.append(assign_module_level_dict(data_list, heading_index))
+    return compiled_list
+
+
 
 def main():
     stored_content = content_extract("result_module_output.txt")
@@ -171,9 +202,16 @@ def main():
     stored_module_content = text_to_point(stored_heading_content, stored_content)
     stored_module_content = list_clean(stored_module_content)
     full_content = full_list(stored_content)
-    constructed_content_dict = text_to_dict(stored_heading_content, full_content)
-    return constructed_content_dict
-
+    compiled_prep_for_json_list = text_to_json_list(stored_heading_content, full_content)
+    return compiled_prep_for_json_list
+def main_dict():
+    stored_content = content_extract("result_module_output.txt")
+    stored_heading_content = text_to_heading_list(stored_content)
+    stored_module_content = text_to_point(stored_heading_content, stored_content)
+    stored_module_content = list_clean(stored_module_content)
+    full_content = full_list(stored_content)
+    content_containing_dict = text_to_dict(stored_heading_content, full_content)
+    return content_containing_dict
 #def test():
 #    stored_content = content_extract("result_module_output.txt")
 #    stored_heading_content = text_to_heading_list(stored_content)
