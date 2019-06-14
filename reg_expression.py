@@ -100,6 +100,28 @@ def build_lists_of_lists(full_list_of_content, track_list):
             list_of_lists.append(list(full_list_of_content[index_value:second_index_value])) # Appends the list of the sliced non heading content
     return list_of_lists
 
+def start_build_top_dict(list_of_headings,list_of_lists):
+    top_level_dict = {}
+    for item_list in list_of_lists:
+        for item in item_list:
+            item_dict = {"label": item, "value": str(item + "_value"), "children": "searching"}
+            new_item_dict = search_dict_children(item,item_dict,list_of_headings,list_of_lists)
+            top_level_dict.update(new_item_dict)
+    return top_level_dict
+
+def search_dict_children(item,item_dict,list_of_headings,list_of_lists):
+    for heading in list_of_headings:
+        if item in heading:
+            sub_dict = build_sub_dict(item_dict,list_of_headings.index(heading),list_of_lists)
+            return sub_dict
+        else
+            old_item_dict = {"label": item, "value": str(item + "_value")}
+            return old_item_dict
+
+def build_sub_dict(item_dict, list_of_lists_index, list_of_lists):
+    
+
+
 # Prints the headings and the lists stored in list_of_lists
 def heading_list_of_lists_print(list_of_headings, list_of_lists):
     print("\n\n\n")
@@ -152,7 +174,7 @@ def text_to_dict(list_of_headings, full_list_of_content):
     view_content_containing_dict(content_containing_dict)
     return content_containing_dict
 
-def remove_slash(argument_list):
+def remove_slash(argument_list):#Unneeded now
     sub_list = []
     for index in argument_list:
         slash_free_index = index.replace("/","-")
@@ -162,7 +184,7 @@ def remove_slash(argument_list):
     print(sub_list)
     return sub_list
 
-def remove_zeros(argument_list):
+def remove_zeros(argument_list):#Unneeded now
     sub_list_1 = []
     for index in argument_list:
         sub_list_2 = []
@@ -172,11 +194,32 @@ def remove_zeros(argument_list):
         sub_list_1.append(sub_list_2)
     return sub_list_1
 
-def huge_list_generator(heading_list,content_list):
+def huge_list_generator(heading_list,content_list):#Unneeded now
     heading_list.append(content_list)
     return heading_list
 
-def assign_module_level_dict(list_of_content, heading):
+def recursive_dict_search(input_dict_containing_lists):
+
+def recursive_list_search(input_list_containing_dicts):
+    for item in input_list_containing_dicts:
+        if isinstance(item,dict):
+
+
+
+def search_child(str_item,list_of_headings,list_of_lists):
+    if str_item in list_of_headings:
+
+        build_dict(
+
+
+def lists_to_dict(list_of_headings,list_of_lists):
+    top_level_dict = {}
+    for item in list_of_lists[0]:
+        temp_dict = {"label": item, "value": str(item + "_value"), "children": search_child(item,list_of_headings,list_of_lists)}
+        top_level_dict.update(temp_dict)
+    return top_level_dict
+
+def assign_module_level_dict(list_of_content, heading):#Ignore
     dict_of_heading = {}
     heading_list = []
     for module in list_of_content:
@@ -188,7 +231,7 @@ def assign_module_level_dict(list_of_content, heading):
     temp_heading_dict = {"label": heading, "value": heading, "children": heading_list}
     return temp_heading_dict
 
-def assign_heading_level_dict(list_of_lists, list_of_headings):
+def assign_heading_level_dict(list_of_lists, list_of_headings):# Ignore
     compiled_list= []
     for data_list, heading_index in zip(list_of_lists, list_of_headings):
         compiled_list.append(assign_module_level_dict(data_list, heading_index))
