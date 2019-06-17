@@ -117,9 +117,10 @@ def search_dict_children(item,item_dict,list_of_headings,list_of_lists):
         else
             old_item_dict = {"label": item, "value": str(item + "_value")}
             return old_item_dict
-
+#Idea: create a dict where the keys are the headings and the values are the array of associated content!!
+#Use the keys to to identify if it is a subdirectory and then use the value lists to iterate through the content smoothly
 def build_sub_dict(item_dict, list_of_lists_index, list_of_lists):
-    
+
 
 
 # Prints the headings and the lists stored in list_of_lists
