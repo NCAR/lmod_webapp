@@ -16,7 +16,7 @@
 # Reference: https://www.geeksforgeeks.org/python-ways-to-create-a-dictionary-of-lists/
 # Reference: https://thispointer.com/python-how-to-replace-single-or-multiple-characters-in-a-string/
 import re
-
+import lists_to_dict_construct
 # content extract reads a file as an argument to access its content
 def content_extract(input_content):
     target_file = open(input_content, "r") #Opens the file and stores the file object to a variable
@@ -52,7 +52,7 @@ def remove_list_clones(primary_list, reference_list):
 # list_clean function is utilized to remove empty strings from a list that is the argument of the function
 def list_clean(list_with_empty_strings):
     for index in list_with_empty_strings: #For loop to iterate through the list that contains empty strings
-        print(index) #Prints the index value
+        #print(index) #Prints the index value
         if index == "": # checks if the index value is an empty string
             list_with_empty_strings.remove(index) # Removes the empty string if found
         else:
@@ -68,9 +68,9 @@ def full_list(input_content):
 #Prints the lists containing the headings and the list containing all of the content
 def print_heading_and_full_content_lists(list_of_headings, full_list_of_content):
     print("All content:")
-    print(full_list_of_content) #Prints a list containing all content
-    print("List of headings:")
-    print(list_of_headings) #Prints a list containing a heading
+    #print(full_list_of_content) #Prints a list containing all content
+    #print("List of headings:")
+    #print(list_of_headings) #Prints a list containing a heading
 
 # Builds the track_list for later usage in the text_to_dict fucntion
 def track_list_build(track_list, list_of_headings, full_list_of_content):
@@ -100,36 +100,13 @@ def build_lists_of_lists(full_list_of_content, track_list):
             list_of_lists.append(list(full_list_of_content[index_value:second_index_value])) # Appends the list of the sliced non heading content
     return list_of_lists
 
-def start_build_top_dict(list_of_headings,list_of_lists):
-    top_level_dict = {}
-    for item_list in list_of_lists:
-        for item in item_list:
-            item_dict = {"label": item, "value": str(item + "_value"), "children": "searching"}
-            new_item_dict = search_dict_children(item,item_dict,list_of_headings,list_of_lists)
-            top_level_dict.update(new_item_dict)
-    return top_level_dict
-
-def search_dict_children(item,item_dict,list_of_headings,list_of_lists):
-    for heading in list_of_headings:
-        if item in heading:
-            sub_dict = build_sub_dict(item_dict,list_of_headings.index(heading),list_of_lists)
-            return sub_dict
-        else
-            old_item_dict = {"label": item, "value": str(item + "_value")}
-            return old_item_dict
-#Idea: create a dict where the keys are the headings and the values are the array of associated content!!
-#Use the keys to to identify if it is a subdirectory and then use the value lists to iterate through the content smoothly
-def build_sub_dict(item_dict, list_of_lists_index, list_of_lists):
-
-
-
 # Prints the headings and the lists stored in list_of_lists
 def heading_list_of_lists_print(list_of_headings, list_of_lists):
     print("\n\n\n")
-    print("Presented here is the list of headings:")
-    print(list_of_headings)
-    print("Presented here is a list of the lists of content:")
-    print(list_of_lists)
+    #print("Presented here is the list of headings:")
+    #print(list_of_headings)
+    #print("Presented here is a list of the lists of content:")
+    #print(list_of_lists)
 
 # Builds the content_containing_dict which is a dictionary containing the headings as keys and the associated content as values
 def build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings):
@@ -145,8 +122,9 @@ def build_content_containing_dict(content_containing_dict, list_of_lists, list_o
 #View the content_containing_dict for error checking
 def view_content_containing_dict(content_containing_dict):
     for headings, content in content_containing_dict.items():
-        print("\nHeading and the Content.")
-        print(headings, content)
+        print("\n")
+        #print("\nHeading and the Content.")
+        #print(headings, content)
 
 # text_to_dict function constructs a dictionary of headings and a list of associated content
 def text_to_json_list(list_of_headings, full_list_of_content):
@@ -173,52 +151,11 @@ def text_to_dict(list_of_headings, full_list_of_content):
     content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings)
     print("\n\n A dictionary containing headings with their respective content:")
     view_content_containing_dict(content_containing_dict)
+    resulting_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists)
+    print("\n\nNow printing the dictionary containing dictionaries:")
+    print(resulting_dict)
+    print("\n")
     return content_containing_dict
-
-def remove_slash(argument_list):#Unneeded now
-    sub_list = []
-    for index in argument_list:
-        slash_free_index = index.replace("/","-")
-        print(slash_free_index)
-        sub_list.append(slash_free_index)
-    print("\n\nCleaned heading list.\n")
-    print(sub_list)
-    return sub_list
-
-def remove_zeros(argument_list):#Unneeded now
-    sub_list_1 = []
-    for index in argument_list:
-        sub_list_2 = []
-        for secindex in index:
-            zero_free_index = secindex.replace("0","zero")
-            sub_list_2.append(zero_free_index)
-        sub_list_1.append(sub_list_2)
-    return sub_list_1
-
-def huge_list_generator(heading_list,content_list):#Unneeded now
-    heading_list.append(content_list)
-    return heading_list
-
-def recursive_dict_search(input_dict_containing_lists):
-
-def recursive_list_search(input_list_containing_dicts):
-    for item in input_list_containing_dicts:
-        if isinstance(item,dict):
-
-
-
-def search_child(str_item,list_of_headings,list_of_lists):
-    if str_item in list_of_headings:
-
-        build_dict(
-
-
-def lists_to_dict(list_of_headings,list_of_lists):
-    top_level_dict = {}
-    for item in list_of_lists[0]:
-        temp_dict = {"label": item, "value": str(item + "_value"), "children": search_child(item,list_of_headings,list_of_lists)}
-        top_level_dict.update(temp_dict)
-    return top_level_dict
 
 def assign_module_level_dict(list_of_content, heading):#Ignore
     dict_of_heading = {}

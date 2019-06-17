@@ -11,3 +11,5 @@ Reference: https://stackoverflow.com/questions/15600958/transform-an-object-in-j
 Reference: https://stackoverflow.com/questions/19795012/how-to-convert-a-list-to-jsonarray-in-python
 Reference: https://stackoverflow.com/questions/3559070/are-there-dictionaries-in-javascript-like-python
 Reference: https://stackoverflow.com/questions/25231989/how-to-check-if-a-variable-is-a-dictionary-in-python
+Reference: https://www.geeksforgeeks.org/python-finding-strings-with-given-substring-in-list/
+Reference: https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
