@@ -25,44 +25,43 @@ def start_build_top_dict(array_of_headings,array_of_lists):# Initiates the entir
     top_level_dict = {} # The hierarchical dictionary. Initialized to store each compiler and repsective module
     track_dict_entries_index = 0 # The index of the dictionary
     clone_of_headings = array_of_headings.copy() # Copies the array_of_headings list
-    clone_of_list_of_lists=array_of_lists.copy() # Copies the array_of_lists list
+    clone_of_array_of_arrays=array_of_lists.copy() # Copies the array_of_lists list
     clone_of_headings_index=0 # Tracks the index of clone_of_headings index
-    for item_list in clone_of_list_of_lists:
-        print("Item List:")
+    for item_list in clone_of_array_of_arrays:# Outer for loop iterating through all the contentin the clone_of_array_of_arrays variable
+        print("Item List:")# Used to track the item_list print value
         print(item_list)
-        for item in item_list:
-            item_dict = {"label": item, "value": str(item + "_value")}
-            checked_value, checked_heading = check_for_children(item, clone_of_headings)
-            if checked_value == True and checked_heading != None:
-                item_dict = search_dict_children_from_target(item,item_dict,clone_of_headings,clone_of_list_of_lists,checked_heading)
-            top_level_dict[track_dict_entries_index] = item_dict
-            print("Print new item dict")
+        for item in item_list:#Inner for loop iterating through the individual entries of each list within the list containing lists of content
+            item_dict = {"label": item, "value": str(item + "_value")} # The current dictionary entry, stored in item_dict
+            checked_value, checked_heading = check_for_children(item, clone_of_headings) # Calls check_for_children to determine if the current content string is will have children, returning a boolean value and the directory that will contain the associated children
+            if checked_value == True and checked_heading != None: # If statement that verifies if the values returned from check_for_children would indicate the dictionary entry will have children
+                item_dict = search_dict_children_from_target(item,item_dict,clone_of_headings,clone_of_array_of_arrays,checked_heading) # Current dictionary is assigned the result of search_dict_children_from_target to gain the children of said dictionary entry
+            top_level_dict[track_dict_entries_index] = item_dict #Stores the dictionary entry into a larger dictionary
+            print("Print new item dict")# Print contents of dictionary entry
             print(item_dict)
-            track_dict_entries_index+=1
-        #clone_of_list_of_lists.pop(clone_of_list_of_lists.index(item_list))
-        #content_array_popped = clone_of_list_of_lists.pop(clone_of_headings_index)
+            track_dict_entries_index+=1 # For enumerating the dictionary entries
+        #clone_of_array_of_arrays.pop(clone_of_array_of_arrays.index(item_list))
+        #content_array_popped = clone_of_array_of_arrays.pop(clone_of_headings_index)
         #heading_array_popped = clone_of_headings.pop(clone_of_headings_index)
         print("\n\n")
         #print("Content popped: ",content_array_popped, " Heading popped: ", heading_array_popped)
         print("\n\n")
-        print("Content left: ",clone_of_list_of_lists)
+        print("Content left: ",clone_of_array_of_arrays)
         print("\n\n\n")
-        clone_of_headings_index+=1
+        clone_of_headings_index+=1 # Increment clone_of_headings_index
         print(top_level_dict)
-        recursive_dict_print_dict(top_level_dict)
+        recursive_dict_print_dict(top_level_dict) #Print sub dictionaries
         #recursive_dict_print(top_level_dict)
-    return top_level_dict
+    return top_level_dict# Returns the value of top_level_dict
 
+
+# search_dict_children_from_target fucntion accepts a string of content, an associated dictionary, a list of headings, a list of lists containing the content, and a heading cotaining the dictionary entry's children
 def search_dict_children_from_target(item,item_dict,clone_of_headings,clone_of_list_of_lists,target_heading):
-    if item in target_heading:
-        sub_dict = build_sub_dict(item,item_dict,clone_of_headings.index(target_heading),clone_of_list_of_lists,clone_of_headings)
-        item_dict["children"] = sub_dict
-        heading_bool = True
-        print("heading boolean:")
-        print(heading_bool)
+    if item in target_heading: # If tstatement checking to snsure that the content substring is a part of the string of the target_heading that was passed in the arguments
+        sub_dict = build_sub_dict(item,item_dict,clone_of_headings.index(target_heading),clone_of_list_of_lists,clone_of_headings) # Another dictionary is created containing the children of the previous dictionary through the build_sub_dict function
+        item_dict["children"] = sub_dict # The value of sub_dict is assigned as the children of item_dict
     else:
-        old_item_dict = {"label": item, "value": str(item + "_value")}
-        item_dict["children"] = old_item_dict
+        old_item_dict = {"label": item, "value": str(item + "_value")} #Creates this dictionary entry if no children are found
+        item_dict["children"] = old_item_dict #old_item_dict assigned to item_dict to be returned
     return item_dict
 # search_dict_children is the predecessor of search_dict_children_from_target. It is has multiple bugs
 # and was most useful in understanding how to improve its successor
@@ -83,14 +82,14 @@ def search_dict_children(item,item_dict,clone_of_headings,clone_of_list_of_lists
         pass
     elif item in search_context and item != item_dict["label"]: #If search_context yields something yet that and the child to be identified is not repeated in the parent dictionary entry
         sub_dict = build_sub_dict(item,item_dict,clone_of_headings.index(heading),clone_of_list_of_lists,clone_of_headings) # Function accepting a string from the content, the current dict being constructed, index of a relevant heading, array of the content, and an array of the headings/directories of said content
-        item_dict["children"] = sub_dict # The 
-        heading_bool = True
-        print("heading boolean:")
+        item_dict["children"] = sub_dict # The current dictionary entry being processed is assigned the result of build_sub_dict as the children of the current dictonary entry
+        heading_bool = True # heading_bool is to track if there was a heading_bool value present
+        print("heading boolean:")#printing for heading_bool
         print(heading_bool)
     else:
-        old_item_dict = {"label": item, "value": str(item + "_value")}
+        old_item_dict = {"label": item, "value": str(item + "_value")} #If none of the previous entries are satisfied, this dictionary entry is sent back.
         item_dict["children"] = old_item_dict
-    return item_dict
+    return item_dict # Returns the dictionary entry
 '''
 #Idea: create a dict where the keys are the headings and the values are the array of associated content!!
 #Use the keys to to identify if it is a subdirectory and then use the value lists to iterate through the content smoothly
@@ -138,7 +137,7 @@ def check_for_children(target_content, clone_of_headings):
             continue
     return False, None
 
-
+# Reference: https://stackoverflow.com/questions/10756427/loop-through-all-nested-dictionary-values
 def recursive_dict_print(item_dictionary):
     for key, value in item_dictionary.items():
         if isinstance(value,dict):
