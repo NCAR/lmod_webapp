@@ -93,61 +93,61 @@ def search_dict_children(item,item_dict,clone_of_headings,clone_of_list_of_lists
 '''
 #Idea: create a dict where the keys are the headings and the values are the array of associated content!!
 #Use the keys to to identify if it is a subdirectory and then use the value lists to iterate through the content smoothly
+# build_sub_dict accepts a content string, the associated content string's dictonary entry, the index of associated directory in the headings array, the array of lists containing lists of content, and an array of the headings/directories
 def build_sub_dict(item_name,item_dict, clone_of_headings_index, clone_of_list_of_lists,clone_of_headings):
-    encompassing_dict = {}
-    for content_item in clone_of_list_of_lists[clone_of_headings_index]:
-        content_item_dict ={"label": content_item, "value": str(content_item + "_value")}
+    encompassing_dict = {} #encompassing_dict will contain all the children dictionaries
+    for content_item in clone_of_list_of_lists[clone_of_headings_index]:# iterates through the content strings that are part of the associated heading/directory
+        content_item_dict ={"label": content_item, "value": str(content_item + "_value")} #This dictionary entry is the defualt if no children dictionary entries are present
         #clone_of_list_of_lists[clone_of_headings_index].remove(content_item)
-        if content_item != item_name:
-            check_headings_bool, pinpoint_heading = check_headings(content_item,clone_of_headings)
-            print("\n content_item = ", content_item," item_name = ", item_name," check_headings_bool = ", check_headings_bool, " pinpoint_heading = ", pinpoint_heading)
-            if check_headings_bool == True and pinpoint_heading != None:
-                print("print me")
-                content_item_dict = search_dict_children_from_target(content_item,content_item_dict,clone_of_headings,clone_of_list_of_lists, pinpoint_heading)
-        encompassing_dict[clone_of_list_of_lists[clone_of_headings_index].index(content_item)] =content_item_dict
+        if content_item != item_name: # If the content string is the same as the dictionary label value, the code will not run to avoid duplicates
+            check_headings_bool, pinpoint_heading = check_headings(content_item,clone_of_headings)# The function check_headings returns a boolean and an associated heading that contains children dictionaries
+            print("\n content_item = ", content_item," item_name = ", item_name," check_headings_bool = ", check_headings_bool, " pinpoint_heading = ", pinpoint_heading)# Print statement to determine if there are errors or bugs
+            if check_headings_bool == True and pinpoint_heading != None:# If statement to determine if the there will be child dictionaries of current content string
+                content_item_dict = search_dict_children_from_target(content_item,content_item_dict,clone_of_headings,clone_of_list_of_lists, pinpoint_heading) #Searches for any child dictionaries of the current content string
+        encompassing_dict[clone_of_list_of_lists[clone_of_headings_index].index(content_item)] = content_item_dict #Puts the new child dictionary into the encompassing dictionary
         #encompassing_dict.update(temp_encompassing_dict)
         print("\n\nEncompassing dict")
         print(encompassing_dict)
-    item_dict["children"] = encompassing_dict
+    item_dict["children"] = encompassing_dict #Assigns encompassing_dict as the child of item_dict
     print("\nSub dictionaries:")
     recursive_dict_print(item_dict)
-    content_array_popped = clone_of_list_of_lists.pop(clone_of_headings_index)
-    heading_array_popped = clone_of_headings.pop(clone_of_headings_index)
+    content_array_popped = clone_of_list_of_lists.pop(clone_of_headings_index) #Pops the used content array in the function (Where the child's content came from)
+    heading_array_popped = clone_of_headings.pop(clone_of_headings_index) #Pops the used heading/directory of the child dictionary
     print("\n\n")
     print("Content popped: ",content_array_popped, " Heading popped: ", heading_array_popped)
     print("\n\n")
     print("Content left: ",clone_of_list_of_lists)
     print("\n\n\n")
-    return encompassing_dict
+    return encompassing_dict # returns the encompassing_dict
 
-def check_headings(target_item, clone_of_headings):
-    for heading in clone_of_headings:
-        if target_item in heading:
-            located_heading = heading
-            return True, located_heading
+def check_headings(target_item, clone_of_headings):# Checks if the heading in question actually has the children of content string
+    for heading in clone_of_headings: # For loop for going through the headings
+        if target_item in heading: #Checks id target_item is a substring of the heading
+            located_heading = heading #Assigns the heading value to located heading
+            return True, located_heading #Returns both values
         else:
-            continue
-    return False, None
+            continue# Continues looping otherwise
+    return False, None# If not a substring, this is returned
 
-def check_for_children(target_content, clone_of_headings):
-    for heading in clone_of_headings:
-        if target_content in heading:
-            return True, heading
+def check_for_children(target_content, clone_of_headings): #Checks for where the children are in regard to the headings
+    for heading in clone_of_headings:#For loop looping through the headings
+        if target_content in heading:# If statement checking if the target_content is a substring of of the heading
+            return True, heading # Return the True value and heading value
         else:
-            continue
-    return False, None
+            continue#continue if not satisfying if statement
+    return False, None# If not satisfying the if-else statement above, return these values
 
 # Reference: https://stackoverflow.com/questions/10756427/loop-through-all-nested-dictionary-values
-def recursive_dict_print(item_dictionary):
-    for key, value in item_dictionary.items():
-        if isinstance(value,dict):
-            recursive_dict_print(value)
+def recursive_dict_print(item_dictionary):# Prints the sub_dictionaries recursively
+    for key, value in item_dictionary.items():#Loop through keys and values
+        if isinstance(value,dict):#When the value is a dictionary itself
+            recursive_dict_print(value)# recursively call the function to go through the nested dictionaries
         else:
-            print("\n", key,"\n", value)
+            print("\n", key,"\n", value) # Print s the key and value
 
-def recursive_dict_print_dict(item_dictionary):
-    for key, value in item_dictionary.items():
-        if isinstance(value,dict):
-            recursive_dict_print(value)
+def recursive_dict_print_dict(item_dictionary):# Prints the sub_dictionaries recursively
+    for key, value in item_dictionary.items():#Loop through keys and values
+        if isinstance(value,dict):#When the value is a dictionary itself
+            recursive_dict_print_dict(value)# recursively call the function to go through the nested dictionaries
         else:
-            print(item_dictionary)
+            print(item_dictionary) #Prints the dictionary
