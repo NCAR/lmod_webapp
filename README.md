@@ -13,17 +13,31 @@ Currently there is one bash script in the repository as well:
 
 module_collect.sh (Collects the relevant compiler and module information)
 
-This Flask Application depends on five different python files:
+This Flask Application has six different python files:
 
 dict_to_json.py (Manages converting the final output of reg_expression.py to a json to send to the Javascript of the webpage.)
 
 document.py (Holds the configuration and url patterns for the FLASK application. Currently, only two url patterns of note are stored in document.py. The first is "/" and the second is "/json/". The Flask app is ran using commands specified in comments of document.py.)
+
+lists_to_dict_construct.py (Contains the functions necessary to convert the lists containing the content from the target file a hierarchical dictionary that stores sub dictionaries or respective children.)
 
 reg_expression.py (Where the bulk of text processing and organization of content is handled.)
 
 test_js_dict.py (Test code to see what structure could be implemented and accepted as json for the simpletree on the frontend.)
 
 text_cleaner.py (Used at one point to parse the text. Currently unneeded.)
+
+There are multiple JSON files present:
+
+array_dict.json (Example of the format that the jQuery simpletree will accept. Short summary: the data must be contained in lists that contain dictionaries so that the JavaScript can interpret the JSON as the correct JavaScript object.)
+
+dictionary.json (One example if the directories are used to organize the rest of the content.)
+
+dictionary_2.json (One example if the directories are used to organize the rest of the content.)
+
+dictionary_3.json (One example if the directories are used to organize the rest of the content.)
+
+dictionary_3.txt (Example of a structure that cannot be used.)
 
 ## Directions
 To run this application:
