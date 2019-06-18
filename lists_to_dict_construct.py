@@ -40,22 +40,20 @@ def start_build_top_dict(array_of_headings,array_of_lists):# Initiates the entir
             print(item_dict)
             track_dict_entries_index+=1
         #clone_of_list_of_lists.pop(clone_of_list_of_lists.index(item_list))
-        clone_of_list_of_lists.pop(clone_of_headings_index)
-        clone_of_headings.pop(clone_of_headings_index)
+        #content_array_popped = clone_of_list_of_lists.pop(clone_of_headings_index)
+        #heading_array_popped = clone_of_headings.pop(clone_of_headings_index)
+        print("\n\n")
+        #print("Content popped: ",content_array_popped, " Heading popped: ", heading_array_popped)
+        print("\n\n")
+        print("Content left: ",clone_of_list_of_lists)
+        print("\n\n\n")
         clone_of_headings_index+=1
         print(top_level_dict)
+        recursive_dict_print_dict(top_level_dict)
         #recursive_dict_print(top_level_dict)
     return top_level_dict
 
 def search_dict_children_from_target(item,item_dict,clone_of_headings,clone_of_list_of_lists,target_heading):
-    search_context = next((heading for heading in clone_of_headings if item in heading), None)
-    print("Printing Search Context")
-    print(search_context)
-    #for heading in search_context:
-        #print("Printing the item to search heading: ", item)
-        #print("Printing the heading:")
-        #print(heading)
-        #heading_bool = False
     if item in target_heading:
         sub_dict = build_sub_dict(item,item_dict,clone_of_headings.index(target_heading),clone_of_list_of_lists,clone_of_headings)
         item_dict["children"] = sub_dict
@@ -66,21 +64,26 @@ def search_dict_children_from_target(item,item_dict,clone_of_headings,clone_of_l
         old_item_dict = {"label": item, "value": str(item + "_value")}
         item_dict["children"] = old_item_dict
     return item_dict
-
+# search_dict_children is the predecessor of search_dict_children_from_target. It is has multiple bugs
+# and was most useful in understanding how to improve its successor
+'''
+# search_dict_children function was designed to detectif there were any children of a previous dictionary entry.
+# The function calls build_sub_dict to build another dictionary within a previous dictionary entry if a child is
+# located.
 def search_dict_children(item,item_dict,clone_of_headings,clone_of_list_of_lists):
-    search_context = next((heading for heading in clone_of_headings if item in heading), None)
-    print("Printing Search Context")
-    print(search_context)
-    #for heading in search_context:
+    search_context = next((heading for heading in clone_of_headings if item in heading), None) # Would find the first entry of the occurrence of a substring
+    print("Printing Search Context") # Printing to be able to identify the next print statement
+    print(search_context) # Prints the search_context value
+    #for heading in search_context: # For lop for identifying the  substring for
         #print("Printing the item to search heading: ", item)
         #print("Printing the heading:")
         #print(heading)
         #heading_bool = False
-    if search_context == None:
+    if search_context == None: # In case search_context yields nothing
         pass
-    elif item in search_context and item != item_dict["label"]:
-        sub_dict = build_sub_dict(item,item_dict,clone_of_headings.index(heading),clone_of_list_of_lists,clone_of_headings)
-        item_dict["children"] = sub_dict
+    elif item in search_context and item != item_dict["label"]: #If search_context yields something yet that and the child to be identified is not repeated in the parent dictionary entry
+        sub_dict = build_sub_dict(item,item_dict,clone_of_headings.index(heading),clone_of_list_of_lists,clone_of_headings) # Function accepting a string from the content, the current dict being constructed, index of a relevant heading, array of the content, and an array of the headings/directories of said content
+        item_dict["children"] = sub_dict # The 
         heading_bool = True
         print("heading boolean:")
         print(heading_bool)
@@ -88,15 +91,20 @@ def search_dict_children(item,item_dict,clone_of_headings,clone_of_list_of_lists
         old_item_dict = {"label": item, "value": str(item + "_value")}
         item_dict["children"] = old_item_dict
     return item_dict
+'''
 #Idea: create a dict where the keys are the headings and the values are the array of associated content!!
 #Use the keys to to identify if it is a subdirectory and then use the value lists to iterate through the content smoothly
 def build_sub_dict(item_name,item_dict, clone_of_headings_index, clone_of_list_of_lists,clone_of_headings):
     encompassing_dict = {}
     for content_item in clone_of_list_of_lists[clone_of_headings_index]:
-        content_item_dict ={"label": content_item, "value": str(content_item + "_value"), "children": "searching"}
+        content_item_dict ={"label": content_item, "value": str(content_item + "_value")}
         #clone_of_list_of_lists[clone_of_headings_index].remove(content_item)
         if content_item != item_name:
-            content_item_dict = search_dict_children(content_item,content_item_dict,clone_of_headings,clone_of_list_of_lists)
+            check_headings_bool, pinpoint_heading = check_headings(content_item,clone_of_headings)
+            print("\n content_item = ", content_item," item_name = ", item_name," check_headings_bool = ", check_headings_bool, " pinpoint_heading = ", pinpoint_heading)
+            if check_headings_bool == True and pinpoint_heading != None:
+                print("print me")
+                content_item_dict = search_dict_children_from_target(content_item,content_item_dict,clone_of_headings,clone_of_list_of_lists, pinpoint_heading)
         encompassing_dict[clone_of_list_of_lists[clone_of_headings_index].index(content_item)] =content_item_dict
         #encompassing_dict.update(temp_encompassing_dict)
         print("\n\nEncompassing dict")
@@ -104,7 +112,23 @@ def build_sub_dict(item_name,item_dict, clone_of_headings_index, clone_of_list_o
     item_dict["children"] = encompassing_dict
     print("\nSub dictionaries:")
     recursive_dict_print(item_dict)
+    content_array_popped = clone_of_list_of_lists.pop(clone_of_headings_index)
+    heading_array_popped = clone_of_headings.pop(clone_of_headings_index)
+    print("\n\n")
+    print("Content popped: ",content_array_popped, " Heading popped: ", heading_array_popped)
+    print("\n\n")
+    print("Content left: ",clone_of_list_of_lists)
+    print("\n\n\n")
     return encompassing_dict
+
+def check_headings(target_item, clone_of_headings):
+    for heading in clone_of_headings:
+        if target_item in heading:
+            located_heading = heading
+            return True, located_heading
+        else:
+            continue
+    return False, None
 
 def check_for_children(target_content, clone_of_headings):
     for heading in clone_of_headings:
@@ -120,4 +144,11 @@ def recursive_dict_print(item_dictionary):
         if isinstance(value,dict):
             recursive_dict_print(value)
         else:
-            print(key, value)
+            print("\n", key,"\n", value)
+
+def recursive_dict_print_dict(item_dictionary):
+    for key, value in item_dictionary.items():
+        if isinstance(value,dict):
+            recursive_dict_print(value)
+        else:
+            print(item_dictionary)
