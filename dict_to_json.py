@@ -15,7 +15,7 @@ import json
 
 def dictionary_to_json(input_dictionary):
     print("Converting dictionary to JSON")
-    with open("dictionary_3.json", "w") as jfile:
+    with open("dictionary_3.txt", "w") as jfile:
         json.dump(input_dictionary, jfile)
     output_json = json.dumps(input_dictionary)
     print("JSON Ready.")
