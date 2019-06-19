@@ -31,7 +31,7 @@ def display(): #For rendering the template and sending the necessary data to sai
 @app.route("/json/")
 def display_json_tree():
     #dictionary_content = reg_expression.main()
-    javascript_content = reg_expression.main()
+    javascript_content = dict_to_json.array_dict_to_json(reg_expression.main_array_dict())
     #javascript_content = test_js_dict.commence_test()#dict_to_json.dictionary_to_json(dictionary_content)#javascript_content now stores a JSON object of dictionary_content
     return flask.render_template("json_modules.html", tree_content = javascript_content)
 

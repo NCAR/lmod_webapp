@@ -151,11 +151,9 @@ def text_to_dict(list_of_headings, full_list_of_content):
     content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings)
     print("\n\n A dictionary containing headings with their respective content:")
     view_content_containing_dict(content_containing_dict)
-    resulting_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists)
-    print("\n\nNow printing the dictionary containing dictionaries:")
-    print(resulting_dict)
+    resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists)
     print("\n")
-    return content_containing_dict
+    return resulting_array_dict, content_containing_dict
 
 def assign_module_level_dict(list_of_content, heading):#Ignore
     dict_of_heading = {}
@@ -191,8 +189,16 @@ def main_dict():
     stored_module_content = text_to_point(stored_heading_content, stored_content)
     stored_module_content = list_clean(stored_module_content)
     full_content = full_list(stored_content)
-    content_containing_dict = text_to_dict(stored_heading_content, full_content)
+    array_dict_conteining_content, content_containing_dict = text_to_dict(stored_heading_content, full_content)
     return content_containing_dict
+def main_array_dict():
+    stored_content = content_extract("result_module_output.txt")
+    stored_heading_content = text_to_heading_list(stored_content)
+    stored_module_content = text_to_point(stored_heading_content, stored_content)
+    stored_module_content = list_clean(stored_module_content)
+    full_content = full_list(stored_content)
+    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content)
+    return array_dict_containing_content
 #def test():
 #    stored_content = content_extract("result_module_output.txt")
 #    stored_heading_content = text_to_heading_list(stored_content)

@@ -15,16 +15,16 @@ import json
 
 def dictionary_to_json(input_dictionary):
     print("Converting dictionary to JSON")
-    with open("dictionary_3.txt", "w") as jfile:
+    with open("dictionary_4.json", "w") as jfile:
         json.dump(input_dictionary, jfile)
-    output_json = json.dumps(input_dictionary)
+    output_json = json.dump(input_dictionary)
     print("JSON Ready.")
     print(output_json)
     return output_json
 
 def array_dict_to_json(input_dictionary):
     print("Converting array/dictionary to JSON")
-    with open("array_dict.json", "w") as jfile:
+    with open("array_dict_list.json", "w") as jfile:
         json.dump(input_dictionary, jfile)
     output_json = json.dumps(input_dictionary)
     print("JSON Ready.")

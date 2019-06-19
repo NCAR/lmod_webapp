@@ -27,6 +27,12 @@ test_js_dict.py (Test code to see what structure could be implemented and accept
 
 text_cleaner.py (Used at one point to parse the text. Currently unneeded.)
 
+There are currently two html files present:
+
+view_modules.html (The original HTML file utilized for testing purposes. view_modules.html is the default route for the Flask application.)
+
+json_modules.html (The second HTML file developed. To get to this page json/ must be added to the base URL.)
+
 There are multiple JSON files present:
 
 array_dict.json (Example of the format that the jQuery simpletree will accept. Short summary: the data must be contained in lists that contain dictionaries so that the JavaScript can interpret the JSON as the correct JavaScript object.)
@@ -51,3 +57,7 @@ Limitations:
 1. The data must be loaded when the page initializes for the simpletree. Data cannot be added after the page has loaded.
 
 2. The data must be loaded within a nested list to dictionary structure. The data will not be displayed otherwise as the simpletree will not be able to traverse said data.
+
+3. If the nesting of the dictionaries require extreme depth, the recursive functions can become overwhelmed if there is an extreme quantity of recursive calls.
+
+4. Currently requires a file to already exist with the required information for building the module tree.
