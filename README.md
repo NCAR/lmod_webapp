@@ -12,6 +12,7 @@ result_module_output.txt (Currently where the modules are stored after being ext
 Currently there is one bash script in the repository as well:
 
 module_collect.sh (Collects the relevant compiler and module information)
+->module_collect.sh will output a file with the relevant module information. The most recent version was developed using regular expressions provided by Brian Vanderwende. Subject to further modification.
 
 This Flask Application has six different python files:
 
@@ -27,11 +28,13 @@ test_js_dict.py (Test code to see what structure could be implemented and accept
 
 text_cleaner.py (Used at one point to parse the text. Currently unneeded.)
 
-There are currently two html files present:
+There are currently three html files present:
 
 view_modules.html (The original HTML file utilized for testing purposes. view_modules.html is the default route for the Flask application.)
 
 json_modules.html (The second HTML file developed. To get to this page json/ must be added to the base URL.)
+
+test.html (Unneeded, used for initial experimentation with JavaScript)
 
 There are multiple JSON files present:
 
