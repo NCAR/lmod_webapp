@@ -3,7 +3,8 @@
 */
 .color_body
 {
-    background-image: linear-gradient(#81e8bb,cyan);
+    /*background-image: linear-gradient(#81e8bb,cyan);*/
+    background-color: white;
 }
 
 .padding_body

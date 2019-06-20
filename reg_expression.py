@@ -160,7 +160,7 @@ def text_to_dict(list_of_headings, full_list_of_content,heading_container): #Arg
     resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists,heading_container) #From second iteration of the code that builds heavily on reg_expression.py's functions to develop a hierachical list-dict construct using list comprehension mainly. This code requires lists_to_dict_construct.py file and its functions to be executed.
     print("\n")
     full_content_vessel = heading_point_to_list(heading_container,list_of_lists,list_of_headings)# From the third version of the code. Reorganizes a pre-designed dictionary of headings/directories as keys and lists of content as values to generate a hierarchical list-dict construct. This code depends heavily on the file dict_to_array_dict.py and its associated functions to be executed.
-    return full_content_vessel, content_containing_dict #returns ttwo separate variables full_content_vessel being obtained by the dict_to_array_dict.py code and content_containing_dict being obtained by the original code, both variables are being tilized in the FLASK application
+    return full_content_vessel, content_containing_dict #returns two separate variables full_content_vessel being obtained by the dict_to_array_dict.py code and content_containing_dict being obtained by the original code, both variables are being tilized in the FLASK application
 
 #For calling dict_to_array_dict.py functions for generating a hierarchical list-dict construct
 def heading_point_to_list(heading_construct, arrays_of_content,list_of_headings): # The function heading_point_to_list calls on code from the dict_to_array_dict.py and uses its functions to rearrange a dictionary of heading/directory and values of associated lists of content into a hierarchical list-dict construct. Has the arguments heading_construct, arrays_of_content,list_of_headings for building a new dictionary.
@@ -181,21 +181,21 @@ def assign_module_level_dict(list_of_content, heading):#Ignore, being used for t
         module_list.append(description_dict)# Appends the dictionary of content to a list
         module_dict ={"label":str(module), "value": str(module +"_value"), "children": module_list}#module_list is assigned as the valeu of the "children" key. Said key is part of the larger module_dict dictionary. Said dictionary is composed of three keys with three values for each key. The keys are "label", "value", "children"
         heading_list.append(module_dict) # Appends the module dict to the heading_list to be used for constructing a larger list-dict construct.
-    temp_heading_dict = {"label": heading, "value": heading, "children": heading_list}
-    return temp_heading_dict
+    temp_heading_dict = {"label": heading, "value": heading, "children": heading_list} # builds the overarching dictionary for the heading/directory to be returned by the function stored in temp_heading_dict
+    return temp_heading_dict #Returns the value of temp_heading_dict
 
-def assign_heading_level_dict(list_of_lists, list_of_headings):# Ignore
-    compiled_list= []
-    for data_list, heading_index in zip(list_of_lists, list_of_headings):
-        compiled_list.append(assign_module_level_dict(data_list, heading_index))
-    return compiled_list
+def assign_heading_level_dict(list_of_lists, list_of_headings):# Ignore, being used for text_to_json_list function for test purposes (arguments are headings and list of associated content)
+    compiled_list= [] #Initializes a list to store the individual dictionaries that will encompass each heading/directory and their respective content
+    for data_list, heading_index in zip(list_of_lists, list_of_headings): # Iterates both the headings/directories and lists of associated content for the purpose fo appending to the compiled_list
+        compiled_list.append(assign_module_level_dict(data_list, heading_index)) #Appends the dictionary-list content to a larger list-dict construct
+    return compiled_list #Returns the value of the variable compiled_list
 
 
 
-def main():
-    stored_content = content_extract("result_module_output.txt")
-    stored_heading_content,heading_container = text_to_heading_list(stored_content)
-    stored_module_content = text_to_point(stored_heading_content, stored_content)
+def main():#Initial main function that is the first version of the code implementation
+    stored_content = content_extract("result_module_output.txt")# Content extraction to obtain the strings of the content
+    stored_heading_content,heading_container = text_to_heading_list(stored_content) #test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
+    stored_module_content = text_to_point(stored_heading_content, stored_content) #
     stored_module_content = list_clean(stored_module_content)
     full_content = full_list(stored_content)
     compiled_prep_for_json_list = text_to_json_list(stored_heading_content, full_content)
