@@ -195,27 +195,29 @@ def assign_heading_level_dict(list_of_lists, list_of_headings):# Ignore, being u
 def main():#Initial main function that is the first version of the code implementation
     stored_content = content_extract("result_module_output.txt")# Content extraction to obtain the strings of the content
     stored_heading_content,heading_container = text_to_heading_list(stored_content) #test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
-    stored_module_content = text_to_point(stored_heading_content, stored_content) #
-    stored_module_content = list_clean(stored_module_content)
-    full_content = full_list(stored_content)
-    compiled_prep_for_json_list = text_to_json_list(stored_heading_content, full_content)
-    return compiled_prep_for_json_list
-def main_dict():
-    stored_content = content_extract("result_module_output.txt")
-    stored_heading_content,heading_container = text_to_heading_list(stored_content)
-    stored_module_content = text_to_point(stored_heading_content, stored_content)
-    stored_module_content = list_clean(stored_module_content)
-    full_content = full_list(stored_content)
-    array_dict_conteining_content, content_containing_dict = text_to_dict(stored_heading_content, full_content)
-    return content_containing_dict
-def main_array_dict():
-    stored_content = content_extract("result_module_output.txt")
-    stored_heading_content,heading_container = text_to_heading_list(stored_content)
-    stored_module_content = text_to_point(stored_heading_content, stored_content)
-    stored_module_content = list_clean(stored_module_content)
-    full_content = full_list(stored_content)
-    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container)
-    return array_dict_containing_content
+    stored_module_content = text_to_point(stored_heading_content, stored_content) #The function test_to_point is called to return the content of the extracted content
+    stored_module_content = list_clean(stored_module_content)# Cleans the content list of empy strings
+    full_content = full_list(stored_content) #Calls the full_list fucntion for the purpose of gaining a list of all content
+    compiled_prep_for_json_list = text_to_json_list(stored_heading_content, full_content) #compiled_prep_for_json_list the content is formatted in such a way that would be acceptable as a JSON for the jQuery simpletree
+    return compiled_prep_for_json_list #Returns the value for the jQuery simpletree
+
+def main_dict():#Second main fucntion for the second version of the code implementation
+    stored_content = content_extract("result_module_output.txt") # Content extraction to obtain the strings of the content
+    stored_heading_content,heading_container = text_to_heading_list(stored_content)#test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
+    stored_module_content = text_to_point(stored_heading_content, stored_content)#The function test_to_point is called to return the content of the extracted content
+    stored_module_content = list_clean(stored_module_content)# Cleans the content list of empy strings
+    full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
+    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content) #returns the array_dict_containing_content as well as content_containing_dict
+    return content_containing_dict#Returns the value of view_content_containing_dict
+
+def main_array_dict():#Third main fucntion for the third version of the code implementation
+    stored_content = content_extract("result_module_output.txt")# Content extraction to obtain the strings of the content
+    stored_heading_content,heading_container = text_to_heading_list(stored_content)#test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
+    stored_module_content = text_to_point(stored_heading_content, stored_content)#The function test_to_point is called to return the content of the extracted content
+    stored_module_content = list_clean(stored_module_content)# Cleans the content list of empy strings
+    full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
+    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container)#returns the array_dict_containing_content as well as content_containing_dict
+    return array_dict_containing_content #Returns the array_dict_containing_content 
 #def test():
 #    stored_content = content_extract("result_module_output.txt")
 #    stored_heading_content = text_to_heading_list(stored_content)
