@@ -170,21 +170,21 @@ def heading_point_to_list(heading_construct, arrays_of_content,list_of_headings)
     for key, value in heading_construct.items():# Iterates the dictionary heading_construct to check the key, value pairs
         print("\n",key,value)
     full_compiler_construct = dict_to_array_dict.value_morph_dict(heading_construct) #The python file dict_to_array_dict.py with function value_morph_dict being called to return a hierarchical list-dict construct to be stored in the variable full_compiler_construct
-    return full_compiler_construct # Returns the hierarchical list-dict
+    return full_compiler_construct # Returns the hierarchical list-dict construct
 
-def assign_module_level_dict(list_of_content, heading):#Ignore (previously used, no longer needed)
-    dict_of_heading = {}
-    heading_list = []
-    for module in list_of_content:
-        module_list = []
-        description_dict = {"label": str(module +" Description:"), "value": str(module + "descriptionvalue")}
-        module_list.append(description_dict)
-        module_dict ={"label":str(module), "value": str(module +"_value"), "children": module_list}#, "children": module_list
-        heading_list.append(module_dict)
+def assign_module_level_dict(list_of_content, heading):#Ignore, being used for text_to_json_list function for test purposes (arguments are headings and list of associated content)
+    dict_of_heading = {} # Creates a dictionary of headings
+    heading_list = [] # Creates a list to store the headings (outer wrap of list)
+    for module in list_of_content: # A for loop is utilized to iterate for each string of content to construct a a new dictionary to be wrapped in another list
+        module_list = []# New list is initialized to store each ditionary of content
+        description_dict = {"label": str(module +" Description:"), "value": str(module + "descriptionvalue")}# A dictionary of the description of content with three keys and three separate values to be interpreted by the jQuery simpletree
+        module_list.append(description_dict)# Appends the dictionary of content to a list
+        module_dict ={"label":str(module), "value": str(module +"_value"), "children": module_list}#module_list is assigned as the valeu of the "children" key. Said key is part of the larger module_dict dictionary. Said dictionary is composed of three keys with three values for each key. The keys are "label", "value", "children"
+        heading_list.append(module_dict) # Appends the module dict to the heading_list to be used for constructing a larger list-dict construct.
     temp_heading_dict = {"label": heading, "value": heading, "children": heading_list}
     return temp_heading_dict
 
-def assign_heading_level_dict(list_of_lists, list_of_headings):# Ignore (previously used, no longer needed)
+def assign_heading_level_dict(list_of_lists, list_of_headings):# Ignore
     compiled_list= []
     for data_list, heading_index in zip(list_of_lists, list_of_headings):
         compiled_list.append(assign_module_level_dict(data_list, heading_index))
