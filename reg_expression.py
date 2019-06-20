@@ -131,29 +131,30 @@ def view_content_containing_dict(content_containing_dict):
         #print("\nHeading and the Content.")
         #print(headings, content)
 
-# text_to_dict function constructs a dictionary of headings and a list of associated content
+#text_to_json_list is cused for constructung a one-level list-dictionary hybrid to be converted to JSON and utilized later
 def text_to_json_list(list_of_headings, full_list_of_content):
     track_list = [] #Initializes the track_list which will store the indexes of content in between headings
     content_containing_dict = {} #Constructs a dictionary that will use the headings as keys and the lists containing content as the values
     print_heading_and_full_content_lists(list_of_headings, full_list_of_content) #prints out the heading and full_list_of_content structures for checking purposes
     track_list = track_list_build(track_list, list_of_headings, full_list_of_content) #Builds a list to track the indices of all non-heading/directory content, that list is called track_list
     list_of_lists = build_lists_of_lists(full_list_of_content, track_list) #Initializes the a list that will contain lists as elements
-    heading_list_of_lists_print(list_of_headings, list_of_lists)
-    compiled_for_json_list = assign_heading_level_dict(list_of_lists, list_of_headings)
-    return compiled_for_json_list
+    heading_list_of_lists_print(list_of_headings, list_of_lists) # Prints the heading_list and list_of_lists values for debugging purposes
+    compiled_for_json_list = assign_heading_level_dict(list_of_lists, list_of_headings) # used to generate the json list of each heading/directory being separate and having its own respective content
+    return compiled_for_json_list #Returns the compiled_for_json_list that is ready to be converted to a JSON
     #content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings)
     #print("\n\n A dictionary containing headings with their respective content:")
     #view_content_containing_dict(content_containing_dict)
     #return content_containing_dict
 
-def text_to_dict(list_of_headings, full_list_of_content,heading_container):
+# text_to_dict function constructs a dictionary of headings and a list of associated content
+def text_to_dict(list_of_headings, full_list_of_content,heading_container): #Arguments are an array of the headings, an array of the associated content, and a dictionary of headings as keys and arrays of content as the values
     track_list = [] #Initializes the track_list which will store the indexes of content in between headings
     content_containing_dict = {} #Constructs a dictionary that will use the headings as keys and the lists containing content as the values
-    print_heading_and_full_content_lists(list_of_headings, full_list_of_content)
-    track_list = track_list_build(track_list, list_of_headings, full_list_of_content)
+    print_heading_and_full_content_lists(list_of_headings, full_list_of_content) # Prints the list_of_headings and full_list_of_content lists for debugging purposes
+    track_list = track_list_build(track_list, list_of_headings, full_list_of_content) #Builds a list of indices by which only the content of each heading/directory can be found, which can then be used to construct a list containing only the lists of the content.
     list_of_lists = build_lists_of_lists(full_list_of_content, track_list) #Initializes the a list that will contain lists as elements
-    heading_list_of_lists_print(list_of_headings, list_of_lists)
-    content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings)
+    heading_list_of_lists_print(list_of_headings, list_of_lists)#Use the heading_list_of_lists_print function to print the list contianing the headings and the list of the associated content for each heading
+    content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings) # A dictionary (from the original code's functions) is constructed that stores all the headings/directories as keys and the lists of content as values
     print("\n\n A dictionary containing headings with their respective content:")
     view_content_containing_dict(content_containing_dict)
     resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists,heading_container)
