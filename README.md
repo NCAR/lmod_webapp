@@ -28,6 +28,8 @@ test_js_dict.py (Test code to see what structure could be implemented and accept
 
 text_cleaner.py (Used at one point to parse the text. Currently unneeded.)
 
+dict_to_array_dict.py (The Python file is used to generate hierarchical list-dict construct using a pre-made dictionary containing headings/directories as keys and lists of associated content as values. Necessary for the current version of the code to be executed.)
+
 There are currently three html files present:
 
 view_modules.html (The original HTML file utilized for testing purposes. view_modules.html is the default route for the Flask application.)

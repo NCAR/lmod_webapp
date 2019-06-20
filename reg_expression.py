@@ -156,10 +156,10 @@ def text_to_dict(list_of_headings, full_list_of_content,heading_container): #Arg
     heading_list_of_lists_print(list_of_headings, list_of_lists)#Use the heading_list_of_lists_print function to print the list contianing the headings and the list of the associated content for each heading
     content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings) # A dictionary (from the original code's functions) is constructed that stores all the headings/directories as keys and the lists of content as values
     print("\n\n A dictionary containing headings with their respective content:")
-    view_content_containing_dict(content_containing_dict)
-    resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists,heading_container)
+    view_content_containing_dict(content_containing_dict) #the function prints the dictionary, content_containing_dict, printing both keys and their associated values
+    resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists,heading_container) #From second iteration of the code that builds heavily on reg_expression.py's functions to develop a hierachical list-dict construct using list comprehension mainly. This code requires lists_to_dict_construct.py file and its functions to be executed.
     print("\n")
-    full_content_vessel = heading_point_to_list(heading_container,list_of_lists,list_of_headings)
+    full_content_vessel = heading_point_to_list(heading_container,list_of_lists,list_of_headings)# From the third version of the code. Reorganizes a pre-designed dictionary of headings/directories as keys and lists of content as values to generate a hierarchical list-dict construct. This code depends heavily on the file dict_to_array_dict.py and its associated functions to be executed.
     return full_content_vessel, content_containing_dict
 
 def heading_point_to_list(heading_construct, arrays_of_content,list_of_headings):
