@@ -19,7 +19,7 @@
         #build_dict(
 
 # The function start_build_top_dict initializes the heirarchical dictionary, and then returns said dictionary
-def start_build_top_dict(array_of_headings,array_of_lists):# Initiates the entire process
+def start_build_top_dict(array_of_headings,array_of_lists,heading_container):# Initiates the entire process
     #print("The list of lists:") #Check if the correct list of lists is being printed.
     #print(list_of_lists)# Prints said list of lists
     top_level_array =[]
