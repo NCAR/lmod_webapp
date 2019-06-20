@@ -160,16 +160,17 @@ def text_to_dict(list_of_headings, full_list_of_content,heading_container): #Arg
     resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists,heading_container) #From second iteration of the code that builds heavily on reg_expression.py's functions to develop a hierachical list-dict construct using list comprehension mainly. This code requires lists_to_dict_construct.py file and its functions to be executed.
     print("\n")
     full_content_vessel = heading_point_to_list(heading_container,list_of_lists,list_of_headings)# From the third version of the code. Reorganizes a pre-designed dictionary of headings/directories as keys and lists of content as values to generate a hierarchical list-dict construct. This code depends heavily on the file dict_to_array_dict.py and its associated functions to be executed.
-    return full_content_vessel, content_containing_dict
+    return full_content_vessel, content_containing_dict #returns ttwo separate variables full_content_vessel being obtained by the dict_to_array_dict.py code and content_containing_dict being obtained by the original code, both variables are being tilized in the FLASK application
 
-def heading_point_to_list(heading_construct, arrays_of_content,list_of_headings):
-    for heading,content in zip(list_of_headings,arrays_of_content):
-        heading_construct[heading] = content
+#For calling dict_to_array_dict.py functions for generating a hierarchical list-dict construct
+def heading_point_to_list(heading_construct, arrays_of_content,list_of_headings): # The function heading_point_to_list calls on code from the dict_to_array_dict.py and uses its functions to rearrange a dictionary of heading/directory and values of associated lists of content into a hierarchical list-dict construct. Has the arguments heading_construct, arrays_of_content,list_of_headings for building a new dictionary.
+    for heading,content in zip(list_of_headings,arrays_of_content):# For loop iterating through the headings/directory, associated lists of content, this constructs a ditionary to avoid using parallel arrays any further
+        heading_construct[heading] = content # The list containing headings is to make sure each key is paired with the cuorrect value (value being the list of associated content)
     print("\n Heading dictionary printed")
-    for key, value in heading_construct.items():
+    for key, value in heading_construct.items():# Iterates the dictionary heading_construct to check the key, value pairs
         print("\n",key,value)
-    full_compiler_construct = dict_to_array_dict.value_morph_dict(heading_construct)
-    return full_compiler_construct
+    full_compiler_construct = dict_to_array_dict.value_morph_dict(heading_construct) #The python file dict_to_array_dict.py with function value_morph_dict being called to return a hierarchical list-dict construct to be stored in the variable full_compiler_construct
+    return full_compiler_construct # Returns the hierarchical list-dict
 
 def assign_module_level_dict(list_of_content, heading):#Ignore (previously used, no longer needed)
     dict_of_heading = {}
