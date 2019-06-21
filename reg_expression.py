@@ -6,7 +6,7 @@
 #Reference: https://stackabuse.com/using-regex-for-text-manipulation-in-python/
 #Reference: https://stackoverflow.com/questions/17949508/python-read-all-text-file-lines-in-loop
 #Reference: https://www.regextester.com/15
-#https://thispointer.com/python-how-to-add-append-key-value-pairs-in-dictionary-using-dict-update/
+#Reference: https://thispointer.com/python-how-to-add-append-key-value-pairs-in-dictionary-using-dict-update/
 # Reference: https://www.w3schools.com/python/ref_dictionary_keys.asp
 # Refernece: https://stackoverflow.com/questions/26660654/how-do-i-print-the-key-value-pairs-of-a-dictionary-in-python
 # Reference: https://stackoverflow.com/questions/3199171/append-multiple-values-for-one-key-in-a-dictionary
@@ -16,6 +16,7 @@
 # Reference: https://www.geeksforgeeks.org/python-ways-to-create-a-dictionary-of-lists/
 # Reference: https://thispointer.com/python-how-to-replace-single-or-multiple-characters-in-a-string/
 #Reference: https://stackoverflow.com/questions/3199171/append-multiple-values-for-one-key-in-a-dictionary
+#Reference: https://stackoverflow.com/questions/3559559/how-to-delete-a-character-from-a-string-using-python
 import re
 import lists_to_dict_construct
 import dict_to_array_dict
@@ -29,7 +30,8 @@ def content_extract(input_content):
 # text_to_heading_list converts the headings to a list
 def text_to_heading_list(input_content):
     heading_acquired = re.findall("(\/glade[\/a-z0-9\.]*)",input_content) #Regular expression that pulls the /glade/ headings form the file content and stores them in a list
-    #print(heading_acquired)
+    print("Here are the headings:")
+    print(heading_acquired)
     heading_container ={}
     for heading in heading_acquired:
         heading_container[heading] = []
@@ -64,6 +66,17 @@ def list_clean(list_with_empty_strings):
             continue #If an empty string is not found, just continue
     #print(list_with_empty_strings)
 
+def array_clean_colons(array_with_colons):
+    array_without_colons = []
+    print(array_with_colons)
+    for content_item in array_with_colons:
+        new_content_item = content_item.replace(":","")
+        array_without_colons.append(new_content_item)
+    print("Array without colons:")
+    print(array_without_colons)
+    return array_without_colons
+
+
 # full_list() function obtains all content from the file
 def full_list(input_content):
     full_list_of_content = re.findall(".*/.*",input_content) # Find all content in the file
@@ -78,11 +91,11 @@ def print_heading_and_full_content_lists(list_of_headings, full_list_of_content)
     #print(list_of_headings) #Prints a list containing a heading
 
 # Builds the track_list for later usage in the text_to_dict fucntion
-def track_list_build(track_list, list_of_headings, full_list_of_content):
+def track_list_build(track_list, list_of_headings, full_list_of_content,heading_container):
     for index_count in full_list_of_content: # For loop that iterates thrugh the content that makes of elements of full_list_of_content
         index_value = index_count # Saves the value of index_count to index_value
-        #print("See index_value for loop populating track_list")
-        #print(index_value)
+        print("See index_value for loop populating track_list")
+        print(index_value)# Need to remove semicolons in list.out
         if index_value in list_of_headings: # If statement that checks whether the value of index_value is in list_of_headings
             track_list.append(full_list_of_content.index(index_value)) #Appends the index (numerical index) of any heading in track_list
     track_list.append(len(full_list_of_content))# Appends the end of the list as there is no heading at the ending of the content
@@ -100,9 +113,12 @@ def build_lists_of_lists(full_list_of_content, track_list):
             index_value = track_list[index_count]+1 #Stores the value of the index after a heading
             print("\n")
             print(index_value)
-            second_index_value = track_list[index_count+1]-1 # Stores the value of an index before the next heading
+            second_index_value = track_list[index_count+1] # Stores the value of an index before the next heading
             print(second_index_value)
             list_of_lists.append(list(full_list_of_content[index_value:second_index_value])) # Appends the list of the sliced non heading content
+    print("Array_item of the list_of_lists to observe:")
+    for array_item in list_of_lists:
+        print("\n", array_item)
     return list_of_lists
 
 # Prints the headings and the lists stored in list_of_lists
@@ -147,17 +163,18 @@ def text_to_json_list(list_of_headings, full_list_of_content):
     #return content_containing_dict
 
 # text_to_dict function constructs a dictionary of headings and a list of associated content
-def text_to_dict(list_of_headings, full_list_of_content,heading_container): #Arguments are an array of the headings, an array of the associated content, and a dictionary of headings as keys and arrays of content as the values
+def text_to_dict(list_of_headings, unclean_full_list_of_content,heading_container): #Arguments are an array of the headings, an array of the associated content, and a dictionary of headings as keys and arrays of content as the values
     track_list = [] #Initializes the track_list which will store the indexes of content in between headings
     content_containing_dict = {} #Constructs a dictionary that will use the headings as keys and the lists containing content as the values
+    full_list_of_content = array_clean_colons(unclean_full_list_of_content)
     print_heading_and_full_content_lists(list_of_headings, full_list_of_content) # Prints the list_of_headings and full_list_of_content lists for debugging purposes
-    track_list = track_list_build(track_list, list_of_headings, full_list_of_content) #Builds a list of indices by which only the content of each heading/directory can be found, which can then be used to construct a list containing only the lists of the content.
+    track_list = track_list_build(track_list, list_of_headings, full_list_of_content,heading_container) #Builds a list of indices by which only the content of each heading/directory can be found, which can then be used to construct a list containing only the lists of the content.
     list_of_lists = build_lists_of_lists(full_list_of_content, track_list) #Initializes the a list that will contain lists as elements
     heading_list_of_lists_print(list_of_headings, list_of_lists)#Use the heading_list_of_lists_print function to print the list contianing the headings and the list of the associated content for each heading
-    content_containing_dict = build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings) # A dictionary (from the original code's functions) is constructed that stores all the headings/directories as keys and the lists of content as values
+    content_containing_dict = 0#build_content_containing_dict(content_containing_dict, list_of_lists, list_of_headings) # A dictionary (from the original code's functions) is constructed that stores all the headings/directories as keys and the lists of content as values
     print("\n\n A dictionary containing headings with their respective content:")
-    view_content_containing_dict(content_containing_dict) #the function prints the dictionary, content_containing_dict, printing both keys and their associated values
-    resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists,heading_container) #From second iteration of the code that builds heavily on reg_expression.py's functions to develop a hierachical list-dict construct using list comprehension mainly. This code requires lists_to_dict_construct.py file and its functions to be executed.
+    #view_content_containing_dict(content_containing_dict) #the function prints the dictionary, content_containing_dict, printing both keys and their associated values
+    #resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists,heading_container) #From second iteration of the code that builds heavily on reg_expression.py's functions to develop a hierachical list-dict construct using list comprehension mainly. This code requires lists_to_dict_construct.py file and its functions to be executed.
     print("\n")
     full_content_vessel = heading_point_to_list(heading_container,list_of_lists,list_of_headings)# From the third version of the code. Reorganizes a pre-designed dictionary of headings/directories as keys and lists of content as values to generate a hierarchical list-dict construct. This code depends heavily on the file dict_to_array_dict.py and its associated functions to be executed.
     return full_content_vessel, content_containing_dict #returns two separate variables full_content_vessel being obtained by the dict_to_array_dict.py code and content_containing_dict being obtained by the original code, both variables are being tilized in the FLASK application
@@ -211,17 +228,17 @@ def main_dict():#Second main fucntion for the second version of the code impleme
     return content_containing_dict#Returns the value of view_content_containing_dict
 
 def main_array_dict():#Third main fucntion for the third version of the code implementation
-    stored_content = content_extract("result_module_output.txt")# Content extraction to obtain the strings of the content
+    stored_content = content_extract("list.out")# Content extraction to obtain the strings of the content
     stored_heading_content,heading_container = text_to_heading_list(stored_content)#test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
     stored_module_content = text_to_point(stored_heading_content, stored_content)#The function test_to_point is called to return the content of the extracted content
     stored_module_content = list_clean(stored_module_content)# Cleans the content list of empy strings
     full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
     array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container)#returns the array_dict_containing_content as well as content_containing_dict
-    return array_dict_containing_content #Returns the array_dict_containing_content 
+    return array_dict_containing_content #Returns the array_dict_containing_content
 #def test():
 #    stored_content = content_extract("result_module_output.txt")
 #    stored_heading_content = text_to_heading_list(stored_content)
 #    remove_slash(stored_heading_content)
 #    print(stored_heading_content)
-main()
+
 #test()

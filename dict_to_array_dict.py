@@ -80,10 +80,10 @@ def move_children(heading_container,array_of_headings, parent_heading, item_susp
     print("\nParent Heading here:")
     print(parent_heading)
     array_of_headings.remove(parent_heading)
-    search_dict_descendants(heading_container,array_of_headings, item_suspect["children"])
+    search_dict_descendants(heading_container,array_of_headings, item_suspect["children"], item_suspect)
     return item_suspect
 
-def search_dict_descendants(heading_container,array_of_headings,item_with_possible_descendants):
+def search_dict_descendants(heading_container,array_of_headings,item_with_possible_descendants, item_suspect_parent):
     print("Item with possible descendants:")
     print(item_with_possible_descendants)
     for content_container in item_with_possible_descendants:
