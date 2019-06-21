@@ -32,28 +32,28 @@ def search_dict_children_from_target(heading_container): # The function argument
             if check_label_bool == True and parent_heading != None: #Checks to make sure theat the boolean is True and a value for parent_heading is provided, otherwise no children were found
                 location_of_value_suspect = value_array_suspect.index(value_suspect) #Tracks the content dictionary in the array that contains them
                 value_suspect = move_children(heading_container,array_of_headings, parent_heading, value_suspect, location_of_value_suspect)#Function that moves content dictionary array that has the children of said content dictionary, takes the overall structure, the headings that are remaining to utilize, the heading of the children, the content dictionary that has children, and the location of the content dictionary in the array of content dictionaries
-                print("\n\nPrinting the value_suspect here:") #Print statement that will be used for debugging purposes
+                print("\n\nPrinting the value_suspect here:") #Print statement that will be used for debugging purposes (tracking the current content dictionary being examined)
                 print (value_suspect)
-                print("\n\nThe full heading_container is printed:")
+                print("\n\nThe full heading_container is printed:")#Print statement that will be used for debugging purposes (tracking the heading_container as it goes through changes)
                 print(heading_container)
-                print("The missing heading:")
-                missing_heading = heading_container.pop(parent_heading)
+                print("The missing heading:")#Print statement that will be used for debugging purposes (tracking the directories that remain to be utilized for the purpose of tracking the children of dictionaries, which one has been removed)
+                missing_heading = heading_container.pop(parent_heading)#Removes a directory from the keys of the heading_container
                 print(missing_heading)
             else:
                 continue
-        print("\nThe resulting heirarchical array-dict object is here:")
+        print("\nThe resulting heirarchical array-dict object is here:") #Further debugging (Track the rearrangement of list-dict construct)
         print(key,value_array_suspect)
-    print("Totality of it all:")
+    print("Totality of it all:") #Prints the entire heading_container_clone which displays all keys (direcories) and arrays of content dictionaries
     print(heading_container_clone)
-    full_compiler_container = elminate_superfluous_keys(heading_container_clone,array_of_headings, clone_of_array_of_headings)
+    full_compiler_container = elminate_superfluous_keys(heading_container_clone,array_of_headings, clone_of_array_of_headings) #Returns the heading container with extra directories eliminated to get rid of the clutter
     return full_compiler_container
 
-def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of_array_of_headings):
-    print("The array of headings:")
+def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of_array_of_headings):# eliminate_superfluous_keys is a function taking the arguments of heading_container_clone,array_of_headings, and clone_of_array_of_headings to get rid of excess directories in the top level of keys in heading_container_clone
+    print("The array of headings:")#Prints the directories
     print(array_of_headings)
-    for heading in array_of_headings:
+    for heading in array_of_headings:#For loop to remove any directories matching those in clone_of_array_of_headings to allow clone_of_array_of_headings to be used as a filter for heading_container_clone
         if heading in clone_of_array_of_headings:
-            clone_of_array_of_headings.remove(heading)
+            clone_of_array_of_headings.remove(heading)#Removal of the directory
         else:
             continue
     for heading in clone_of_array_of_headings:
