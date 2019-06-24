@@ -59,20 +59,21 @@ def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of
     for heading in clone_of_array_of_headings: #For loop using clone_of_array_of_headings to remove the keys that have be rearranged from the first level of the list-dict construct
         heading_container_clone.pop(heading) # The directory is removed from the top level of the heading_conteiner_clone list-dict
     print("Heading container without superfluous keys present:")
-    full_compiler_array = [] #A new list full_compiler_array is 
-    for key in heading_container_clone:
-        full_compiler_container = {}
-        full_compiler_container["label"] = key
-        full_compiler_container["value"] = str(key + "_value")
-        full_compiler_container["children"] = heading_container_clone[key]
-        full_compiler_array.append(full_compiler_container)
+    full_compiler_array = [] #A new list full_compiler_array is used to wrap around the the heading_container_clone to complete list-dict construct
+    for key in heading_container_clone:#For loop initialized to reconstruct first level of list-dict (Previously the first level was not a list-dict construct nor did it consist of the keys: label, value, children)
+        full_compiler_container = {} #The full_compiler_container dictionary is initialized to make a sepaate dictionary for each directory at the first level of the list-dict
+        full_compiler_container["label"] = key #The label key is assigned the string the current directory
+        full_compiler_container["value"] = str(key + "_value")# The value key is assigned a modified string fo the current dictionary
+        full_compiler_container["children"] = heading_container_clone[key] #The children key is assigned the list-dict construct that is currently held by the heading_container_clone's directory (key)
+        full_compiler_array.append(full_compiler_container) # Now each dictionary holding a directory and its content is appended to the full_compiler_array, building a list-dict construct from first level to last level
     print("full_compiler_container is printed here:")
-    print(full_compiler_array)
-    return full_compiler_array
+    print(full_compiler_array)#Printing out the full_compiler_array for debugging purposes
+    return full_compiler_array #Returns the full_compiler_array as a value to wherever the eliminate_superfluous_keys() function was called
 
-def move_children(heading_container,array_of_headings, parent_heading, item_suspect, location_of_value_suspect):
+#The move children function handles rearranging the list-dict construct from a one level dictionary to a multi-level list-dict construct
+def move_children(heading_container,array_of_headings, parent_heading, item_suspect, location_of_value_suspect):#The arguments are the heading_container containing the relevant directories and their list of contents, An array_of_headings (the directories) to keep track of which directories hav ebeen moved, the parent_heading which is the directory or subdirectory that the current directory shall be moved to be the "children" of, item_suspect which is the dictionary that is currently in question, and location_of_value_suspect which the location within a list of the item_suspect
     print("Printing item_suspect here:")
-    print(item_suspect)
+    print(item_suspect) #Prints the item_suspect for the purposes of debugging
     item_suspect["children"] = heading_container[parent_heading]
     print("Printing item_suspect with children here:")
     print(item_suspect)
