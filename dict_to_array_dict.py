@@ -45,21 +45,21 @@ def search_dict_children_from_target(heading_container): # The function argument
         print(key,value_array_suspect)
     print("Totality of it all:") #Prints the entire heading_container_clone which displays all keys (direcories) and arrays of content dictionaries
     print(heading_container_clone)
-    full_compiler_container = elminate_superfluous_keys(heading_container_clone,array_of_headings, clone_of_array_of_headings) #Returns the heading container with extra directories eliminated to get rid of the clutter
-    return full_compiler_container
+    full_compiler_container = elminate_superfluous_keys(heading_container_clone,array_of_headings, clone_of_array_of_headings) #Returns the heading container with extra directories eliminated to get rid of the clutter of keys that have already been rearranged in the list-dict hierarchy
+    return full_compiler_container#Returns a cleaned up list-dict with no extra keys
 
 def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of_array_of_headings):# eliminate_superfluous_keys is a function taking the arguments of heading_container_clone,array_of_headings, and clone_of_array_of_headings to get rid of excess directories in the top level of keys in heading_container_clone
     print("The array of headings:")#Prints the directories
     print(array_of_headings)
     for heading in array_of_headings:#For loop to remove any directories matching those in clone_of_array_of_headings to allow clone_of_array_of_headings to be used as a filter for heading_container_clone
-        if heading in clone_of_array_of_headings:
-            clone_of_array_of_headings.remove(heading)#Removal of the directory
+        if heading in clone_of_array_of_headings:# Check which directories are shared between both list constructs, and those directories that are shared are are removed from clone_of_array_of_headings
+            clone_of_array_of_headings.remove(heading)# Removal of the directory from clone_of_array_of_headings
         else:
-            continue
-    for heading in clone_of_array_of_headings:
-        heading_container_clone.pop(heading)
+            continue #Will continue the for loop when the if statement is not satisfied
+    for heading in clone_of_array_of_headings: #For loop using clone_of_array_of_headings to remove the keys that have be rearranged from the first level of the list-dict construct
+        heading_container_clone.pop(heading) # The directory is removed from the top level of the heading_conteiner_clone list-dict
     print("Heading container without superfluous keys present:")
-    full_compiler_array = []
+    full_compiler_array = [] #A new list full_compiler_array is 
     for key in heading_container_clone:
         full_compiler_container = {}
         full_compiler_container["label"] = key
