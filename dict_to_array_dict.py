@@ -84,21 +84,22 @@ def move_children(heading_container,array_of_headings, parent_heading, item_susp
     search_dict_descendants(heading_container,array_of_headings, item_suspect["children"], item_suspect) #Calls search_dict_descendants to ensure that the children of the current directory do not have children themselves
     return item_suspect #Returns item_suspect as a value to were the move_children() function is called
 
-def search_dict_descendants(heading_container,array_of_headings,item_with_possible_descendants, item_suspect_parent):
+#search_dict_descendants is a function  that is a variation of search_dict_children_from_target() function for searching for the children of directories that deeper than the second level
+def search_dict_descendants(heading_container,array_of_headings,item_with_possible_descendants, item_suspect_parent):# Accepts the arguments heading_container (a dictionary of the directories with associated content arrays), a list of the headings to track which directories have been sorted, item_with_possible_descendants is a list containing the associated content of an dictionary of a directory, item_suspect_parent which is the parent dictionary of item_with_possible_descendants
     print("Item with possible descendants:")
-    print(item_with_possible_descendants)
+    print(item_with_possible_descendants)#Print the array that is being searched for debugging purposes
     for content_container in item_with_possible_descendants:
         print("\nThis point prints content_contianer and array_of_headings:")
-        print(content_container,array_of_headings)
-        parent_sub_heading = check_lineage_label_in_headings(content_container, array_of_headings,item_suspect_parent)
-        if parent_sub_heading != None:
-            location_of_content_container = item_with_possible_descendants.index(content_container)
-            content_container = move_children(heading_container,array_of_headings, parent_sub_heading, content_container, location_of_content_container)
+        print(content_container,array_of_headings) # Print the dictionary that is obtained from iterating item_with_possible_descendants and the list of directories for debugging purposes
+        parent_sub_heading = check_lineage_label_in_headings(content_container, array_of_headings,item_suspect_parent) #Check the directory to which the current dictionary belongs
+        if parent_sub_heading != None: #Will only run the next section if a value other than None is returned.
+            location_of_content_container = item_with_possible_descendants.index(content_container) # The location of the dictionary that will be assigned children
+            content_container = move_children(heading_container,array_of_headings, parent_sub_heading, content_container, location_of_content_container)# Adds the subdirectory to the children key of the dictionary as the value of the children key
             print("The missing heading:")
-            missing_heading = heading_container.pop(parent_sub_heading)
+            missing_heading = heading_container.pop(parent_sub_heading) #Identify the key that has been removed from the top level of the head_container construct
             print(missing_heading)
         else:
-            continue
+            continue #Continues the for loop when the if statement is not satisfied
 
 def check_label_in_headings(target_item_dictionary, array_of_headings):# Checks if the heading in question actually has the children of content string
     for heading in array_of_headings: # For loop for going through the headings
@@ -109,13 +110,14 @@ def check_label_in_headings(target_item_dictionary, array_of_headings):# Checks 
             continue# Continues looping otherwise
     return False, None# If not a substring, this is returned
 
-def check_lineage_label_in_headings(target_item_content, array_of_headings, parent_of_target_item_content):
-    for target_heading in array_of_headings:
-        if target_item_content["label"] in target_heading:
-            if parent_of_target_item_content["label"] in target_heading:
-                located_target_heading = target_heading
-                print("\nPrint the located_target_heading: ",located_target_heading)
-                return located_target_heading
+#Function that checks for the parent in the search_dict_descendants() function
+def check_lineage_label_in_headings(target_item_content, array_of_headings, parent_of_target_item_content):#Arguments are: target_item_content which is the current dictionary being examined, array_of_headings the list of the directories that have not been sorted, parent_of_target_item_content the parent dictionary of target_item_content
+    for target_heading in array_of_headings: #For loop iterating through the list of directories
+        if target_item_content["label"] in target_heading:#Continues if the current dictionary's label value is a substring of the current heading
+            if parent_of_target_item_content["label"] in target_heading:#Continues if the parent dictionary's label value is a substring of the current heading
+                located_target_heading = target_heading#located_target_heading points to the value of target_heading
+                print("\nPrint the located_target_heading: ",located_target_heading) #Prints the located_target_heading for debugging purposes
+                return located_target_heading #returns the located_target_heading value to where the check_lineage_label_in_headings() function is called
         else:
-            continue
-        return None
+            continue#Continue to keep the for loop running
+    return None
