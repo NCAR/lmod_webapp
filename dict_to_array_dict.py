@@ -71,18 +71,18 @@ def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of
     return full_compiler_array #Returns the full_compiler_array as a value to wherever the eliminate_superfluous_keys() function was called
 
 #The move children function handles rearranging the list-dict construct from a one level dictionary to a multi-level list-dict construct
-def move_children(heading_container,array_of_headings, parent_heading, item_suspect, location_of_value_suspect):#The arguments are the heading_container containing the relevant directories and their list of contents, An array_of_headings (the directories) to keep track of which directories hav ebeen moved, the parent_heading which is the directory or subdirectory that the current directory shall be moved to be the "children" of, item_suspect which is the dictionary that is currently in question, and location_of_value_suspect which the location within a list of the item_suspect
+def move_children(heading_container,array_of_headings, parent_heading, item_suspect, location_of_value_suspect):#The arguments are the heading_container containing the relevant directories and their list of contents, An array_of_headings (the directories) to keep track of which directories hav ebeen moved, the parent_heading which is the directory or subdirectory of the current directory that shall be moved to be the "children" of, item_suspect which is the dictionary that is currently in question, and location_of_value_suspect which the location within a list of the item_suspect
     print("Printing item_suspect here:")
     print(item_suspect) #Prints the item_suspect for the purposes of debugging
-    item_suspect["children"] = heading_container[parent_heading]
+    item_suspect["children"] = heading_container[parent_heading] #Assigns the directory with the value of parent_heading as the "children" of the item_suspect dictionary
     print("Printing item_suspect with children here:")
-    print(item_suspect)
-    print("\n", heading_container)
+    print(item_suspect)#Prints the item_suspect for the purposes of debugging
+    print("\n", heading_container)#Prints the heading_container for the purposes of debugging
     print("\nParent Heading here:")
-    print(parent_heading)
-    array_of_headings.remove(parent_heading)
-    search_dict_descendants(heading_container,array_of_headings, item_suspect["children"], item_suspect)
-    return item_suspect
+    print(parent_heading)#Prints the parent_heading for the purposes of debugging
+    array_of_headings.remove(parent_heading) #Removes the parent_heading that it cannot be utilized again and cause an unending recursive loop
+    search_dict_descendants(heading_container,array_of_headings, item_suspect["children"], item_suspect) #Calls search_dict_descendants to ensure that the children of the current directory do not have children themselves
+    return item_suspect #Returns item_suspect as a value to were the move_children() function is called
 
 def search_dict_descendants(heading_container,array_of_headings,item_with_possible_descendants, item_suspect_parent):
     print("Item with possible descendants:")
