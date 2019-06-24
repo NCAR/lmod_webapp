@@ -98,27 +98,49 @@ def track_list_build(track_list, list_of_headings, full_list_of_content,heading_
         print(index_value)# Need to remove semicolons in list.out
         if index_value in list_of_headings: # If statement that checks whether the value of index_value is in list_of_headings
             track_list.append(full_list_of_content.index(index_value)) #Appends the index (numerical index) of any heading in track_list
+            print("Debugging by checking to make sure only directories are being caught for the track_list")
+            print(full_list_of_content.index(index_value))
     track_list.append(len(full_list_of_content))# Appends the end of the list as there is no heading at the ending of the content
     print("Contents of track list:")
     print(track_list)
     print("\n")
     return track_list
 
+def build_track_container(array_of_indices):
+    tracking_container = {}
+    number_of_key = 0
+    for indices in array_of_indices:
+        temporary_container = {number_of_key:indices}
+        tracking_container.update(temporary_container)
+        number_of_key += 1
+    print("This is a tracking_container:")
+    print(tracking_container)
+    return tracking_container
+
 # list_of_lists function builds the list_of_lists
 def build_lists_of_lists(full_list_of_content, track_list):
     list_of_lists = []
-    max_iteration = len(track_list) #Saves the index of the end of the list track_list
-    for index_count in range(len(track_list)): # For loop that iterates through the track_list elements
-        if (index_count+2) <= max_iteration: # If statement ensuring that the for llop does not excede the number of indices
-            index_value = track_list[index_count]+1 #Stores the value of the index after a heading
+    tracking_container = build_track_container(track_list)
+    max_iteration = len(tracking_container) #Saves the index of the end of the list track_list
+    for index_count in range(len(tracking_container)): # For loop that iterates through the tracking_container elements
+        if (index_count+2) <= max_iteration: # If statement ensuring that the for loop does not excede the number of indices
+            index_value = tracking_container[index_count]+1 #Stores the value of the index after a heading
             print("\n")
             print(index_value)
-            second_index_value = track_list[index_count+1] # Stores the value of an index before the next heading
+            second_index_value = tracking_container[index_count+1] # Stores the value of an index before the next heading
             print(second_index_value)
-            list_of_lists.append(list(full_list_of_content[index_value:second_index_value])) # Appends the list of the sliced non heading content
+            print(index_count)
+            print("The segmenting of list based on indices")
+            print(full_list_of_content[index_value:second_index_value])
+            list_of_lists.append(list(full_list_of_content[tracking_container[index_count]+1:tracking_container[index_count+1]])) # Appends the list of the sliced non heading content
+            index_count+=1
     print("Array_item of the list_of_lists to observe:")
     for array_item in list_of_lists:
         print("\n", array_item)
+    print("Indices of the track_list:")
+    for indices in track_list:
+        if indices < len(full_list_of_content):
+            print(full_list_of_content[indices])
     return list_of_lists
 
 # Prints the headings and the lists stored in list_of_lists

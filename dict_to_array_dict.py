@@ -28,7 +28,8 @@ def search_dict_children_from_target(heading_container): # The function argument
     heading_container_clone = copy.deepcopy(heading_container)# Create a clone of the heading_container completely
     for key, value_array_suspect in heading_container_clone.items():# For loop iterating through the directories and arrays of content in the heading_conteiner_clone dictionary
         for value_suspect in value_array_suspect:# For loop iterating through the individual values of the array of content dictionary
-            check_label_bool, parent_heading = check_label_in_headings(value_suspect,array_of_headings)# Returns a boolean and a directory that would likely contain the children of a given content dictionary
+            module_path ="/glade/u/apps/ch/modulefiles/default/" #The root path the first level of subdirectories
+            check_label_bool, parent_heading = check_label_in_headings(value_suspect,array_of_headings,module_path)# Returns a boolean and a directory that would likely contain the children of a given content dictionary
             if check_label_bool == True and parent_heading != None: #Checks to make sure theat the boolean is True and a value for parent_heading is provided, otherwise no children were found
                 location_of_value_suspect = value_array_suspect.index(value_suspect) #Tracks the content dictionary in the array that contains them
                 value_suspect = move_children(heading_container,array_of_headings, parent_heading, value_suspect, location_of_value_suspect)#Function that moves content dictionary array that has the children of said content dictionary, takes the overall structure, the headings that are remaining to utilize, the heading of the children, the content dictionary that has children, and the location of the content dictionary in the array of content dictionaries
@@ -95,15 +96,17 @@ def search_dict_descendants(heading_container,array_of_headings,item_with_possib
         if parent_sub_heading != None: #Will only run the next section if a value other than None is returned.
             location_of_content_container = item_with_possible_descendants.index(content_container) # The location of the dictionary that will be assigned children
             content_container = move_children(heading_container,array_of_headings, parent_sub_heading, content_container, location_of_content_container)# Adds the subdirectory to the children key of the dictionary as the value of the children key
+            print("\nI am printing content_container for debugging purposes:")
+            print(content_container)
             print("The missing heading:")
             missing_heading = heading_container.pop(parent_sub_heading) #Identify the key that has been removed from the top level of the head_container construct
             print(missing_heading)
         else:
             continue #Continues the for loop when the if statement is not satisfied
 
-def check_label_in_headings(target_item_dictionary, array_of_headings):# Checks if the heading in question actually has the children of content string
+def check_label_in_headings(target_item_dictionary, array_of_headings,path_to_modules):# Checks if the heading in question actually has the children of content string
     for heading in array_of_headings: # For loop for going through the headings
-        if target_item_dictionary["label"] in heading: #Checks id target_item is a substring of the heading
+        if path_to_modules + target_item_dictionary["label"] == heading: #Checks id target_item is a substring of the heading
             located_heading = heading #Assigns the heading value to located heading
             return True, located_heading #Returns both values
         else:
@@ -118,6 +121,7 @@ def check_lineage_label_in_headings(target_item_content, array_of_headings, pare
                 located_target_heading = target_heading#located_target_heading points to the value of target_heading
                 print("\nPrint the located_target_heading: ",located_target_heading) #Prints the located_target_heading for debugging purposes
                 return located_target_heading #returns the located_target_heading value to where the check_lineage_label_in_headings() function is called
+                break
         else:
             continue#Continue to keep the for loop running
     return None
