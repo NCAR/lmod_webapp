@@ -67,7 +67,7 @@ Limitations:
 Said file can be inputted manually, but if the incorrect file is given, the program will likely fail.
 
 
-##Debugging:
+## Debugging:
 
 To see a relatively organized print out of the list-dict construct call the recursive_dict_print_dict() function from lists_to_dict.py at end of the construction of the full list-dict construct or while building it (note there can be a lot of content that will be printed out.) It will print out all the dictionaries in the list-dict construct. Use the printed results to try and find any bugs that may be occurring the code.
 
