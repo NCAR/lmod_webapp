@@ -151,13 +151,15 @@ def check_lineage_label_in_headings(target_item_content, array_of_headings, pare
             continue#Continue to keep the for loop running
     return None
 
-def sub_levels_attainment(array_containing_headings):
-    regular_expression_instance = re.compile(".*/.*/.*/.*")
-    array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings))
-    print("These are the sub-levels:")
+# sub_levels_attainment function is written the case of there being a necessity to identify the headings that will definitively be in the levels lower than that of the of the top levels
+def sub_levels_attainment(array_containing_headings):# Takes an argument of a list with all the headings to extract the headings that will be at the lower levels.
+    regular_expression_instance = re.compile(".*/.*/.*/.*")# Regular expression to extract the headings/directories of the sub-levels
+    array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings))# Puts the regular expression results and compiles them into a list to contain the sub-level headings/directories
+    print("These are the sub-levels:") # Check that the sub-levels are being printed.
     print(array_containing_reg_exp)
-    return array_containing_reg_exp
+    return array_containing_reg_exp# Returns the list that holds the results of the regular expression parsing through
 
+# The first_level_obtainment() function can be used to obtain the first level of directories/headings that will be displayed by the list-dictionary being processed for the simpleTree
 def first_level_obtainment(array_containing_headings):
     regular_expression_instance = re.compile("[A-z]+:")
     array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings))
@@ -171,9 +173,6 @@ def top_levels_attainment(array_containing_headings):
     for heading in array_containing_headings:
         if heading not in array_of_sub_levels:
             array_of_top_levels.append(heading)
-    for heading in array_of_top_levels:
-        if "\/" in heading:
-            array_of_top_levels.remove(heading)
     print("An array of the top levels")
     print(array_of_top_levels)
     return array_of_top_levels
