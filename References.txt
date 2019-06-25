@@ -1,6 +1,8 @@
 Thomas Johnson III
 Additional References and/or citations
 
+Note: JavaScript written with assistance of WW3 Schools
+
 JavaScript
 Reference: https://stackoverflow.com/questions/8763125/get-array-of-objects-keys/8763227
 Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values
@@ -13,3 +15,46 @@ Reference: https://stackoverflow.com/questions/3559070/are-there-dictionaries-in
 Reference: https://stackoverflow.com/questions/25231989/how-to-check-if-a-variable-is-a-dictionary-in-python
 Reference: https://www.geeksforgeeks.org/python-finding-strings-with-given-substring-in-list/
 Reference: https://stackoverflow.com/questions/2612802/how-to-clone-or-copy-a-list
+Reference: https://www.jqueryscript.net/other/hierarchical-searchable-tree.html
+Simpletree jQuery plugin by Michael Derntl
+Reference: https://www.javatpoint.com/external-javascript-file
+
+Python
+
+Reference: http://flask.pocoo.org/docs/1.0/api/#flask.Flask
+Reference: http://jinja.pocoo.org/docs/2.10/templates/
+Reference: http://flask.pocoo.org/docs/1.0/quickstart/
+Reference: https://www.pythonforbeginners.com/files/reading-and-writing-files-in-python
+Reference: Manan Yadav, https://www.quora.com/What-is-the-right-way-to-read-a-file-and-display-its-content-on-browser-using-flask
+Reference: https://stackoverflow.com/questions/1186789/what-is-the-best-way-to-call-a-script-from-another-script
+Reference: https://stackoverflow.com/questions/32677167/in-a-flask-app-how-to-print-each-item-of-a-list-in-the-new-paragraphs-inside-my
+Reference: https://stackoverflow.com/questions/17309889/how-to-debug-a-flask-app
+Reference: Fernando Wittmann and Amber, https://stackoverflow.com/questions/4697882/how-can-i-find-all-matches-to-a-regular-expression-in-python
+Reference: https://stackabuse.com/using-regex-for-text-manipulation-in-python/
+Reference: https://stackoverflow.com/questions/17949508/python-read-all-text-file-lines-in-loop
+Reference: https://www.regextester.com/15
+Reference: https://thispointer.com/python-how-to-add-append-key-value-pairs-in-dictionary-using-dict-update/
+Reference: https://www.w3schools.com/python/ref_dictionary_keys.asp
+Refernece: https://stackoverflow.com/questions/26660654/how-do-i-print-the-key-value-pairs-of-a-dictionary-in-python
+Reference: https://stackoverflow.com/questions/3199171/append-multiple-values-for-one-key-in-a-dictionary
+Reference: https://stackoverflow.com/questions/509211/understanding-slice-notation
+Reference: https://stackoverflow.com/questions/32554527/typeerror-list-indices-must-be-integers-or-slices-not-str
+Reference: https://stackoverflow.com/questions/1663807/how-to-iterate-through-two-lists-in-parallel
+Reference: https://www.geeksforgeeks.org/python-ways-to-create-a-dictionary-of-lists/
+Reference: https://thispointer.com/python-how-to-replace-single-or-multiple-characters-in-a-string/
+Reference: https://stackoverflow.com/questions/3199171/append-multiple-values-for-one-key-in-a-dictionary
+Reference: https://stackoverflow.com/questions/3559559/how-to-delete-a-character-from-a-string-using-python
+Reference: https://stackoverflow.com/questions/11941817/how-to-avoid-runtimeerror-dictionary-changed-size-during-iteration-error
+Reference: https://stackoverflow.com/questions/13519644/how-to-solve-dictionary-changed-size-during-iteration-in-python/13519858
+Reference: https://stackoverflow.com/questions/8995611/removing-multiple-keys-from-a-dictionary-safely
+Reference: https://stackoverflow.com/questions/4406501/change-the-name-of-a-key-in-dictionary
+Reference: https://stackoverflow.com/questions/3640359/regular-expressions-search-in-list
+Reference: https://stackoverflow.com/questions/10756427/loop-through-all-nested-dictionary-values
+Reference: https://stackabuse.com/using-regex-for-text-manipulation-in-python/
+Reference: https://stackoverflow.com/questions/11469228/python-replace-and-overwrite-instead-of-appending/11469328
+
+-json
+Reference: https://www.w3schools.com/python/python_json.asp
+Reference: https://stackoverflow.com/questions/15617164/parsing-json-giving-unexpected-token-o-error
+Reference: https://stackoverflow.com/questions/15617164/parsing-json-giving-unexpected-token-o-error
+Reference: https://stackoverflow.com/questions/4933217/print-json-parsed-object

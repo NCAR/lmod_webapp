@@ -1,7 +1,7 @@
 # Author: Thomas Hilton Johnson III
 # document.py
 # For displaying module data retrieved from module_collect.sh
-# requires view_modules.html
+# requires view_modules.html and json_modules.html
 #Reference: http://flask.pocoo.org/docs/1.0/api/#flask.Flask
 #Reference: http://jinja.pocoo.org/docs/2.10/templates/
 #Reference: http://flask.pocoo.org/docs/1.0/quickstart/
