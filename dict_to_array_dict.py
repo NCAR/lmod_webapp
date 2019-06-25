@@ -49,6 +49,16 @@ def search_dict_children_from_target(heading_container): # The function argument
     full_compiler_container = elminate_superfluous_keys(heading_container_clone,array_of_headings, clone_of_array_of_headings) #Returns the heading container with extra directories eliminated to get rid of the clutter of keys that have already been rearranged in the list-dict hierarchy
     return full_compiler_container#Returns a cleaned up list-dict with no extra keys
 
+#A function responsible for retitling the top level of the list-dict hierarchy
+def new_first_level_directories(target_partial_heading_container): #Accepts the dictionaries that will contain the top level directories of the list-dict construct as an argument
+    module_path ="/glade/u/apps/ch/modulefiles/default/" # module path for string manipulation
+    if target_partial_heading_container["label"] == module_path+"compilers": # If statement to catch the compilers directory, then rename it
+        target_partial_heading_container["label"] = "Compilers" #Renames said compilers directory
+    elif target_partial_heading_container["label"] == module_path+"idep": # If statement to catch the compiler independent software dirctory, then rename it
+        target_partial_heading_container["label"] = "Compiler Independent" # Renames said compilers independent directory
+    else:
+        None #Nonetype value 
+
 def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of_array_of_headings):# eliminate_superfluous_keys is a function taking the arguments of heading_container_clone,array_of_headings, and clone_of_array_of_headings to get rid of excess directories in the top level of keys in heading_container_clone
     print("The array of headings:")#Prints the directories
     print(array_of_headings)
@@ -66,6 +76,7 @@ def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of
         full_compiler_container["label"] = key #The label key is assigned the string the current directory
         full_compiler_container["value"] = str(key + "_value")# The value key is assigned a modified string fo the current dictionary
         full_compiler_container["children"] = heading_container_clone[key] #The children key is assigned the list-dict construct that is currently held by the heading_container_clone's directory (key)
+        new_first_level_directories(full_compiler_container)
         full_compiler_array.append(full_compiler_container) # Now each dictionary holding a directory and its content is appended to the full_compiler_array, building a list-dict construct from first level to last level
     print("full_compiler_container is printed here:")
     print(full_compiler_array)#Printing out the full_compiler_array for debugging purposes

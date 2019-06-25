@@ -2,7 +2,7 @@
 # June 13th 2019
 # test_js_dict.py
 # Written to test the effectiveness of restructuring Python dict to better resemble the object the simpleTree of the JQuery app.
-
+# Is not required for the main implementation of the current program
 import dict_to_json
 
 def test_dict(): #Defines test_dict() function

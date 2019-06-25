@@ -9,6 +9,7 @@
 #Reference: Manan Yadav, https://www.quora.com/What-is-the-right-way-to-read-a-file-and-display-its-content-on-browser-using-flask
 #Reference: https://stackoverflow.com/questions/1186789/what-is-the-best-way-to-call-a-script-from-another-script
 #Reference: https://stackoverflow.com/questions/32677167/in-a-flask-app-how-to-print-each-item-of-a-list-in-the-new-paragraphs-inside-my
+# Reference: https://stackoverflow.com/questions/17309889/how-to-debug-a-flask-app
 # export FLASK_APP=document.py
 # flask run
 from flask import Flask #Importing the flask module, which is necessary for a Flask app
@@ -35,4 +36,4 @@ def display_json_tree():#Function initialized to display the webpage that will i
     return flask.render_template("json_modules.html", tree_content = javascript_content)#Renders the HTML file and passes the javascript_content variable to be utilized by Jinja2 or JavaScript
 
 if "update_webpage" == "__main__":
-    app.run(debug=True)
+    app.run(debug=True) #For opening debugging options
