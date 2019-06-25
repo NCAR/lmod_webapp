@@ -38,17 +38,11 @@ json_modules.html (The second HTML file developed. To get to this page json/ mus
 
 test.html (Unneeded, used for initial experimentation with JavaScript)
 
-There are multiple JSON files present:
+There can be multiple JSON files present: (currently deleted)
 
 array_dict.json (Example of the format that the jQuery simpletree will accept. Short summary: the data must be contained in lists that contain dictionaries so that the JavaScript can interpret the JSON as the correct JavaScript object.)
 
-dictionary.json (One example if the directories are used to organize the rest of the content.)
-
-dictionary_2.json (One example if the directories are used to organize the rest of the content.)
-
-dictionary_3.json (One example if the directories are used to organize the rest of the content.)
-
-dictionary_3.txt (Example of a structure that cannot be used.)
+array_dict_list.json (The JSON generated from the lmod_webapp. You can use this file to verify whether the contents are in a proper JSON format. Also allows for checking to see if there are any unnecessary processing details in the code itself.)
 
 ## Directions
 To run this application:
@@ -56,6 +50,8 @@ To run this application:
 2. flask run
 
 then navigate to the specified url in a web browser to see the webpage to get to the default opage with HTML and CSS. To get the Javascript and Jquery simpletree implementation, add /json/ after the default url.
+
+To input the file name, input the base URL and add /json/ after the base URL. Then, when the printed prompt is displayed, enter the name of the file you wish to use. After that, the webpage should fully load. Note: loading will remain indefinite while there is no given input.
 Ex: DEFAULT_URL/json/
 
 Limitations:
@@ -66,7 +62,7 @@ Limitations:
 3. If the nesting of the dictionaries require extreme depth, the recursive functions can become overwhelmed if there is an extreme quantity of recursive calls.
 
 4. Currently requires a file to already exist with the required information for building the module tree.
-Said file must be hardcoded as well.
+Said file can be inputted manually, but if the incorrect file is given, the program will likely fail.
 
 
 Debugging:
@@ -78,3 +74,7 @@ If the simpletree is not properly displaying, be sure to check that the correctl
 Ensure that a JSON is being transferred to JavaScript. Otherwise, there can be serious errors that emerge as a result of such not being implemented.
 
 Ensure that the file that is being read has no extra punctuation such as colons, otherwise such punctuation will have to be removed edited out before the Python scripts can successfully run.
+
+The current implementation runs based on an assumption that there are no duplicate directories in the submitted file. If there are, it will cause bugs in the program. Please ensure that in the file given that the directories are not duplicated.
+
+An edit has been made to make the code more robust by distinguishing what will make up the second level of the list-dict structure versus the remaining sub-levels.

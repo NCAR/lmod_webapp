@@ -229,7 +229,15 @@ def assign_heading_level_dict(list_of_lists, list_of_headings):# Ignore, being u
         compiled_list.append(assign_module_level_dict(data_list, heading_index)) #Appends the dictionary-list content to a larger list-dict construct
     return compiled_list #Returns the value of the variable compiled_list
 
-
+def assign_name_of_file():
+    name_of_file = input("What is the name of your file to submit to the Python scripts? Please type it. ")
+    print("The name of the file is: ",name_of_file)
+    if (name_of_file == "" or name_of_file == None):
+        print("Not a proper file name. Running default file.")
+        defaulted_file_name = "list.out"
+        return defaulted_file_name
+    else:
+        return name_of_file
 
 def main():#Initial main function that is the first version of the code implementation
     stored_content = content_extract("result_module_output.txt")# Content extraction to obtain the strings of the content
@@ -251,7 +259,7 @@ def main_dict():#Second main fucntion for the second version of the code impleme
     return content_containing_dict#Returns the value of view_content_containing_dict
 
 def main_array_dict():#Third main fucntion for the third version of the code implementation
-    stored_content = content_extract("list.out")# Content extraction to obtain the strings of the content
+    stored_content = content_extract(assign_name_of_file())# Content extraction to obtain the strings of the content
     stored_heading_content,heading_container = text_to_heading_list(stored_content)#test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
     stored_module_content = text_to_point(stored_heading_content, stored_content)#The function test_to_point is called to return the content of the extracted content
     stored_module_content = list_clean(stored_module_content)# Cleans the content list of empy strings

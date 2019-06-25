@@ -106,7 +106,7 @@ def search_dict_descendants(heading_container,array_of_headings,item_with_possib
 
 def check_label_in_headings(target_item_dictionary, array_of_headings,path_to_modules):# Checks if the heading in question actually has the children of content string
     for heading in array_of_headings: # For loop for going through the headings
-        if path_to_modules + target_item_dictionary["label"] == heading: #Checks id target_item is a substring of the heading
+        if path_to_modules + target_item_dictionary["label"] == heading: #Checks if the current item when concatenated with the path of the modules is one of the top level directories.
             located_heading = heading #Assigns the heading value to located heading
             return True, located_heading #Returns both values
         else:
