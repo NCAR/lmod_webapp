@@ -20,7 +20,6 @@ Simpletree jQuery plugin by Michael Derntl
 Reference: https://www.javatpoint.com/external-javascript-file
 
 Python
-
 Reference: http://flask.pocoo.org/docs/1.0/api/#flask.Flask
 Reference: http://jinja.pocoo.org/docs/2.10/templates/
 Reference: http://flask.pocoo.org/docs/1.0/quickstart/
