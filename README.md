@@ -1,13 +1,15 @@
 # lmod_webapp
 A web application to interactively display Lmod trees
 
-Web application built primarily using Python Flask.
+Web application built primarily using Python Flask. This web application also makes use of Python's regular expression, json, and copy modules.
 
 Currently there are multiple txt files in the repository main directory:
 
 References.txt (For any useful or necessary references that have not been inserted in comments in the available code. Will likely contain all necessary references throughout the code as a central file to store such information. Update to keep track use of useful or necessary references.)
 
 result_module_output.txt (Currently where the modules are stored after being extracted from the bash terminal. This file is read by the reg_expression.py file to gain the data necessary for the rest of the application.)
+
+result_module_output_backup.txt (The text file is a backup of result_module_output.txt in the case of unintended deletion the original file.)
 
 Currently there is one bash script in the repository as well:
 
@@ -20,11 +22,11 @@ This Flask Application has six different python files:
 
 dict_to_json.py (Manages converting the final output of reg_expression.py to a json to send to the Javascript of the webpage.)
 
-document.py (Holds the configuration and url patterns for the FLASK application. Currently, only two url patterns of note are stored in document.py. The first is "/" and the second is "/json/". The Flask app is ran using commands specified in comments of document.py.)
+document.py (Holds the configuration and url patterns for the FLASK application. Currently, only two url patterns of note are stored in document.py. The first is "/" and the second is "/json/". The Flask app is ran using commands specified in comments of document.py. Running this python file with the proper commands will run the other necessary files that are imported.)
 
 lists_to_dict_construct.py (Contains the functions necessary to convert the lists containing the content from the target file a hierarchical dictionary that stores sub dictionaries or respective children. Note: Utilizes recursive functions for this process. If altered, please verify the functions are not recursively storing the same dictionary entries over and over.)
 
-reg_expression.py (Where the bulk of text processing and organization of content is handled.)
+reg_expression.py (Where the bulk of text processing and organization of content is handled. Handles a bulk of the initial processing.)
 
 test_js_dict.py (Test code to see what structure could be implemented and accepted as json for the simpletree on the frontend. Can be used for practice runs.)
 
