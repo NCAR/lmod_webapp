@@ -1,5 +1,7 @@
 #!/bin/bash
-
+# Generates all the module directory content
+# Brian Vanderwende
+# Utilized by Thomas Johnson
 shopt -s expand_aliases
 alias mod_avail='module -t av |& grep -v "/$"'
 

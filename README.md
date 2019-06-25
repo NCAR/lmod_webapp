@@ -5,7 +5,7 @@ Web application built primarily using Python Flask.
 
 Currently there are multiple txt files in the repository main directory:
 
-References.txt (For any useful or necessary references that have not been inserted in comments in the available code. Will likely contain all necessary references throughout the code as a central file to store such information.)
+References.txt (For any useful or necessary references that have not been inserted in comments in the available code. Will likely contain all necessary references throughout the code as a central file to store such information. Update to keep track use of useful or necessary references.)
 
 result_module_output.txt (Currently where the modules are stored after being extracted from the bash terminal. This file is read by the reg_expression.py file to gain the data necessary for the rest of the application.)
 
@@ -13,6 +13,8 @@ Currently there is one bash script in the repository as well:
 
 module_collect.sh (Collects the relevant compiler and module information)
 ->module_collect.sh will output a file with the relevant module information. The most recent version was developed using regular expressions provided by Brian Vanderwende. Subject to further modification.
+
+genlist.sh (collects all directory and software components. Provided by Brian Vanderwende. Generates the file list.out. Do not change .out extension to .txt or else it will miss some of the information that is gathered.)
 
 This Flask Application has six different python files:
 
@@ -24,7 +26,7 @@ lists_to_dict_construct.py (Contains the functions necessary to convert the list
 
 reg_expression.py (Where the bulk of text processing and organization of content is handled.)
 
-test_js_dict.py (Test code to see what structure could be implemented and accepted as json for the simpletree on the frontend.)
+test_js_dict.py (Test code to see what structure could be implemented and accepted as json for the simpletree on the frontend. Can be used for practice runs.)
 
 text_cleaner.py (Used at one point to parse the text. Currently unneeded.)
 

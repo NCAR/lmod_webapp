@@ -3,6 +3,8 @@
 # test_js_dict.py
 # Written to test the effectiveness of restructuring Python dict to better resemble the object the simpleTree of the JQuery app.
 # Is not required for the main implementation of the current program
+# Not recursive, does not possess a high degree of flexibility
+# can be used as a simple example
 import dict_to_json
 
 def test_dict(): #Defines test_dict() function
