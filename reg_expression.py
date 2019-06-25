@@ -29,8 +29,9 @@ def content_extract(input_content):
 
 # text_to_heading_list converts the headings to a list
 def text_to_heading_list(input_content):
-    heading_acquired = re.findall("(\/glade[\/a-z0-9\.]*)",input_content) #Regular expression that pulls the /glade/ headings form the file content and stores them in a list
+    heading_acquired = re.findall("(.+\:)",input_content) #Regular expression that pulls the /glade/ headings form the file content and stores them in a list
     print("Here are the headings:")
+    #cleaned_heading_acquired = array_clean_colons(heading_acquired)
     print(heading_acquired)
     heading_container ={}
     for heading in heading_acquired:
@@ -64,7 +65,8 @@ def list_clean(list_with_empty_strings):
             list_with_empty_strings.remove(index) # Removes the empty string if found
         else:
             continue #If an empty string is not found, just continue
-    #print(list_with_empty_strings)
+    print("No more empty strings:")
+    print(list_with_empty_strings)
 
 def array_clean_colons(array_with_colons):
     array_without_colons = []
@@ -79,14 +81,16 @@ def array_clean_colons(array_with_colons):
 
 # full_list() function obtains all content from the file
 def full_list(input_content):
-    full_list_of_content = re.findall(".*/.*",input_content) # Find all content in the file
+    full_list_of_content = re.findall(".*",input_content) # Find all content in the file
+    print("A full list of content is generated:")
+    print(full_list_of_content)
     #print("This should be all content:")
     #print(full_list_of_content)
     return full_list_of_content #Returns the list containing all of the content
 #Prints the lists containing the headings and the list containing all of the content
 def print_heading_and_full_content_lists(list_of_headings, full_list_of_content):
-    print("All content:")
-    #print(full_list_of_content) #Prints a list containing all content
+    print("All relevant content:")
+    print(full_list_of_content) #Prints a list containing all content
     #print("List of headings:")
     #print(list_of_headings) #Prints a list containing a heading
 
@@ -185,10 +189,9 @@ def text_to_json_list(list_of_headings, full_list_of_content):
     #return content_containing_dict
 
 # text_to_dict function constructs a dictionary of headings and a list of associated content
-def text_to_dict(list_of_headings, unclean_full_list_of_content,heading_container): #Arguments are an array of the headings, an array of the associated content, and a dictionary of headings as keys and arrays of content as the values
+def text_to_dict(list_of_headings, full_list_of_content,heading_container): #Arguments are an array of the headings, an array of the associated content, and a dictionary of headings as keys and arrays of content as the values
     track_list = [] #Initializes the track_list which will store the indexes of content in between headings
     content_containing_dict = {} #Constructs a dictionary that will use the headings as keys and the lists containing content as the values
-    full_list_of_content = array_clean_colons(unclean_full_list_of_content)
     print_heading_and_full_content_lists(list_of_headings, full_list_of_content) # Prints the list_of_headings and full_list_of_content lists for debugging purposes
     track_list = track_list_build(track_list, list_of_headings, full_list_of_content,heading_container) #Builds a list of indices by which only the content of each heading/directory can be found, which can then be used to construct a list containing only the lists of the content.
     list_of_lists = build_lists_of_lists(full_list_of_content, track_list) #Initializes the a list that will contain lists as elements
@@ -264,6 +267,8 @@ def main_array_dict():#Third main fucntion for the third version of the code imp
     stored_module_content = text_to_point(stored_heading_content, stored_content)#The function test_to_point is called to return the content of the extracted content
     stored_module_content = list_clean(stored_module_content)# Cleans the content list of empy strings
     full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
+    full_clean_content = list_clean(full_content)
+    print("This is the full_contenttt:", full_clean_content)
     array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container)#returns the array_dict_containing_content as well as content_containing_dict
     return array_dict_containing_content #Returns the array_dict_containing_content
 #def test():

@@ -6,7 +6,8 @@
 #Reference: https://stackoverflow.com/questions/13519644/how-to-solve-dictionary-changed-size-during-iteration-in-python/13519858
 #Reference: https://stackoverflow.com/questions/8995611/removing-multiple-keys-from-a-dictionary-safely
 #Reference: https://stackoverflow.com/questions/4406501/change-the-name-of-a-key-in-dictionary
-
+#reference: https://stackoverflow.com/questions/3640359/regular-expressions-search-in-list
+import re
 import copy #Imports the copy module of Python for the purpose of making deep copies to maniulate dictionaries in this code
 def value_morph_dict(heading_container):# Function value_morph_dict function accepts a dictionary argument. Executes the remainder of the code in this Python file.
     for key, content_array in heading_container.items():# Iterates through the dictionary
@@ -28,8 +29,15 @@ def search_dict_children_from_target(heading_container): # The function argument
     heading_container_clone = copy.deepcopy(heading_container)# Create a clone of the heading_container completely
     for key, value_array_suspect in heading_container_clone.items():# For loop iterating through the directories and arrays of content in the heading_conteiner_clone dictionary
         for value_suspect in value_array_suspect:# For loop iterating through the individual values of the array of content dictionary
-            module_path ="/glade/u/apps/ch/modulefiles/default/" #The root path the first level of subdirectories
-            check_label_bool, parent_heading = check_label_in_headings(value_suspect,array_of_headings,module_path)# Returns a boolean and a directory that would likely contain the children of a given content dictionary
+            #module_path ="/glade/u/apps/ch/modulefiles/default/" #The root path the first level of subdirectories
+            print("Sanity checking...")
+            check_label_bool, parent_heading = check_label_in_headings(value_suspect,array_of_headings)# Returns a boolean and a directory that would likely contain the children of a given content dictionary
+            print("Sanity checking value_suspect...")
+            print(value_suspect)
+            print("Printing these hadings for sanity purposes:")
+            print(array_of_headings)
+            print("\n\n This is the check label and parent heading:")
+            print(check_label_bool, parent_heading)
             if check_label_bool == True and parent_heading != None: #Checks to make sure theat the boolean is True and a value for parent_heading is provided, otherwise no children were found
                 location_of_value_suspect = value_array_suspect.index(value_suspect) #Tracks the content dictionary in the array that contains them
                 value_suspect = move_children(heading_container,array_of_headings, parent_heading, value_suspect, location_of_value_suspect)#Function that moves content dictionary array that has the children of said content dictionary, takes the overall structure, the headings that are remaining to utilize, the heading of the children, the content dictionary that has children, and the location of the content dictionary in the array of content dictionaries
@@ -44,6 +52,8 @@ def search_dict_children_from_target(heading_container): # The function argument
                 continue
         print("\nThe resulting heirarchical array-dict object is here:") #Further debugging (Track the rearrangement of list-dict construct)
         print(key,value_array_suspect)
+        print("Totality of it all in session:") #Prints the entire heading_container_clone which displays all keys (direcories) and arrays of content dictionaries
+        print(heading_container_clone)
     print("Totality of it all:") #Prints the entire heading_container_clone which displays all keys (direcories) and arrays of content dictionaries
     print(heading_container_clone)
     full_compiler_container = elminate_superfluous_keys(heading_container_clone,array_of_headings, clone_of_array_of_headings) #Returns the heading container with extra directories eliminated to get rid of the clutter of keys that have already been rearranged in the list-dict hierarchy
@@ -52,12 +62,12 @@ def search_dict_children_from_target(heading_container): # The function argument
 #A function responsible for retitling the top level of the list-dict hierarchy
 def new_first_level_directories(target_partial_heading_container): #Accepts the dictionaries that will contain the top level directories of the list-dict construct as an argument
     module_path ="/glade/u/apps/ch/modulefiles/default/" # module path for string manipulation
-    if target_partial_heading_container["label"] == module_path+"compilers": # If statement to catch the compilers directory, then rename it
+    if target_partial_heading_container["label"] == "compilers": # If statement to catch the compilers directory, then rename it
         target_partial_heading_container["label"] = "Compilers" #Renames said compilers directory
-    elif target_partial_heading_container["label"] == module_path+"idep": # If statement to catch the compiler independent software dirctory, then rename it
+    elif target_partial_heading_container["label"] == "idep": # If statement to catch the compiler independent software dirctory, then rename it
         target_partial_heading_container["label"] = "Compiler Independent" # Renames said compilers independent directory
     else:
-        None #Nonetype value 
+        None #None
 
 def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of_array_of_headings):# eliminate_superfluous_keys is a function taking the arguments of heading_container_clone,array_of_headings, and clone_of_array_of_headings to get rid of excess directories in the top level of keys in heading_container_clone
     print("The array of headings:")#Prints the directories
@@ -101,12 +111,13 @@ def search_dict_descendants(heading_container,array_of_headings,item_with_possib
     print("Item with possible descendants:")
     print(item_with_possible_descendants)#Print the array that is being searched for debugging purposes
     for content_container in item_with_possible_descendants:
-        print("\nThis point prints content_contianer and array_of_headings:")
+        print("\nThis point prints content_container and array_of_headings:")
         print(content_container,array_of_headings) # Print the dictionary that is obtained from iterating item_with_possible_descendants and the list of directories for debugging purposes
         parent_sub_heading = check_lineage_label_in_headings(content_container, array_of_headings,item_suspect_parent) #Check the directory to which the current dictionary belongs
         if parent_sub_heading != None: #Will only run the next section if a value other than None is returned.
             location_of_content_container = item_with_possible_descendants.index(content_container) # The location of the dictionary that will be assigned children
             content_container = move_children(heading_container,array_of_headings, parent_sub_heading, content_container, location_of_content_container)# Adds the subdirectory to the children key of the dictionary as the value of the children key
+            print("Checking to make sure...")
             print("\nI am printing content_container for debugging purposes:")
             print(content_container)
             print("The missing heading:")
@@ -115,9 +126,17 @@ def search_dict_descendants(heading_container,array_of_headings,item_with_possib
         else:
             continue #Continues the for loop when the if statement is not satisfied
 
-def check_label_in_headings(target_item_dictionary, array_of_headings,path_to_modules):# Checks if the heading in question actually has the children of content string
-    for heading in array_of_headings: # For loop for going through the headings
-        if path_to_modules + target_item_dictionary["label"] == heading: #Checks if the current item when concatenated with the path of the modules is one of the top level directories.
+
+def check_label_in_headings(target_item_dictionary, array_of_headings):# Checks if the heading in question actually has the children of content string
+    array_of_top_levels = first_level_obtainment(array_of_headings)
+    print("These top levels have been printed:")
+    print(array_of_top_levels)
+    for heading in array_of_headings:
+        print("Checking for any colons:")
+        print(target_item_dictionary["label"])
+        print("Checking for colon discrepancies:")
+        print(heading)
+        if target_item_dictionary["label"] +":" == heading: #Checks if the current item when concatenated with the path of the modules is one of the top level directories.
             located_heading = heading #Assigns the heading value to located heading
             return True, located_heading #Returns both values
         else:
@@ -136,3 +155,30 @@ def check_lineage_label_in_headings(target_item_content, array_of_headings, pare
         else:
             continue#Continue to keep the for loop running
     return None
+
+def sub_levels_attainment(array_containing_headings):
+    regular_expression_instance = re.compile(".*/.*/.*/.*")
+    array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings))
+    print("These are the sub-levels:")
+    print(array_containing_reg_exp)
+    return array_containing_reg_exp
+
+def first_level_obtainment(array_containing_headings):
+    regular_expression_instance = re.compile("[A-z]+:")
+    array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings))
+    print("These are the top-levels:")
+    print(array_containing_reg_exp)
+    return array_containing_reg_exp
+
+def top_levels_attainment(array_containing_headings):
+    array_of_top_levels = []
+    array_of_sub_levels = sub_levels_attainment(array_containing_headings)
+    for heading in array_containing_headings:
+        if heading not in array_of_sub_levels:
+            array_of_top_levels.append(heading)
+    for heading in array_of_top_levels:
+        if "\/" in heading:
+            array_of_top_levels.remove(heading)
+    print("An array of the top levels")
+    print(array_of_top_levels)
+    return array_of_top_levels
