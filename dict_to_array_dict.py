@@ -7,7 +7,8 @@
 #Reference: https://stackoverflow.com/questions/8995611/removing-multiple-keys-from-a-dictionary-safely
 #Reference: https://stackoverflow.com/questions/4406501/change-the-name-of-a-key-in-dictionary
 #reference: https://stackoverflow.com/questions/3640359/regular-expressions-search-in-list
-import re
+
+import re # Imports the regular expression module of Python
 import copy #Imports the copy module of Python for the purpose of making deep copies to maniulate dictionaries in this code
 def value_morph_dict(heading_container):# Function value_morph_dict function accepts a dictionary argument. Executes the remainder of the code in this Python file.
     for key, content_array in heading_container.items():# Iterates through the dictionary
@@ -62,9 +63,9 @@ def search_dict_children_from_target(heading_container): # The function argument
 #A function responsible for retitling the top level of the list-dict hierarchy
 def new_first_level_directories(target_partial_heading_container): #Accepts the dictionaries that will contain the top level directories of the list-dict construct as an argument
     module_path ="/glade/u/apps/ch/modulefiles/default/" # module path for string manipulation
-    if target_partial_heading_container["label"] == "compilers": # If statement to catch the compilers directory, then rename it
+    if target_partial_heading_container["label"] == "compilers:": # If statement to catch the compilers directory, then rename it
         target_partial_heading_container["label"] = "Compilers" #Renames said compilers directory
-    elif target_partial_heading_container["label"] == "idep": # If statement to catch the compiler independent software dirctory, then rename it
+    elif target_partial_heading_container["label"] == "idep:": # If statement to catch the compiler independent software dirctory, then rename it
         target_partial_heading_container["label"] = "Compiler Independent" # Renames said compilers independent directory
     else:
         None #None
@@ -126,17 +127,10 @@ def search_dict_descendants(heading_container,array_of_headings,item_with_possib
         else:
             continue #Continues the for loop when the if statement is not satisfied
 
-
+# check_label_in_headings() function is necessary for the remainder of the code to work as it handles the top level of the list-dict construct
 def check_label_in_headings(target_item_dictionary, array_of_headings):# Checks if the heading in question actually has the children of content string
-    array_of_top_levels = first_level_obtainment(array_of_headings)
-    print("These top levels have been printed:")
-    print(array_of_top_levels)
     for heading in array_of_headings:
-        print("Checking for any colons:")
-        print(target_item_dictionary["label"])
-        print("Checking for colon discrepancies:")
-        print(heading)
-        if target_item_dictionary["label"] +":" == heading: #Checks if the current item when concatenated with the path of the modules is one of the top level directories.
+        if target_item_dictionary["label"] +":" == heading: #Checks if the current item when concatenated with the colon (:) is one of the top level directories.
             located_heading = heading #Assigns the heading value to located heading
             return True, located_heading #Returns both values
         else:
@@ -144,6 +138,7 @@ def check_label_in_headings(target_item_dictionary, array_of_headings):# Checks 
     return False, None# If not a substring, this is returned
 
 #Function that checks for the parent in the search_dict_descendants() function
+# Works through the usage of substrings
 def check_lineage_label_in_headings(target_item_content, array_of_headings, parent_of_target_item_content):#Arguments are: target_item_content which is the current dictionary being examined, array_of_headings the list of the directories that have not been sorted, parent_of_target_item_content the parent dictionary of target_item_content
     for target_heading in array_of_headings: #For loop iterating through the list of directories
         if target_item_content["label"] in target_heading:#Continues if the current dictionary's label value is a substring of the current heading

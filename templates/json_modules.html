@@ -2,6 +2,7 @@
 <!--Thomas Johnson III-->
 <!-- Reference: https://www.jqueryscript.net/other/hierarchical-searchable-tree.html-->
 <!-- JavaScript written with the assistance of W3 Schools -->
+<!--Simpletree jQuery plugin Michael Derntl-->
 <head>
  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/viewmodules.css') }}">
  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='js/searchtree/simpleTree.css') }}">
@@ -13,20 +14,7 @@
 <body class="color_body padding_body">
 <h1>Information on Cheyenne Modules</h1>
 <p>Relevant compilers and modules appear below.</p>
- {% if text_html %}
-   {% for headings, content in text_html.items()  %}
-     <div class ="outer-module-block">
-       <p>{{ headings }}</p>
-       <div class="inner-module-block">
-         {% for module in content %}
-         <p>{{ module }}</p>
-         {% endfor %}
-       </div>
-     </div>
-   {% endfor %}
- {% else %}
-  <p>No text to display</p>
- {% endif %}
+ <p>Search for some software in the search bar below.</p>
 <input type="search" id="test">
 <div class ="outer-module-block">
   <h2>Module Information</h2>

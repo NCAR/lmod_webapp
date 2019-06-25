@@ -64,7 +64,7 @@ Limitations:
 3. If the nesting of the dictionaries require extreme depth, the recursive functions can become overwhelmed if there is an extreme quantity of recursive calls.
 
 4. Currently requires a file to already exist with the required information for building the module tree.
-Said file can be inputted manually, but if the incorrect file is given, the program will likely fail.
+Said file can be inputted manually, but if the incorrect file is given, the program will run the specified default file.
 
 
 ## Debugging:
@@ -80,3 +80,5 @@ Ensure that the file that is being read has no extra punctuation such as colons,
 The current implementation runs based on an assumption that there are no duplicate directories in the submitted file. If there are, it will cause bugs in the program. Please ensure that in the file given that the directories are not duplicated.
 
 An edit has been made to make the code more robust by distinguishing what will make up the second level of the list-dict structure versus the remaining sub-levels.
+
+Note: simpleTree jQuery was developed by Michael Derntl. It can be used under the permissions of the MIT License.
