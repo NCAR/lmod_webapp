@@ -33,9 +33,9 @@ def text_to_heading_list(input_content):
     print("Here are the headings:")
     #cleaned_heading_acquired = array_clean_colons(heading_acquired)
     print(heading_acquired)
-    heading_container ={}
-    for heading in heading_acquired:
-        heading_container[heading] = []
+    heading_container ={} #Creates a ditionary to store headings as keys
+    for heading in heading_acquired:#Iterates the through the list of directories/headings
+        heading_container[heading] = []# Assigns each directory/headings as a key and lists as values
     return heading_acquired,heading_container #Returns the list containing the headings
 
 # Get the non-heading content into a list (May not be needed)
@@ -65,18 +65,19 @@ def list_clean(list_with_empty_strings):
             list_with_empty_strings.remove(index) # Removes the empty string if found
         else:
             continue #If an empty string is not found, just continue
-    print("No more empty strings:")
+    print("No more empty strings:") #Prints the list with no empty strings present
     print(list_with_empty_strings)
 
-def array_clean_colons(array_with_colons):
-    array_without_colons = []
-    print(array_with_colons)
-    for content_item in array_with_colons:
-        new_content_item = content_item.replace(":","")
-        array_without_colons.append(new_content_item)
-    print("Array without colons:")
+# The array_clean_colons() function is used to clean out colons from the string elements of a provided list argument
+def array_clean_colons(array_with_colons):# The argument can be any list with string elements
+    array_without_colons = [] # Inititializes the list that has no colons present
+    print(array_with_colons) #Print the list with colons to ensure that the function would need to be ran at this point
+    for content_item in array_with_colons:#For loop that iterates every string element to search for strings that have a colon (:) present
+        new_content_item = content_item.replace(":","") #A new, colon (:) free string is generated from the previous string
+        array_without_colons.append(new_content_item) # The new, colon (:) free string is appended to the list array_without_colons
+    print("Array without colons:") # Will print the entire list to allow the user to check and make sure that the list contains no colons whatsoever
     print(array_without_colons)
-    return array_without_colons
+    return array_without_colons #Returns the entire list that will be absent of colons amongst its string elements
 
 
 # full_list() function obtains all content from the file

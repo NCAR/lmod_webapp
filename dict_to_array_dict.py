@@ -160,19 +160,20 @@ def sub_levels_attainment(array_containing_headings):# Takes an argument of a li
     return array_containing_reg_exp# Returns the list that holds the results of the regular expression parsing through
 
 # The first_level_obtainment() function can be used to obtain the first level of directories/headings that will be displayed by the list-dictionary being processed for the simpleTree
-def first_level_obtainment(array_containing_headings):
-    regular_expression_instance = re.compile("[A-z]+:")
-    array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings))
-    print("These are the top-levels:")
+def first_level_obtainment(array_containing_headings): # The argument that is used is a list of all the headings
+    regular_expression_instance = re.compile("[A-z]+:") # The variable regular_expression_instance stores the trgular expression that will be used
+    array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings)) # constructs a list with all the instances that match the regular expression from the list of directories/headings as elements
+    print("These are the first-level:")# Prints the first level to make sure the code is working properly.
     print(array_containing_reg_exp)
-    return array_containing_reg_exp
+    return array_containing_reg_exp # returns the list that contains the directories/headings that have satisfied the regular expression filter
 
-def top_levels_attainment(array_containing_headings):
-    array_of_top_levels = []
-    array_of_sub_levels = sub_levels_attainment(array_containing_headings)
-    for heading in array_containing_headings:
-        if heading not in array_of_sub_levels:
-            array_of_top_levels.append(heading)
-    print("An array of the top levels")
+# top_levels_attainment() function gets the first dew headings/directories levels that will be constructed by the list-dict processing.
+def top_levels_attainment(array_containing_headings):#The argument for the function is a list with headings/directories contained as elements
+    array_of_top_levels = [] # Initializes a new list for the top levels of the list-dictionary
+    array_of_sub_levels = sub_levels_attainment(array_containing_headings)# Calls sub_levels_attainment() function for a list of the sub-levels
+    for heading in array_containing_headings:# for loop for iterating through the list with all the headings/directories
+        if heading not in array_of_sub_levels:# Any instance by which the heading/directory is not within the list containing the sub-level headings/directories
+            array_of_top_levels.append(heading) #The instances that satisfy the if statement are appended to the list that was previously intialized within this function
+    print("An array of the top levels")# Prints the top levels of the headings/directories to check the eleements of the list
     print(array_of_top_levels)
-    return array_of_top_levels
+    return array_of_top_levels # Returns the list of the top levels of the list-dictionary construct 
