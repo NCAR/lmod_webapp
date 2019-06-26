@@ -52,15 +52,23 @@ array_dict_list.json (The JSON generated from the lmod_webapp. You can use this 
 
 There are also two .out files present in the repository.
 
+list.out (The software headings/directories and their respective contents that are available on Cheyenne HPC system. This file, and listcasper.out, are the files currently being processed for the web application. To switch the files being processed, simply reload the tab that displays the webpage and specify the alternate file within the terminal. The default route for this file is localhost/json/ using the template json_modules.html.)
+
+listcasper.out (The software headings/directories and their respective contents that are available on the Casper HPC system. This file, along with list.out, are the files currently being processed for the web application. To switch the files being processed, simply reload the tab that displays the webpage and specify the alternate file within the terminal. The default route for this file is localhost/ using the template json_casper_modules.html.)
+
 ## Directions
 To run this application:
 1. export FLASK_APP=document.py
 2. flask run
+3.
 
 then navigate to the specified url in a web browser to see the webpage to get to the default opage with HTML and CSS. To get the Javascript and Jquery simpletree implementation, add /json/ after the default url.
 
-To input the file name, input the base URL and add /json/ after the base URL. Then, when the printed prompt is displayed, enter the name of the file you wish to use. After that, the webpage should fully load. Note: loading will remain indefinite while there is no given input.
 Ex: DEFAULT_URL/json/
+
+To input the file name, input the base URL and add /json/ after the base URL. Then, when the printed prompt is displayed, enter the name of the file you wish to use. After that, the webpage should fully load. Note: loading will remain indefinite while there is no given input.
+
+The path /casperjson/ works in a similar process to the path /json/, the difference being that /casperjson/ is added to the end of the default url.
 
 Limitations:
 1. The data must be loaded when the page initializes for the simpletree. Data cannot be added after the page has loaded.
