@@ -9,6 +9,7 @@ References.txt (For any useful or necessary references that have not been insert
 -> References.txt should be updated to maintain record of any resources or citations that can be used to continue sustain the longevity of the application or allow future users to have access to resources to understand how the application works. While there are references in the comments of the code, allowing the existence of a file that can serve as a central reference point is also helpful.
 
 result_module_output.txt (Currently where the modules are stored after being extracted from the bash terminal. This file is read by the reg_expression.py file to gain the data necessary for the rest of the application.)
+-> result_module_output.txt is a text file that was essential for the first and second implementations. Now it can be used to test the code with some modifications to the source code in the regular expression to be able to capture the correct directories/headings. Currently list.out and listcasper.out utilize colons (:) to denote the headings/directories instead of the full glade path.
 
 result_module_output_backup.txt (The text file is a backup of result_module_output.txt in the case of unintended deletion the original file.)
 
@@ -48,6 +49,8 @@ There can be multiple JSON files present: (currently deleted)
 array_dict.json (Example of the format that the jQuery simpletree will accept. Short summary: the data must be contained in lists that contain dictionaries so that the JavaScript can interpret the JSON as the correct JavaScript object.)
 
 array_dict_list.json (The JSON generated from the lmod_webapp. You can use this file to verify whether the contents are in a proper JSON format. Also allows for checking to see if there are any unnecessary processing details in the code itself.)
+
+There are also two .out files present in the repository.
 
 ## Directions
 To run this application:
