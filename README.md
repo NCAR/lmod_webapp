@@ -80,6 +80,7 @@ Limitations:
 4. Currently requires a file to already exist with the required information for building the module tree.
 Said file can be inputted manually, but if the incorrect file is given, the program will run the specified default file.
 
+5. The file specified must have headings/directories denoted by colons (:) at the end. For examples of such, look into the list.out and the listcasper.out files.
 
 ## Debugging:
 
