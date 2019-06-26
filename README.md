@@ -6,6 +6,7 @@ Web application built primarily using Python Flask. This web application also ma
 Currently there are multiple txt files in the repository main directory:
 
 References.txt (For any useful or necessary references that have not been inserted in comments in the available code. Will likely contain all necessary references throughout the code as a central file to store such information. Update to keep track use of useful or necessary references.)
+-> References.txt should be updated to maintain record of any resources or citations that can be used to continue sustain the longevity of the application or allow future users to have access to resources to understand how the application works. While there are references in the comments of the code, allowing the existence of a file that can serve as a central reference point is also helpful.
 
 result_module_output.txt (Currently where the modules are stored after being extracted from the bash terminal. This file is read by the reg_expression.py file to gain the data necessary for the rest of the application.)
 
