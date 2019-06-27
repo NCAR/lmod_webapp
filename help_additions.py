@@ -44,7 +44,12 @@ def track_container_build(container_of_directories, all_of_the_relevant_content)
     return tracking_indices_container_acquired
 
 def build_container_with_groups_of_arrays(all_of_the_contents, container_of_tracking_indices):
-    container_of_groupings_of_content = {} 
+    container_of_groupings_of_content = {}
+    maximum_iteration = len(container_of_tracking_indices)
+    for index_position in range(len(container_of_tracking_indices)):
+        if (index_position+2) <= maximum_iteration:
+            index_capture = container_of_tracking_indices[index_position]+1
+            
 
 construct_hunting_items("help.out")
 
