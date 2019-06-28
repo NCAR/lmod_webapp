@@ -47,21 +47,23 @@ def construct_a_directory_container(directory_keys_array): #The argument is dire
         counter_of_iteration += 1 #The variable counter_of_iteration is incremented so that the next directory will have a new number as a key.
     return tracking_directory_obtained # Returns tracking_directory_obtained to be utilized by the function or script in which it is called.
 
-def track_container_build(container_of_directories, all_of_the_relevant_content):
-    tracking_indices_container_acquired = {}
-    record_the_key = 0
+# track_container_build() function will be used build a dictionary of the relevant indices that will be utilized for picking out the content of each software path.
+def track_container_build(container_of_directories, all_of_the_relevant_content): # The argument container_of_directories is a dictionary of the directory paths of the software and all_of_the_relevant_content being a list of all the relevant content of each software directory path
+    tracking_indices_container_acquired = {}# Initializes a dictionary that will be used for recording the indices that will make off where the relevant content is
+    record_the_key = 0 # used to keep a record of the number that is utilized as the keys for the for the tracking_indices_container_acquired
     for index_count in all_of_the_relevant_content: # For loop that iterates thrugh the content that makes of elements of all_of_the_relevant_content
-        print("See index_value for loop populating tracking_indices_container_acquired")
+        print("See index_value for loop populating tracking_indices_container_acquired")# Print statement used for debugging purposes
         print(index_count)
         if index_count in container_of_directories.values(): # If statement that checks whether the value of index_count is in container_of_directories
-            temporary_indices_acquired = {record_the_key:all_of_the_relevant_content.index(index_count)}
-            print("Debugging by checking to make sure only directories are being caught for the track_list")
+            temporary_indices_acquired = {record_the_key:all_of_the_relevant_content.index(index_count)}# temporary_indices_acquired dictionary is initialized with the record_the_key and the value being the index of a software directory path
+            print("Debugging by checking to make sure only directories are being caught for the track_list")#Print statement that is utilized to for debugging purposes
             print(index_count)
-            tracking_indices_container_acquired.update(temporary_indices_acquired)
-            record_the_key += 1
-    temporary_last_addition = {record_the_key: len(all_of_the_relevant_content)}
-    tracking_indices_container_acquired.update(temporary_last_addition)
-    return tracking_indices_container_acquired
+            tracking_indices_container_acquired.update(temporary_indices_acquired) #tracking_indices_container_acquired is updated with the dictionary of temporary_indices_acquired
+            record_the_key += 1 #Increments the record_the_key to give a unique enumerated key for each value for the tracking_indices_container_acquired
+    temporary_last_addition = {record_the_key: len(all_of_the_relevant_content)} #Adds the final index to the dictionary to make sure to catch the last of the help contents of the  in the list.
+    tracking_indices_container_acquired.update(temporary_last_addition)# Makes the fincal update to tracking_indices_container_acquired with the last index to be used to track the contents of the help contents.
+    return tracking_indices_container_acquired# Returns the dictionary contained in tracking_indices_container_acquired
+
 
 def build_container_with_groups_of_arrays(all_of_the_contents, container_of_tracking_indices):
     container_of_groupings_of_content = {}
