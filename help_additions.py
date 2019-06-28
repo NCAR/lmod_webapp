@@ -78,15 +78,16 @@ def build_container_with_groups_of_arrays(all_of_the_contents, container_of_trac
         if (index_position+2) <= maximum_iteration:# If condition that ensures that the for loop does not run if the numer of usable indices has been exceeded (two indices, the current and the succeeding index, are being used every iteration)
             print("...running for loop to build dictionary of arrays of help content..")# print statement used for debugging. Indicates the code has made it to this point (if statement is valid and not causing bugs)
             #print(all_of_the_contents)# Prints all_of_the_contents, used for debugging purposes.
-            first_index_capture = container_of_tracking_indices[index_position]+1 #
-            second_index_capture = container_of_tracking_indices[index_position+1]
-            temporary_container_for_array = {index_position:all_of_the_contents[first_index_capture:second_index_capture]}
-            container_of_groupings_of_content.update(temporary_container_for_array)
-            index_position += 1
-    print("container_of_groupings_of_content")
+            first_index_capture = container_of_tracking_indices[index_position]+1 # The beginning index of the new array is stored in first_index_capture
+            second_index_capture = container_of_tracking_indices[index_position+1] # The ending index of the new array is stored in second_index_capture
+            temporary_container_for_array = {index_position:all_of_the_contents[first_index_capture:second_index_capture]}# The enumerated key is provided by index_position and the array value is the list comprehension of first_index_capture and second_index_capture of the list all_of_the_contents and srored in the ewly initialized dictionary
+            container_of_groupings_of_content.update(temporary_container_for_array) # The dictionary container_of_groupings_of_content is updated by the dictionary temporary_container_for_array to store an enumerated key and array of help content values
+            index_position += 1 # Increments the index_postion by 1 as a pair of indices is being utilized in the for loop at any given time.
+    print("container_of_groupings_of_content")#Prints the contents of the container_of_groupings_of_content dictionary to validate key-values were stored correctly.
     print(container_of_groupings_of_content)
-    return container_of_groupings_of_content
+    return container_of_groupings_of_content # Returns the dictionary being pointed to by container_of_groupings_of_content to where the function is called it is called
 
+# 
 def build_help_information_containing_dict(container_possessing_directories, container_possessing_groupings_of_content):
     help_info_container = {}
     max_out_iteration = len(container_possessing_directories)
