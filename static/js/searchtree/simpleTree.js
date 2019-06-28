@@ -323,6 +323,7 @@ $.fn.simpleTree = function(options, data) {
             _self.clearSelection(true);
         else
             _self.setSelectedNode(node);
+            //Added by Thomas Johnson III
             var modal_subject = document.getElementById("modal-outer");
             function summon_modal()
             {
@@ -330,6 +331,7 @@ $.fn.simpleTree = function(options, data) {
               $("#modal-inner").html(node.modal_content);
             }
             summon_modal()
+            //End of Thomas Johnson III's addition.
     }
 
     // ------------------------------------------------------------------------
