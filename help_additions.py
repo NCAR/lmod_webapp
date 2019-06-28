@@ -75,10 +75,10 @@ def build_container_with_groups_of_arrays(all_of_the_contents, container_of_trac
     print("Checking the tracking container.")# Print statement used for debugging by allowing the user to know if there is anything in the container_of_tracking_indices
     print(container_of_tracking_indices)
     for index_position in range(len(container_of_tracking_indices)):#Initializing a for loop that will allow for enumerated keys for storing the arrays of content as values
-        if (index_position+2) <= maximum_iteration:
-            print("To check if all_of_the_contents is present")
-            print(all_of_the_contents)
-            first_index_capture = container_of_tracking_indices[index_position]+1
+        if (index_position+2) <= maximum_iteration:# If condition that ensures that the for loop does not run if the numer of usable indices has been exceeded (two indices, the current and the succeeding index, are being used every iteration)
+            print("...running for loop to build dictionary of arrays of help content..")# print statement used for debugging. Indicates the code has made it to this point (if statement is valid and not causing bugs)
+            #print(all_of_the_contents)# Prints all_of_the_contents, used for debugging purposes.
+            first_index_capture = container_of_tracking_indices[index_position]+1 #
             second_index_capture = container_of_tracking_indices[index_position+1]
             temporary_container_for_array = {index_position:all_of_the_contents[first_index_capture:second_index_capture]}
             container_of_groupings_of_content.update(temporary_container_for_array)
