@@ -15,7 +15,6 @@ def list_clean(list_with_empty_strings):
             continue #If an empty string is not found, just continue
     print("No more empty strings:") #Prints the list with no empty strings present
     print(list_with_empty_strings)
-    return list_with_empty_strings #Returns a list without empty strings
 
 # The function construct_hunting_items() initiates the code in the Python file, first reading in another file for the rest of the functions to process
 def construct_hunting_items(file_item): #The argument file_item is used to indicate what file should be read by the Python script
@@ -26,20 +25,22 @@ def construct_hunting_items(file_item): #The argument file_item is used to indic
 
 # acquiring_all_contents() function takes all the help contents and puts then in their own list through the usage of regular expressions
 def acquiring_all_contents(entirety_of_help_contents): # For the function to work, the read contents of the file containing the help information most be provided as an argument to the function
-    entirety_of_content_acquired = re.findall("(.*)",entirety_of_help_contents) #Uses the
-    return entirety_of_content_acquired
+    entirety_of_content_acquired = re.findall("(.*)",entirety_of_help_contents) #Uses the regular expression to parse out all of the contents of the file using Python's regular expression module. The results are then put into lists that capture each line.
+    return entirety_of_content_acquired # Returns all of the content of the file. Will be used for later functions.
 
-def parse_contents_to_container(entirety_of_help_contents):
-    target_keys_obtained = re.findall("(%HELP%.+)",entirety_of_help_contents)
-    print(target_keys_obtained)
-    entirety_of_content = acquiring_all_contents(entirety_of_help_contents)
-    list_clean(entirety_of_content)
-    tracking_directory_container = construct_a_directory_container(target_keys_obtained)
-    tracking_indices_container = track_container_build(tracking_directory_container,entirety_of_content)
+#parse_contents_to_container() function handles the next steps in processing the help information
+def parse_contents_to_container(entirety_of_help_contents): # The argument needed for the function is all of the content of the file after the file has been read.
+    target_keys_obtained = re.findall("(%HELP%.+)",entirety_of_help_contents)# regular expression using the unique '%HELP%' string is called. Said string denotes the proper path to the respective software that the help information belongs to.
+    print(target_keys_obtained) #Prints the list of directories in order to ensure that they were properly processed.
+    entirety_of_content = acquiring_all_contents(entirety_of_help_contents) #The acquiring_all_contents() function is called here, which will return the all of file's content to the variable entirety_of_content for later usage.
+    list_clean(entirety_of_content)# The list_clean() fucntion is called for the purpose of removing the empty strings that will populate the list entirety_of_content.
+    tracking_directory_container = construct_a_directory_container(target_keys_obtained) #The costruct_a_directory_container() function is called with the argument target_keys_obtained. The construct_a_directory_container function will return the dictionary of enumerated keys and a directory value for each of those given keys.
+    tracking_indices_container = track_container_build(tracking_directory_container,entirety_of_content) #
     container_content_groupings = build_container_with_groups_of_arrays(entirety_of_content, tracking_indices_container)
     container_for_help_info = build_help_information_containing_dict(tracking_directory_container,container_content_groupings)
 
-def construct_a_directory_container(directory_keys_array):
+# The construct_a_directory_container() function is used to build a dictionary from a list.
+def construct_a_directory_container(directory_keys_array): #The argument is directory_keys_array, which will
     tracking_directory_obtained = {}
     counter_of_iteration = 0
     for directory_key in directory_keys_array:
