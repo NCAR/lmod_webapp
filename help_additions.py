@@ -64,17 +64,17 @@ def track_container_build(container_of_directories, all_of_the_relevant_content)
     tracking_indices_container_acquired.update(temporary_last_addition)# Makes the fincal update to tracking_indices_container_acquired with the last index to be used to track the contents of the help contents.
     return tracking_indices_container_acquired# Returns the dictionary contained in tracking_indices_container_acquired
 
-
-def build_container_with_groups_of_arrays(all_of_the_contents, container_of_tracking_indices):
-    container_of_groupings_of_content = {}
-    maximum_iteration = len(container_of_tracking_indices)
+# build_container_with_groups_of_arrays() function will build a dictionary of arrays that will be utilized for the purpose of building a dictionary that will keep track of the arrays of content that will later be paired with their paths in the software directory
+def build_container_with_groups_of_arrays(all_of_the_contents, container_of_tracking_indices):# the argument all_of_the_contents is a variable pointing to the entire list of content that has been read from the file. The argument container_of_tracking_indices is a ditionary fo the indices that must be tracked to correctly divide up the array based on what content should go where.
+    container_of_groupings_of_content = {}# The dictionary pointed to by container_of_groupings_of_content is initialized. This dictionary is used for the purpose of storing each array of content with an enumerated index to later be matched with the correct software directory path
+    maximum_iteration = len(container_of_tracking_indices) # Keeps track of the max number of iterations to ensure that the for loop initialized later does not exceed the its limit.
     #counter_of_iteration = 0
-    print("Running!")
-    print(all_of_the_contents)
+    print("Running!")#Print statement used for debuggung. Used to track if this part of the function has ran or not.
+    print(all_of_the_contents) #Prints all of the content of the file object in an array to ensure that the array was passed correctly.
     print("\n")
-    print("Checking the tracking container.")
+    print("Checking the tracking container.")# Print statement used for debugging by allowing the user to know if there is anything in the container_of_tracking_indices
     print(container_of_tracking_indices)
-    for index_position in range(len(container_of_tracking_indices)):
+    for index_position in range(len(container_of_tracking_indices)):#Initializing a for loop that will allow for enumerated keys for storing the arrays of content as values
         if (index_position+2) <= maximum_iteration:
             print("To check if all_of_the_contents is present")
             print(all_of_the_contents)
