@@ -40,14 +40,14 @@ def parse_contents_to_container(entirety_of_help_contents): # The argument neede
     container_for_help_info = build_help_information_containing_dict(tracking_directory_container,container_content_groupings)
 
 # The construct_a_directory_container() function is used to build a dictionary from a list.
-def construct_a_directory_container(directory_keys_array): #The argument is directory_keys_array, which will
-    tracking_directory_obtained = {}
-    counter_of_iteration = 0
-    for directory_key in directory_keys_array:
-        temporary_single_item_container = {counter_of_iteration: directory_key}
-        tracking_directory_obtained.update(temporary_single_item_container)
-        counter_of_iteration += 1
-    return tracking_directory_obtained
+def construct_a_directory_container(directory_keys_array): #The argument is directory_keys_array, which willprovide a list of the directories to be put into the dictionary
+    tracking_directory_obtained = {}# tracking_directory_obtained dicitonary is initialized and will be used to store the contents of the given directories.
+    counter_of_iteration = 0 # a variable storing the value of the current iteration. This will be used to generate enumerated keys, each possessing the value of a specific directory.
+    for directory_key in directory_keys_array: #Initializing a for loop to begin the inserting the keys (numbers) and values (directories) of the dictionary to teh dictionary.
+        temporary_single_item_container = {counter_of_iteration: directory_key} # a new, temporary dictionary called temporary_single_item_container is initialized to store the current value of counter_of_iteration as a key and a directory as the value.
+        tracking_directory_obtained.update(temporary_single_item_container) # The tracking_directory_obtained dictionary is updated with the key, value pairing of the temporary_single_item_container
+        counter_of_iteration += 1 #The variable counter_of_iteration is incremented so that the next directory will have a new number as a key.
+    return tracking_directory_obtained # Returns tracking_directory_obtained to be utilized by the function or script in which it is called.
 
 def track_container_build(container_of_directories, all_of_the_relevant_content):
     tracking_indices_container_acquired = {}
