@@ -42,6 +42,10 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
   <p><button onclick="$('#mytree').data('simpleTree').expandAll()" class="btn btn-primary">Expand All</button></p>
   <p><button onclick="console.log($('#mytree').data('simpleTree').getSelectedNode())" class="btn btn-primary">Get Selected Node (See Console Log)</button></p>
 </div>
+<div id="modal-outer" class ="modal-vessel modal-hidden">
+  <div id="modal-inner" class="modal-content">
+  </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="simpleTree.js"></script>
 <script>
@@ -49,31 +53,38 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
    {
        label: 'HTML',
        value: 'html',
+       modal_content: 'something',
        children: [
            {
                label: 'HTML5',
-               value: 'html5'
+               value: 'html5',
+               modal_content: 'here'
            }, {
                label: 'XML',
-               value: 'xml'
+               value: 'xml',
+               modal_content: 'to'
            }
        ]
    }, {
        label: 'JavaScript',
        value: 'javaScript',
+       modal_content: 'see',
        children: [
            {
                label: 'React',
                value: 'react',
+               modal_content: 'for',
                children: [
                    {
                        label: 'React Native',
-                       value: 'reactnative'
+                       value: 'reactnative',
+                       modal_content: 'a'
                    }
                ]
            }, {
                label: 'Angular',
-               value: 'angular'
+               value: 'angular',
+               modal_content: 'minute'
            }
        ]
    }

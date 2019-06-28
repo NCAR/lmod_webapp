@@ -3,30 +3,30 @@
 
     Copyright (c) 2019 eScience-Center, University of Tübingen
 
-    Permission is hereby granted, free of charge, to any person obtaining a 
-    copy of this software and associated documentation files (the "Software"), 
-    to deal in the Software without restriction, including without limitation 
-    the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-    and/or sell copies of the Software, and to permit persons to whom the 
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the "Software"),
+    to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom the
     Software is furnished to do so, subject to the following conditions:
 
-    The above copyright notice and this permission notice shall be included in 
+    The above copyright notice and this permission notice shall be included in
     all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
     DEALINGS IN THE SOFTWARE.
 ============================================================================ */
 ;(function($){
 $.fn.simpleTree = function(options, data) {
 // ============================================================================
     if(this.length > 1) {
-        this.each(function() { 
-            $(this).simpleTree(options, data); 
+        this.each(function() {
+            $(this).simpleTree(options, data);
         });
         return this;
     }
@@ -139,7 +139,7 @@ $.fn.simpleTree = function(options, data) {
             node.domChildren.hide();
         else {
             // expand ancestor nodes if needed
-            if(node.parent && !node.parent.expanded) 
+            if(node.parent && !node.parent.expanded)
                 this.toggleSubtree(node.parent);
             if(node.domChildren.children().length > 0)
                 node.domChildren.show();
@@ -173,7 +173,7 @@ $.fn.simpleTree = function(options, data) {
             nh = node.domContainer.height(),
             dt = this.offset().top,
             dh = this.height();
-        
+
         if(nt < dt || nt + nh > dt + dh) {
             this.animate({
                 scrollTop: nt - dt - dh / 2 // scroll to middle of the tree
@@ -193,7 +193,7 @@ $.fn.simpleTree = function(options, data) {
     }
 
     // ------------------------------------------------------------------------
-    // node is visible if the whole ancestry is visible and expanded and the 
+    // node is visible if the whole ancestry is visible and expanded and the
     // node itself is not hidden
     this.isNodeVisible = function(
         node
@@ -206,7 +206,7 @@ $.fn.simpleTree = function(options, data) {
         // the container must not be hidden
         if(node.domContainer.hasClass('hidden'))
             return false;
-        
+
         // if there's no parent, we're fine
         if(!node.parent)
             return true;
@@ -249,8 +249,8 @@ $.fn.simpleTree = function(options, data) {
         node
     ) {
     // ------------------------------------------------------------------------
-        return this.isNodeVisible(node) 
-            ? this.hideNode(node) 
+        return this.isNodeVisible(node)
+            ? this.hideNode(node)
             : this.showNode(node);
     }
 
@@ -270,7 +270,7 @@ $.fn.simpleTree = function(options, data) {
 
     // Default options, can be overriden when initializing the jQuery object
     var _defaults = {
-        // Optionally provide here the jQuery element that you use as the 
+        // Optionally provide here the jQuery element that you use as the
         // search box for filtering the tree. simplTree then takes control
         // over the provided box, handling user input
         searchBox: undefined,
@@ -291,7 +291,7 @@ $.fn.simpleTree = function(options, data) {
             expanded: '▼'
         },
 
-        // these are the CSS class names used on various occasions. 
+        // these are the CSS class names used on various occasions.
         // If you change these names, you also need to provide
         // the corresponding CSS class. See simpleTree.css
         css: {
@@ -314,6 +314,7 @@ $.fn.simpleTree = function(options, data) {
     // ========================================================================
 
     // ------------------------------------------------------------------------
+    //Edit this one for click events
     var _nodeClicked = function(
         node
     ) {
@@ -322,6 +323,13 @@ $.fn.simpleTree = function(options, data) {
             _self.clearSelection(true);
         else
             _self.setSelectedNode(node);
+            var modal_subject = document.getElementById("modal-outer");
+            function summon_modal()
+            {
+              $(modal_subject).removeClass("modal-hidden");
+              $("#modal-inner").html(node.modal_content);
+            }
+            summon_modal()
     }
 
     // ------------------------------------------------------------------------
@@ -352,9 +360,9 @@ $.fn.simpleTree = function(options, data) {
                 }
                 else {
                     label += (
-                        _htmlEncode(remaining.substr(0, pos)) 
-                        + "<span class='" + _options.css.highlight + "'>" 
-                        + _htmlEncode(remaining.substr(pos, _lastSearchTerm.length)) 
+                        _htmlEncode(remaining.substr(0, pos))
+                        + "<span class='" + _options.css.highlight + "'>"
+                        + _htmlEncode(remaining.substr(pos, _lastSearchTerm.length))
                         + "</span>"
                     );
                     remaining = remaining.substr(pos + _lastSearchTerm.length);
@@ -363,15 +371,15 @@ $.fn.simpleTree = function(options, data) {
             node.domLabel.html(label);
         }
     }
-        
+
     // ------------------------------------------------------------------------
     var _renderNode = function(
         node
     ) {
     // ------------------------------------------------------------------------
         let div = $('<div/>').addClass(_options.css.nodeContainer);
-        div.append($('<div/>').addClass(_options.css.indent).css({ 
-            width: (node.children.length > 0 ? node.indent : (node.indent + 1)) * _options.indentSize 
+        div.append($('<div/>').addClass(_options.css.indent).css({
+            width: (node.children.length > 0 ? node.indent : (node.indent + 1)) * _options.indentSize
         }));
         if(node.children.length > 0) {
             node.domToggle = $('<div/>')
@@ -383,7 +391,7 @@ $.fn.simpleTree = function(options, data) {
                     _self.toggleSubtree(node)
             });
             div.append(node.domToggle);
-        }  
+        }
         node.domLabel = $('<div/>').addClass(_options.css.label)
             .on('click', () => _nodeClicked(node));
         _renderNodeLabelText(node);
@@ -444,12 +452,12 @@ $.fn.simpleTree = function(options, data) {
         ) {
             _self.showNode(node);
         }
-        if(node.searchInfo.anyChildMatches 
+        if(node.searchInfo.anyChildMatches
             && !node.expanded
         ) {
             _self.toggleSubtree(node);
         }
-        if(!node.searchInfo.matches 
+        if(!node.searchInfo.matches
             && !node.searchInfo.anyChildMatches
             && _self.isNodeVisible(node)
         ) {
@@ -464,7 +472,7 @@ $.fn.simpleTree = function(options, data) {
                 node.domToggle.removeClass('disabled');
         }
     }
-    
+
     // ------------------------------------------------------------------------
     var _restoreNodeAfterSearch = function(
         node
@@ -486,7 +494,7 @@ $.fn.simpleTree = function(options, data) {
             if(hasMatched)
                 _renderNodeLabelText(node);
             node.children.forEach(child => _restoreNodeAfterSearch(child));
-        }  
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -525,7 +533,7 @@ $.fn.simpleTree = function(options, data) {
             let v = String(box.val()).trim().toUpperCase();
             _performSearch(v.length >= _options.searchMinInputLength ? v : '');
         });
-    }    
+    }
 
     // ------------------------------------------------------------------------
     var _initialize = function(
