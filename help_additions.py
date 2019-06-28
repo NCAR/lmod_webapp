@@ -1,31 +1,51 @@
 # Thomas Johnson III
 # 6/27/2019
 # help_additions.py
-# Adds the help information to the modules.
-import re
-def construct_hunting_items(file_item):
-    open_target_file = open(file_item,"r")
-    output_contents = open_target_file.read()
-    open_target_file.close()
-    parse_contents_to_container(output_contents)
+# Extracts and adds the help information to the modules.
+# Reference: https://stackoverflow.com/questions/8214932/how-to-check-if-a-value-exists-in-a-dictionary-python
+import re #Imports the regular expression module from Python's standard library
 
-def acquiring_all_contents(entirety_of_help_contents):
-    entirety_of_content_acquired = re.findall("(.*)",entirety_of_help_contents)
+# list_clean function is utilized to remove empty strings from a list that is the argument of the function
+def list_clean(list_with_empty_strings):
+    for index in list_with_empty_strings: #For loop to iterate through the list that contains empty strings
+        #print(index) #Prints the index value
+        if index == "": # checks if the index value is an empty string
+            list_with_empty_strings.remove(index) # Removes the empty string if found
+        else:
+            continue #If an empty string is not found, just continue
+    print("No more empty strings:") #Prints the list with no empty strings present
+    print(list_with_empty_strings)
+    return list_with_empty_strings #Returns a list without empty strings
+
+# The function construct_hunting_items() initiates the code in the Python file, first reading in another file for the rest of the functions to process
+def construct_hunting_items(file_item): #The argument file_item is used to indicate what file should be read by the Python script
+    open_target_file = open(file_item,"r")# Opens a file object that is stored in the variable open_target_file
+    output_contents = open_target_file.read()# Reads the contents of the file object open_target_file into a variable output_contents
+    open_target_file.close() # The file object open_target_file is now closed
+    parse_contents_to_container(output_contents)# Calls the function parse_contents_to_container, which begins the next steps in processing the help output that is generated.
+
+# acquiring_all_contents() function takes all the help contents and puts then in their own list through the usage of regular expressions
+def acquiring_all_contents(entirety_of_help_contents): # For the function to work, the read contents of the file containing the help information most be provided as an argument to the function
+    entirety_of_content_acquired = re.findall("(.*)",entirety_of_help_contents) #Uses the
     return entirety_of_content_acquired
 
 def parse_contents_to_container(entirety_of_help_contents):
     target_keys_obtained = re.findall("(%HELP%.+)",entirety_of_help_contents)
     print(target_keys_obtained)
     entirety_of_content = acquiring_all_contents(entirety_of_help_contents)
+    list_clean(entirety_of_content)
     tracking_directory_container = construct_a_directory_container(target_keys_obtained)
     tracking_indices_container = track_container_build(tracking_directory_container,entirety_of_content)
-
+    container_content_groupings = build_container_with_groups_of_arrays(entirety_of_content, tracking_indices_container)
+    container_for_help_info = build_help_information_containing_dict(tracking_directory_container,container_content_groupings)
 
 def construct_a_directory_container(directory_keys_array):
     tracking_directory_obtained = {}
+    counter_of_iteration = 0
     for directory_key in directory_keys_array:
-        temporary_single_item_container = {directory_key: []}
+        temporary_single_item_container = {counter_of_iteration: directory_key}
         tracking_directory_obtained.update(temporary_single_item_container)
+        counter_of_iteration += 1
     return tracking_directory_obtained
 
 def track_container_build(container_of_directories, all_of_the_relevant_content):
@@ -34,9 +54,10 @@ def track_container_build(container_of_directories, all_of_the_relevant_content)
     for index_count in all_of_the_relevant_content: # For loop that iterates thrugh the content that makes of elements of all_of_the_relevant_content
         print("See index_value for loop populating tracking_indices_container_acquired")
         print(index_count)
-        if index_count in container_of_directories: # If statement that checks whether the value of index_count is in container_of_directories
+        if index_count in container_of_directories.values(): # If statement that checks whether the value of index_count is in container_of_directories
             temporary_indices_acquired = {record_the_key:all_of_the_relevant_content.index(index_count)}
             print("Debugging by checking to make sure only directories are being caught for the track_list")
+            print(index_count)
             tracking_indices_container_acquired.update(temporary_indices_acquired)
             record_the_key += 1
     temporary_last_addition = {record_the_key: len(all_of_the_relevant_content)}
@@ -46,10 +67,38 @@ def track_container_build(container_of_directories, all_of_the_relevant_content)
 def build_container_with_groups_of_arrays(all_of_the_contents, container_of_tracking_indices):
     container_of_groupings_of_content = {}
     maximum_iteration = len(container_of_tracking_indices)
+    #counter_of_iteration = 0
+    print("Running!")
+    print(all_of_the_contents)
+    print("\n")
+    print("Checking the tracking container.")
+    print(container_of_tracking_indices)
     for index_position in range(len(container_of_tracking_indices)):
         if (index_position+2) <= maximum_iteration:
-            index_capture = container_of_tracking_indices[index_position]+1
-            
+            print("To check if all_of_the_contents is present")
+            print(all_of_the_contents)
+            first_index_capture = container_of_tracking_indices[index_position]+1
+            second_index_capture = container_of_tracking_indices[index_position+1]
+            temporary_container_for_array = {index_position:all_of_the_contents[first_index_capture:second_index_capture]}
+            container_of_groupings_of_content.update(temporary_container_for_array)
+            index_position += 1
+    print("container_of_groupings_of_content")
+    print(container_of_groupings_of_content)
+    return container_of_groupings_of_content
+
+def build_help_information_containing_dict(container_possessing_directories, container_possessing_groupings_of_content):
+    help_info_container = {}
+    max_out_iteration = len(container_possessing_directories)
+    print("Printing the directories.")
+    print(container_possessing_directories)
+    print("Printing the groupings of info.")
+    print(container_possessing_groupings_of_content)
+    for iteration in range(max_out_iteration):
+        temp_container_help_info = {container_possessing_directories[iteration]:container_possessing_groupings_of_content[iteration]}
+        help_info_container.update(temp_container_help_info)
+    print("The help container.")
+    print(help_info_container)
+
 
 construct_hunting_items("help.out")
 
