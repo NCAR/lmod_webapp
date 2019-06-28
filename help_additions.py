@@ -3,18 +3,16 @@
 # help_additions.py
 # Extracts and adds the help information to the modules.
 # Reference: https://stackoverflow.com/questions/8214932/how-to-check-if-a-value-exists-in-a-dictionary-python
+# Reference: https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
 import re #Imports the regular expression module from Python's standard library
 
 # list_clean function is utilized to remove empty strings from a list that is the argument of the function
-def list_clean(list_with_empty_strings):
-    for index in list_with_empty_strings: #For loop to iterate through the list that contains empty strings
-        #print(index) #Prints the index value
-        if index == "": # checks if the index value is an empty string
-            list_with_empty_strings.remove(index) # Removes the empty string if found
-        else:
-            continue #If an empty string is not found, just continue
+def list_clean(array_with_empty_strings):
+    array_with_empty_strings = list(filter(None,array_with_empty_strings))
     print("No more empty strings:") #Prints the list with no empty strings present
-    print(list_with_empty_strings)
+    print(array_with_empty_strings)
+    print("End...")
+    return array_with_empty_strings
 
 # The function construct_hunting_items() initiates the code in the Python file, first reading in another file for the rest of the functions to process
 def construct_hunting_items(file_item): #The argument file_item is used to indicate what file should be read by the Python script
@@ -32,8 +30,8 @@ def acquiring_all_contents(entirety_of_help_contents): # For the function to wor
 def parse_contents_to_container(entirety_of_help_contents): # The argument needed for the function is all of the content of the file after the file has been read.
     target_keys_obtained = re.findall("(%HELP%.+)",entirety_of_help_contents)# regular expression using the unique '%HELP%' string is called. Said string denotes the proper path to the respective software that the help information belongs to.
     print(target_keys_obtained) #Prints the list of directories in order to ensure that they were properly processed.
-    entirety_of_content = acquiring_all_contents(entirety_of_help_contents) #The acquiring_all_contents() function is called here, which will return the all of file's content to the variable entirety_of_content for later usage.
-    list_clean(entirety_of_content)# The list_clean() fucntion is called for the purpose of removing the empty strings that will populate the list entirety_of_content.
+    unclean_entirety_of_content = acquiring_all_contents(entirety_of_help_contents) #The acquiring_all_contents() function is called here, which will return the all of file's content to the variable entirety_of_content for later usage.
+    entirety_of_content =list_clean(unclean_entirety_of_content)# The list_clean() fucntion is called for the purpose of removing the empty strings that will populate the list entirety_of_content.
     tracking_directory_container = construct_a_directory_container(target_keys_obtained) #The costruct_a_directory_container() function is called with the argument target_keys_obtained. The construct_a_directory_container function will return the dictionary of enumerated keys and a directory value for each of those given keys.
     tracking_indices_container = track_container_build(tracking_directory_container,entirety_of_content) #
     container_content_groupings = build_container_with_groups_of_arrays(entirety_of_content, tracking_indices_container)
