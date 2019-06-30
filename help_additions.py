@@ -87,21 +87,22 @@ def build_container_with_groups_of_arrays(all_of_the_contents, container_of_trac
     print(container_of_groupings_of_content)
     return container_of_groupings_of_content # Returns the dictionary being pointed to by container_of_groupings_of_content to where the function is called it is called
 
-# 
-def build_help_information_containing_dict(container_possessing_directories, container_possessing_groupings_of_content):
-    help_info_container = {}
-    max_out_iteration = len(container_possessing_directories)
+# build_help_information_containing_dict() function is used to construct a dictionary of the help information that is relevant to the software information tree in the that will be constructed later
+def build_help_information_containing_dict(container_possessing_directories, container_possessing_groupings_of_content): #Accepts the arguments: container_possessing_directories, a dictionary that contains the paths of the relevant software in the tree software, and container_possessing_groupings_of_content, a dictionary that contains the lists of associated help content
+    help_info_container = {} # Initializes the dictionary that is stored in the variable help_info_container
+    max_out_iteration = len(container_possessing_directories)#the variable max_out_iteration stores the maximum iteration that will be reached by the for loop that will be initialized. This ensures the for loop does not exceed that of what is limited.
     print("Printing the directories.")
-    print(container_possessing_directories)
+    print(container_possessing_directories) # Prints the value of the variable container_possessing_directories for debugging putposes, mainly to see if the variable actually stored anything.
     print("Printing the groupings of info.")
-    print(container_possessing_groupings_of_content)
-    for iteration in range(max_out_iteration):
-        temp_container_help_info = {container_possessing_directories[iteration]:container_possessing_groupings_of_content[iteration]}
-        help_info_container.update(temp_container_help_info)
+    print(container_possessing_groupings_of_content)# Prints the value of container container_possessing_groupings_of_content for debugging purposes, mainly to observe if the variable actually contains anything.
+    for iteration in range(max_out_iteration): # Initializes a for loop that uses the enumerates keys of container_possessing_directories and container_possessing_groupings_of_content to pair each software path with its respective help content.
+        temp_container_help_info = {container_possessing_directories[iteration]:container_possessing_groupings_of_content[iteration]} #The temporary dictionary temp_container_help_info is utilized to temporarily store each pairing of software path and the assoctated help content.
+        help_info_container.update(temp_container_help_info) # Will update the help_info_container dictionary with contents stored in temp_container_help_info
     print("The help container.")
-    print(help_info_container)
+    print(help_info_container)# Will print out the contents of the help_info_container dict to ensure that it has contents to utilize
+    return help_info_container # Return help_info_container to where the build_help_information_containing_dict() function is called
 
 
-construct_hunting_items("help.out")
+construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out"
 
 #def add_help_information(directory_key, content_target):
