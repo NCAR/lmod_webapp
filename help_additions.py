@@ -105,14 +105,39 @@ def build_help_information_containing_dict(container_possessing_directories, con
     print("The help container.")
     print(help_info_container)# Will print out the contents of the help_info_container dict to ensure that it has contents to utilize
     print("Regex is being tested:") #Tesing purposes, to be transferred elsewhere.
-    for path in help_info_container:
-        #new_path = re.sub("%HELP% ", "",path)
-        temp_array_hold = re.split("/",path)# The temp_array_hold variable is used to store the result of the split methd using re module of Python
-        temp_array_path_holder = [edited_path + "/" for edited_path in temp_array_hold] #using list comprehension, temp_array_path_holder variable is used to append the forward slash to the end of each string element that is in the list pointed to temp_array_hold
-        print()
-        print(temp_array_path_holder) #Print statement used for debugging purposes
+    for path in help_info_container:# For loop initialized to iterate though the software path keys of the help_info_container
+        separate_the_siginificant_parts_of_the_path(path) #Calls the separate_the_significant_parts_of_the_path() function to get an array of the path_items necessary to to correctly store the contents of the module help
     return help_info_container # Return help_info_container to where the build_help_information_containing_dict() function is called
 
+# separate_the_siginificant_parts_of_the_path() fucntion is used to sparate the software path into separate pieces to work with
+def separate_the_siginificant_parts_of_the_path(the_path_to_be_partitioned):# The argument the_path_to_be_partitioned is the referring to the key of the help_info_container that has currently been added as an argument
+    temp_array_hold = re.split("/",the_path_to_be_partitioned)# The temp_array_hold variable is used to store the result of the split methd using re module of Python
+    temp_array_path_holder = [edited_path + "/" for edited_path in temp_array_hold] #using list comprehension, temp_array_path_holder variable is used to append the forward slash to the end of each string element that is in the list pointed to temp_array_hold
+    print("Observe the elements in the array.")
+    print(temp_array_path_holder) #Print statement used for debugging purposes
+    separated_path_items = transform_the_array_of_regex(temp_array_path_holder)
+    return separated_path_items # Returns the array formed by the seperated_path_items variable
+
+# transform_the_array_of_regex() is used to piece together the path_items into any easier to utilize list of elements.
+def transform_the_array_of_regex(regex_result_array):
+    separated_joined_path_items = []
+    max_limiter_of_iteration = len(regex_result_array)
+    iteration_number = 0
+    for iteration_number in range(max_limiter_of_iteration):
+        if (iteration_number+2) <= max_limiter_of_iteration:
+            if (iteration_number % 2) == 0:
+                print("Iteration number: ",iteration_number)
+                print("First string element: ", regex_result_array[iteration_number])
+                print("Second string element:", regex_result_array[iteration_number+1])
+                separated_joined_path_items.append(regex_result_array[iteration_number] + regex_result_array[iteration_number+1])
+                print("Iteration number incremented: ",iteration_number)
+    print("Observe the list that was created from joining the regex items together:")
+    print(separated_joined_path_items)
+    return separated_joined_path_items
+
+def attach_help_to_heading_container(container_possessing_help_info, container_of_simple_tree):
+    for help_path in container_possessing_help_info:
+        vessel_containing_help_path_items = separate_the_siginificant_parts_of_the_path(help_path)
 
 
 construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out"
