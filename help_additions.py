@@ -4,6 +4,7 @@
 # Extracts and adds the help information to the modules.
 # Reference: https://stackoverflow.com/questions/8214932/how-to-check-if-a-value-exists-in-a-dictionary-python
 # Reference: https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
+# Reference: https://stackoverflow.com/questions/27093319/how-to-add-a-character-to-the-end-of-every-string-in-a-list/27093357
 import re #Imports the regular expression module from Python's standard library
 
 # list_clean function is utilized to remove empty strings from a list that is the argument of the function
@@ -98,14 +99,18 @@ def build_help_information_containing_dict(container_possessing_directories, con
     print("Printing the groupings of info.")
     print(container_possessing_groupings_of_content)# Prints the value of container container_possessing_groupings_of_content for debugging purposes, mainly to observe if the variable actually contains anything.
     for iteration in range(max_out_iteration): # Initializes a for loop that uses the enumerates keys of container_possessing_directories and container_possessing_groupings_of_content to pair each software path with its respective help content.
-        temp_container_help_info = {container_possessing_directories[iteration]:container_possessing_groupings_of_content[iteration]} #The temporary dictionary temp_container_help_info is utilized to temporarily store each pairing of software path and the assoctated help content.
+        clean_directory = re.sub("%HELP% ","",container_possessing_directories[iteration]) # Cleans the "%HELP%" string from the path of the software
+        temp_container_help_info = {clean_directory:container_possessing_groupings_of_content[iteration]} #The temporary dictionary temp_container_help_info is utilized to temporarily store each pairing of software path and the assoctated help content.
         help_info_container.update(temp_container_help_info) # Will update the help_info_container dictionary with contents stored in temp_container_help_info
     print("The help container.")
     print(help_info_container)# Will print out the contents of the help_info_container dict to ensure that it has contents to utilize
-    print("Regex is being tested:")
+    print("Regex is being tested:") #Tesing purposes, to be transferred elsewhere.
     for path in help_info_container:
-        temp_array_hold = re.split(".*/.*",path)
-        print(temp_array_hold)
+        #new_path = re.sub("%HELP% ", "",path)
+        temp_array_hold = re.split("/",path)# The temp_array_hold variable is used to store the result of the split methd using re module of Python
+        temp_array_path_holder = [edited_path + "/" for edited_path in temp_array_hold] #using list comprehension, temp_array_path_holder variable is used to append the forward slash to the end of each string element that is in the list pointed to temp_array_hold
+        print()
+        print(temp_array_path_holder) #Print statement used for debugging purposes
     return help_info_container # Return help_info_container to where the build_help_information_containing_dict() function is called
 
 
