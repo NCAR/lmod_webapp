@@ -19,7 +19,7 @@ def construct_hunting_items(file_item): #The argument file_item is used to indic
     open_target_file = open(file_item,"r")# Opens a file object that is stored in the variable open_target_file
     output_contents = open_target_file.read()# Reads the contents of the file object open_target_file into a variable output_contents
     open_target_file.close() # The file object open_target_file is now closed
-    help_content_info_conteiner = parse_contents_to_container(output_contents,container_of_the_simple_tree)# Calls the function parse_contents_to_container, which begins the next steps in processing the help output that is generated.
+    help_content_info_conteiner = parse_contents_to_container(output_contents)# Calls the function parse_contents_to_container, which begins the next steps in processing the help output that is generated.
     return help_content_info_conteiner
 
 # acquiring_all_contents() function takes all the help contents and puts then in their own list through the usage of regular expressions
@@ -28,7 +28,7 @@ def acquiring_all_contents(entirety_of_help_contents): # For the function to wor
     return entirety_of_content_acquired # Returns all of the content of the file. Will be used for later functions.
 
 #parse_contents_to_container() function handles the next steps in processing the help information
-def parse_contents_to_container(entirety_of_help_contents, container_of_the_simple_tree): # The argument needed for the function is all of the content of the file after the file has been read.
+def parse_contents_to_container(entirety_of_help_contents): # The argument needed for the function is all of the content of the file after the file has been read.
     target_keys_obtained = re.findall("(%HELP%.+)",entirety_of_help_contents)# regular expression using the unique '%HELP%' string is called. Said string denotes the proper path to the respective software that the help information belongs to.
     print(target_keys_obtained) #Prints the list of directories in order to ensure that they were properly processed.
     unclean_entirety_of_content = acquiring_all_contents(entirety_of_help_contents) #The acquiring_all_contents() function is called here, which will return the all of file's content to the variable entirety_of_content for later usage.
@@ -102,7 +102,12 @@ def build_help_information_containing_dict(container_possessing_directories, con
         help_info_container.update(temp_container_help_info) # Will update the help_info_container dictionary with contents stored in temp_container_help_info
     print("The help container.")
     print(help_info_container)# Will print out the contents of the help_info_container dict to ensure that it has contents to utilize
+    print("Regex is being tested:")
+    for path in help_info_container:
+        temp_array_hold = re.split(".*/.*",path)
+        print(temp_array_hold)
     return help_info_container # Return help_info_container to where the build_help_information_containing_dict() function is called
+
 
 
 construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out"
