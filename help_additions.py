@@ -118,26 +118,37 @@ def separate_the_siginificant_parts_of_the_path(the_path_to_be_partitioned):# Th
     separated_path_items = transform_the_array_of_regex(temp_array_path_holder)
     return separated_path_items # Returns the array formed by the seperated_path_items variable
 
-# transform_the_array_of_regex() is used to piece together the path_items into any easier to utilize list of elements.
-def transform_the_array_of_regex(regex_result_array):
-    separated_joined_path_items = []
-    max_limiter_of_iteration = len(regex_result_array)
-    iteration_number = 0
-    for iteration_number in range(max_limiter_of_iteration):
-        if (iteration_number+2) <= max_limiter_of_iteration:
-            if (iteration_number % 2) == 0:
-                print("Iteration number: ",iteration_number)
-                print("First string element: ", regex_result_array[iteration_number])
-                print("Second string element:", regex_result_array[iteration_number+1])
-                separated_joined_path_items.append(regex_result_array[iteration_number] + regex_result_array[iteration_number+1])
-                print("Iteration number incremented: ",iteration_number)
-    print("Observe the list that was created from joining the regex items together:")
+# transform_the_array_of_regex() is used to piece together the path_items into an easier to utilize list of elements. Otherwise, the elements would be used where they end with the forward slash.
+def transform_the_array_of_regex(regex_result_array): # The regex_result_array argument is the list outputted from using the re.split method to generate the elements.
+    separated_joined_path_items = [] # Initializes a new list for the purpose of storing the new software path elements
+    max_limiter_of_iteration = len(regex_result_array)# Stores the limit that the upcoming for loop can meet before throuwing errors
+    iteration_number = 0 #iteration_number is a variable that stores thevalue of the current iteration
+    for iteration_number in range(max_limiter_of_iteration): #For loop initialization  using iteration_number and max_limiter_of_iteration
+        if (iteration_number+2) <= max_limiter_of_iteration:# If statement that ensures the for loop does not run in excess of the number of elements that are actually present
+            if (iteration_number % 2) == 0:# If statement used to make sure the operations within the for loop (which use two indices at a time), does not overlap in the mount of indices used
+                print("Iteration number: ",iteration_number) #Prints the iteration the for loop is on for debugging purposes
+                print("First string element: ", regex_result_array[iteration_number]) # Prints the first element to be used, to debug if the operations are working appropriately
+                print("Second string element:", regex_result_array[iteration_number+1])# Prints the second element to be used, to debug if the operations are working appropriately
+                separated_joined_path_items.append(regex_result_array[iteration_number] + regex_result_array[iteration_number+1])# Appends the first and second elements of the current iteration of the for loop together in one string
+                print("Iteration number incremented: ",iteration_number) # Prints the value of the current iteration for the purpose for the purpose of debugging
+    print("Observe the list that was created from joining the regex items together:") #Print statement that displays the path items in a much easier to manipulate state.
     print(separated_joined_path_items)
-    return separated_joined_path_items
+    return separated_joined_path_items # Returns the separated_joined_path_items to where the transform_the_array_of_regex() function is called
 
-def attach_help_to_heading_container(container_possessing_help_info, container_of_simple_tree):
+def attach_help_to_heading_container(container_possessing_help_info, target_directory_key, target_directory_array_of_content, container_of_simple_tree):
     for help_path in container_possessing_help_info:
         vessel_containing_help_path_items = separate_the_siginificant_parts_of_the_path(help_path)
+        if len(vessel_containing_help_path_items) == 1:
+            top_level_software_help_information = vessel_containing_help_path_items[0]
+            if top_level_software_help_information in container_of_simple_tree["compilers:"] and target_directory_key == "compilers:":
+                compiler_dependent_modal_content = container_possessing_help_info[top_level_software_help_information]
+                return compiler_dependent_modal_content
+            if top_level_software_help_information in container_of_simple_tree["idep:"] and target_directory_key == "idep:":
+                compiler_independent_modal_content = container_possessing_help_info[top_level_software_help_information]
+                return compiler_independent_modal_content
+        else:
+            
+
 
 
 construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out"
