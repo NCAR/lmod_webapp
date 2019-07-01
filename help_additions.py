@@ -136,7 +136,7 @@ def transform_the_array_of_regex(regex_result_array): # The regex_result_array a
     return separated_joined_path_items # Returns the separated_joined_path_items to where the transform_the_array_of_regex() function is called
 
 def attach_help_to_heading_container(container_possessing_help_info, target_directory_key, target_directory_array_of_content, container_of_simple_tree):
-    for help_path in container_possessing_help_info:
+    for help_path in container_possessing_help_info: #for loop initialized to iterate the paths to the help information (keys) in the container_possessing_help_info
         vessel_containing_help_path_items = separate_the_siginificant_parts_of_the_path(help_path)
         if len(vessel_containing_help_path_items) == 1:
             top_level_software_help_information = vessel_containing_help_path_items[0]
@@ -147,9 +147,17 @@ def attach_help_to_heading_container(container_possessing_help_info, target_dire
                 compiler_independent_modal_content = container_possessing_help_info[top_level_software_help_information]
                 return compiler_independent_modal_content
         else:
-            
+            path_matching_key_in_heading_container = turn_most_of_array_content_to_string(vessel_containing_help_path_items)
+            if path_matching_key_in_heading_container == target_directory_key:
+                software_help_information = container_possessing_help_info[help_path]
+                return software_help_information
 
 
+
+def turn_most_of_array_content_to_string(array_that_is_to_be_used_to_craft_a_string):
+    total_measure_of_the_array = len(array_that_is_to_be_used_to_craft_a_string)
+    new_key_for_locating_help_info_placement = str(total_measure_of_the_array[0:(total_measure_of_the_array-2)])
+    return new_key_for_locating_help_info_placement
 
 construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out"
 
