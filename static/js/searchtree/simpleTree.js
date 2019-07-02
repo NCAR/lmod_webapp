@@ -322,16 +322,18 @@ $.fn.simpleTree = function(options, data) {
         if(node === _selectedNode)
             _self.clearSelection(true);
         else
+        {
             _self.setSelectedNode(node);
             //Added by Thomas Johnson III
-            var modal_subject = document.getElementById("modal-outer");
+            var modal_subject = document.getElementById("modal-vessel");
             function summon_modal()
             {
               $(modal_subject).removeClass("modal-hidden");
               $("#modal-inner").html(node.modal_content);
             }
-            summon_modal()
+            summon_modal();
             //End of Thomas Johnson III's addition.
+          }
     }
 
     // ------------------------------------------------------------------------

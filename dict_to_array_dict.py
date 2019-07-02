@@ -20,9 +20,9 @@ def value_morph_dict(heading_container):# Function value_morph_dict function acc
             element = {"label": element, "value": str(element + "_value"), "modal_content": modal_help_content}# Ditionary template for the dictionaries that will be formed
             array_dict_content.append(element)# Appends the dictionary to the list arra_dict_content to keep dictionaries of all content contained and managed
         heading_container[key] = array_dict_content #Now each dictionary will store all of dicitonaries contianing the content
-    print("heading_container with array of dicts:")# Print statement for debugging purposes
-    for key, content_array in heading_container.items():#For loop and print statement to track the initial organization of each piece of content
-        print("\n",key, content_array)
+    #print("heading_container with array of dicts:")# Print statement for debugging purposes
+    #for key, content_array in heading_container.items():#For loop and print statement to track the initial organization of each piece of content
+        #print("\n",key, content_array)
     full_compiler_container_complete = search_dict_children_from_target(heading_container) #Returns the complete list-dict construct to be stored in a variable for further usage
     return full_compiler_container_complete#Returns the list-dict construct to reg_expression.py
 
@@ -34,51 +34,51 @@ def search_dict_children_from_target(heading_container): # The function argument
     for key, value_array_suspect in heading_container_clone.items():# For loop iterating through the directories and arrays of content in the heading_conteiner_clone dictionary
         for value_suspect in value_array_suspect:# For loop iterating through the individual values of the array of content dictionary
             #module_path ="/glade/u/apps/ch/modulefiles/default/" #The root path the first level of subdirectories
-            print("Sanity checking...")
+            #print("Sanity checking...")
             check_label_bool, parent_heading = check_label_in_headings(value_suspect,array_of_headings)# Returns a boolean and a directory that would likely contain the children of a given content dictionary
-            print("Sanity checking value_suspect...")
-            print(value_suspect)
-            print("Printing these hadings for sanity purposes:")
-            print(array_of_headings)
-            print("\n\n This is the check label and parent heading:")
-            print(check_label_bool, parent_heading)
+            #print("Sanity checking value_suspect...")
+            #print(value_suspect)
+            #print("Printing these hadings for sanity purposes:")
+            #print(array_of_headings)
+            #print("\n\n This is the check label and parent heading:")
+            #print(check_label_bool, parent_heading)
             if check_label_bool == True and parent_heading != None: #Checks to make sure theat the boolean is True and a value for parent_heading is provided, otherwise no children were found
                 location_of_value_suspect = value_array_suspect.index(value_suspect) #Tracks the content dictionary in the array that contains them
                 value_suspect = move_children(heading_container,array_of_headings, parent_heading, value_suspect, location_of_value_suspect)#Function that moves content dictionary array that has the children of said content dictionary, takes the overall structure, the headings that are remaining to utilize, the heading of the children, the content dictionary that has children, and the location of the content dictionary in the array of content dictionaries
                 print_to_check_and_popping_heading(heading_container, value_suspect,parent_heading)
             else:
                 continue
-        print("\nThe resulting heirarchical array-dict object is here:") #Further debugging (Track the rearrangement of list-dict construct)
-        print(key,value_array_suspect)
-        print("Totality of it all in session:") #Prints the entire heading_container_clone which displays all keys (direcories) and arrays of content dictionaries
-        print(heading_container_clone)
-    print("Totality of it all:") #Prints the entire heading_container_clone which displays all keys (direcories) and arrays of content dictionaries
-    print(heading_container_clone)
+        #print("\nThe resulting heirarchical array-dict object is here:") #Further debugging (Track the rearrangement of list-dict construct)
+        #print(key,value_array_suspect)
+        #print("Totality of it all in session:") #Prints the entire heading_container_clone which displays all keys (direcories) and arrays of content dictionaries
+        #print(heading_container_clone)
+    #print("Totality of it all:") #Prints the entire heading_container_clone which displays all keys (direcories) and arrays of content dictionaries
+    #print(heading_container_clone)
     full_compiler_container = elminate_superfluous_keys(heading_container_clone,array_of_headings, clone_of_array_of_headings) #Returns the heading container with extra directories eliminated to get rid of the clutter of keys that have already been rearranged in the list-dict hierarchy
     return full_compiler_container#Returns a cleaned up list-dict with no extra keys
 
 def print_to_check_and_popping_heading(heading_container,value_suspect_dictionary,parent_heading):
-    print("\n\nPrinting the value_suspect here:") #Print statement that will be used for debugging purposes (tracking the current content dictionary being examined)
-    print (value_suspect_dictionary)
-    print("\n\nThe full heading_container is printed:")#Print statement that will be used for debugging purposes (tracking the heading_container as it goes through changes)
-    print(heading_container)
-    print("The missing heading:")#Print statement that will be used for debugging purposes (tracking the directories that remain to be utilized for the purpose of tracking the children of dictionaries, which one has been removed)
+    #print("\n\nPrinting the value_suspect here:") #Print statement that will be used for debugging purposes (tracking the current content dictionary being examined)
+    #print (value_suspect_dictionary)
+    #print("\n\nThe full heading_container is printed:")#Print statement that will be used for debugging purposes (tracking the heading_container as it goes through changes)
+    #print(heading_container)
+    #print("The missing heading:")#Print statement that will be used for debugging purposes (tracking the directories that remain to be utilized for the purpose of tracking the children of dictionaries, which one has been removed)
     missing_heading = heading_container.pop(parent_heading)#Removes a directory from the keys of the heading_container
-    print(missing_heading)
+    #print(missing_heading)
 
 #A function responsible for retitling the top level of the list-dict hierarchy
 def new_first_level_directories(target_partial_heading_container): #Accepts the dictionaries that will contain the top level directories of the list-dict construct as an argument
     module_path ="/glade/u/apps/ch/modulefiles/default/" # module path for string manipulation
     if target_partial_heading_container["label"] == "compilers:": # If statement to catch the compilers directory, then rename it
-        target_partial_heading_container["label"] = "Compilers" #Renames said compilers directory
+        target_partial_heading_container["label"] = "Compiler Dependent" #Renames said compilers directory
     elif target_partial_heading_container["label"] == "idep:": # If statement to catch the compiler independent software dirctory, then rename it
         target_partial_heading_container["label"] = "Compiler Independent" # Renames said compilers independent directory
     else:
         None #None
 
 def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of_array_of_headings):# eliminate_superfluous_keys is a function taking the arguments of heading_container_clone,array_of_headings, and clone_of_array_of_headings to get rid of excess directories in the top level of keys in heading_container_clone
-    print("The array of headings:")#Prints the directories
-    print(array_of_headings)
+    #print("The array of headings:")#Prints the directories
+    #print(array_of_headings)
     for heading in array_of_headings:#For loop to remove any directories matching those in clone_of_array_of_headings to allow clone_of_array_of_headings to be used as a filter for heading_container_clone
         if heading in clone_of_array_of_headings:# Check which directories are shared between both list constructs, and those directories that are shared are are removed from clone_of_array_of_headings
             clone_of_array_of_headings.remove(heading)# Removal of the directory from clone_of_array_of_headings
@@ -86,7 +86,7 @@ def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of
             continue #Will continue the for loop when the if statement is not satisfied
     for heading in clone_of_array_of_headings: #For loop using clone_of_array_of_headings to remove the keys that have be rearranged from the first level of the list-dict construct
         heading_container_clone.pop(heading) # The directory is removed from the top level of the heading_conteiner_clone list-dict
-    print("Heading container without superfluous keys present:")
+    #print("Heading container without superfluous keys present:")
     full_compiler_array = [] #A new list full_compiler_array is used to wrap around the the heading_container_clone to complete list-dict construct
     for key in heading_container_clone:#For loop initialized to reconstruct first level of list-dict (Previously the first level was not a list-dict construct nor did it consist of the keys: label, value, children)
         full_compiler_container = {} #The full_compiler_container dictionary is initialized to make a sepaate dictionary for each directory at the first level of the list-dict
@@ -95,41 +95,41 @@ def elminate_superfluous_keys(heading_container_clone,array_of_headings,clone_of
         full_compiler_container["children"] = heading_container_clone[key] #The children key is assigned the list-dict construct that is currently held by the heading_container_clone's directory (key)
         new_first_level_directories(full_compiler_container)
         full_compiler_array.append(full_compiler_container) # Now each dictionary holding a directory and its content is appended to the full_compiler_array, building a list-dict construct from first level to last level
-    print("full_compiler_container is printed here:")
-    print(full_compiler_array)#Printing out the full_compiler_array for debugging purposes
+    #print("full_compiler_container is printed here:")
+    #print(full_compiler_array)#Printing out the full_compiler_array for debugging purposes
     return full_compiler_array #Returns the full_compiler_array as a value to wherever the eliminate_superfluous_keys() function was called
 
 #The move children function handles rearranging the list-dict construct from a one level dictionary to a multi-level list-dict construct
 def move_children(heading_container,array_of_headings, parent_heading, item_suspect, location_of_value_suspect):#The arguments are the heading_container containing the relevant directories and their list of contents, An array_of_headings (the directories) to keep track of which directories hav ebeen moved, the parent_heading which is the directory or subdirectory of the current directory that shall be moved to be the "children" of, item_suspect which is the dictionary that is currently in question, and location_of_value_suspect which the location within a list of the item_suspect
-    print("Printing item_suspect here:")
-    print(item_suspect) #Prints the item_suspect for the purposes of debugging
+    #print("Printing item_suspect here:")
+    #print(item_suspect) #Prints the item_suspect for the purposes of debugging
     item_suspect["children"] = heading_container[parent_heading] #Assigns the directory with the value of parent_heading as the "children" of the item_suspect dictionary
-    print("Printing item_suspect with children here:")
-    print(item_suspect)#Prints the item_suspect for the purposes of debugging
-    print("\n", heading_container)#Prints the heading_container for the purposes of debugging
-    print("\nParent Heading here:")
-    print(parent_heading)#Prints the parent_heading for the purposes of debugging
+    #print("Printing item_suspect with children here:")
+    #print(item_suspect)#Prints the item_suspect for the purposes of debugging
+    #print("\n", heading_container)#Prints the heading_container for the purposes of debugging
+    #print("\nParent Heading here:")
+    #print(parent_heading)#Prints the parent_heading for the purposes of debugging
     array_of_headings.remove(parent_heading) #Removes the parent_heading that it cannot be utilized again and cause an unending recursive loop
     search_dict_descendants(heading_container,array_of_headings, item_suspect["children"], item_suspect) #Calls search_dict_descendants to ensure that the children of the current directory do not have children themselves
     return item_suspect #Returns item_suspect as a value to were the move_children() function is called
 
 #search_dict_descendants is a function  that is a variation of search_dict_children_from_target() function for searching for the children of directories that deeper than the second level
 def search_dict_descendants(heading_container,array_of_headings,item_with_possible_descendants, item_suspect_parent):# Accepts the arguments heading_container (a dictionary of the directories with associated content arrays), a list of the headings to track which directories have been sorted, item_with_possible_descendants is a list containing the associated content of an dictionary of a directory, item_suspect_parent which is the parent dictionary of item_with_possible_descendants
-    print("Item with possible descendants:")
-    print(item_with_possible_descendants)#Print the array that is being searched for debugging purposes
+    #print("Item with possible descendants:")
+    #print(item_with_possible_descendants)#Print the array that is being searched for debugging purposes
     for content_container in item_with_possible_descendants:
-        print("\nThis point prints content_container and array_of_headings:")
-        print(content_container,array_of_headings) # Print the dictionary that is obtained from iterating item_with_possible_descendants and the list of directories for debugging purposes
+        #print("\nThis point prints content_container and array_of_headings:")
+        #print(content_container,array_of_headings) # Print the dictionary that is obtained from iterating item_with_possible_descendants and the list of directories for debugging purposes
         parent_sub_heading = check_lineage_label_in_headings(content_container, array_of_headings,item_suspect_parent) #Check the directory to which the current dictionary belongs
         if parent_sub_heading != None: #Will only run the next section if a value other than None is returned.
             location_of_content_container = item_with_possible_descendants.index(content_container) # The location of the dictionary that will be assigned children
             content_container = move_children(heading_container,array_of_headings, parent_sub_heading, content_container, location_of_content_container)# Adds the subdirectory to the children key of the dictionary as the value of the children key
-            print("Checking to make sure...")
-            print("\nI am printing content_container for debugging purposes:")
-            print(content_container)
-            print("The missing heading:")
+            #print("Checking to make sure...")
+            #print("\nI am printing content_container for debugging purposes:")
+            #print(content_container)
+            #print("The missing heading:")
             missing_heading = heading_container.pop(parent_sub_heading) #Identify the key that has been removed from the top level of the head_container construct
-            print(missing_heading)
+            #print(missing_heading)
         else:
             continue #Continues the for loop when the if statement is not satisfied
 
@@ -150,7 +150,7 @@ def check_lineage_label_in_headings(target_item_content, array_of_headings, pare
         if target_item_content["label"] in target_heading:#Continues if the current dictionary's label value is a substring of the current heading
             if parent_of_target_item_content["label"] in target_heading:#Continues if the parent dictionary's label value is a substring of the current heading
                 located_target_heading = target_heading#located_target_heading points to the value of target_heading
-                print("\nPrint the located_target_heading: ",located_target_heading) #Prints the located_target_heading for debugging purposes
+                #print("\nPrint the located_target_heading: ",located_target_heading) #Prints the located_target_heading for debugging purposes
                 return located_target_heading #returns the located_target_heading value to where the check_lineage_label_in_headings() function is called
                 break
         else:
@@ -161,16 +161,16 @@ def check_lineage_label_in_headings(target_item_content, array_of_headings, pare
 def sub_levels_attainment(array_containing_headings):# Takes an argument of a list with all the headings to extract the headings that will be at the lower levels.
     regular_expression_instance = re.compile(".*/.*/.*/.*")# Regular expression to extract the headings/directories of the sub-levels
     array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings))# Puts the regular expression results and compiles them into a list to contain the sub-level headings/directories
-    print("These are the sub-levels:") # Check that the sub-levels are being printed.
-    print(array_containing_reg_exp)
+    #print("These are the sub-levels:") # Check that the sub-levels are being printed.
+    #print(array_containing_reg_exp)
     return array_containing_reg_exp# Returns the list that holds the results of the regular expression parsing through
 
 # The first_level_obtainment() function can be used to obtain the first level of directories/headings that will be displayed by the list-dictionary being processed for the simpleTree
 def first_level_obtainment(array_containing_headings): # The argument that is used is a list of all the headings
     regular_expression_instance = re.compile("[A-z]+:") # The variable regular_expression_instance stores the trgular expression that will be used
     array_containing_reg_exp = list(filter(regular_expression_instance.match,array_containing_headings)) # constructs a list with all the instances that match the regular expression from the list of directories/headings as elements
-    print("These are the first-level:")# Prints the first level to make sure the code is working properly.
-    print(array_containing_reg_exp)
+    #print("These are the first-level:")# Prints the first level to make sure the code is working properly.
+    #print(array_containing_reg_exp)
     return array_containing_reg_exp # returns the list that contains the directories/headings that have satisfied the regular expression filter
 
 # top_levels_attainment() function gets the first dew headings/directories levels that will be constructed by the list-dict processing.
@@ -180,6 +180,6 @@ def top_levels_attainment(array_containing_headings):#The argument for the funct
     for heading in array_containing_headings:# for loop for iterating through the list with all the headings/directories
         if heading not in array_of_sub_levels:# Any instance by which the heading/directory is not within the list containing the sub-level headings/directories
             array_of_top_levels.append(heading) #The instances that satisfy the if statement are appended to the list that was previously intialized within this function
-    print("An array of the top levels")# Prints the top levels of the headings/directories to check the eleements of the list
-    print(array_of_top_levels)
+    #print("An array of the top levels")# Prints the top levels of the headings/directories to check the eleements of the list
+    #print(array_of_top_levels)
     return array_of_top_levels # Returns the list of the top levels of the list-dictionary construct

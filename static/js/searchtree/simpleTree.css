@@ -83,12 +83,15 @@ div.simpleTree-mainContainer.countHidden span.simpleTree-childCountBadge {
 }
 /*
 Added by Thomas Johnson III
+Reference https://www.w3schools.com/css/css_border.asp
 */
-.modal-vessel
+.modal-external
 {
   padding: 5px;
-  border-style: black 5px solid;
-  border-radius : 5px;
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  border-radius: 5px;
 }
 .modal-content
 {
@@ -97,7 +100,7 @@ Added by Thomas Johnson III
 }
 .modal-hidden
 {
-  display: none
+  display: none;
 }
 /*
 End of Thomas Johnson III's additions
