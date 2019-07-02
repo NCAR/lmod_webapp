@@ -5,6 +5,7 @@
 # Reference: https://stackoverflow.com/questions/8214932/how-to-check-if-a-value-exists-in-a-dictionary-python
 # Reference: https://www.geeksforgeeks.org/python-remove-empty-strings-from-list-of-strings/
 # Reference: https://stackoverflow.com/questions/27093319/how-to-add-a-character-to-the-end-of-every-string-in-a-list/27093357
+# Reference: https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string
 import re #Imports the regular expression module from Python's standard library
 
 # list_clean function is utilized to remove empty strings from a list that is the argument of the function
@@ -112,7 +113,12 @@ def build_help_information_containing_dict(container_possessing_directories, con
 # separate_the_siginificant_parts_of_the_path() fucntion is used to sparate the software path into separate pieces to work with
 def separate_the_siginificant_parts_of_the_path(the_path_to_be_partitioned):# The argument the_path_to_be_partitioned is the referring to the key of the help_info_container that has currently been added as an argument
     temp_array_hold = re.split("/",the_path_to_be_partitioned)# The temp_array_hold variable is used to store the result of the split methd using re module of Python
+    measure_of_arr = len(temp_array_hold)
     temp_array_path_holder = [edited_path + "/" for edited_path in temp_array_hold] #using list comprehension, temp_array_path_holder variable is used to append the forward slash to the end of each string element that is in the list pointed to temp_array_hold
+    current_end_index = temp_array_path_holder[measure_of_arr-1]
+    new_replacement_index = current_end_index.replace("/","")
+    temp_array_path_holder.remove(current_end_index)
+    temp_array_path_holder.append(new_replacement_index)
     print("Observe the elements in the array.")
     print(temp_array_path_holder) #Print statement used for debugging purposes
     separated_path_items = transform_the_array_of_regex(temp_array_path_holder)
@@ -135,15 +141,22 @@ def transform_the_array_of_regex(regex_result_array): # The regex_result_array a
     print(separated_joined_path_items)
     return separated_joined_path_items # Returns the separated_joined_path_items to where the transform_the_array_of_regex() function is called
 
-def attach_help_to_heading_container(container_possessing_help_info, target_directory_key, target_directory_array_of_content, container_of_simple_tree):
+def attach_help_to_heading_container(container_possessing_help_info, target_directory_key, target_directory_array_of_content, container_of_simple_tree, target_software):
     for help_path in container_possessing_help_info: #for loop initialized to iterate the paths to the help information (keys) in the container_possessing_help_info
         vessel_containing_help_path_items = separate_the_siginificant_parts_of_the_path(help_path)
+        print("Printing the help_path:")
+        print(vessel_containing_help_path_items)
         if len(vessel_containing_help_path_items) == 1:
             top_level_software_help_information = vessel_containing_help_path_items[0]
-            if top_level_software_help_information in container_of_simple_tree["compilers:"] and target_directory_key == "compilers:":
+            print("Is this running?")
+            print(vessel_containing_help_path_items[0])
+            print("What array are we looking at?")
+            print(container_of_simple_tree["compilers:"])
+            if top_level_software_help_information in container_of_simple_tree["compilers:"] and top_level_software_help_information == target_software:
                 compiler_dependent_modal_content = container_possessing_help_info[top_level_software_help_information]
+                print("Am I running?")
                 return compiler_dependent_modal_content
-            if top_level_software_help_information in container_of_simple_tree["idep:"] and target_directory_key == "idep:":
+            if top_level_software_help_information in container_of_simple_tree["idep:"] and top_level_software_help_information == target_software:
                 compiler_independent_modal_content = container_possessing_help_info[top_level_software_help_information]
                 return compiler_independent_modal_content
         else:
@@ -156,8 +169,11 @@ def attach_help_to_heading_container(container_possessing_help_info, target_dire
 
 def turn_most_of_array_content_to_string(array_that_is_to_be_used_to_craft_a_string):
     total_measure_of_the_array = len(array_that_is_to_be_used_to_craft_a_string)
-    new_key_for_locating_help_info_placement = str(total_measure_of_the_array[0:(total_measure_of_the_array-2)])
-    return new_key_for_locating_help_info_placement
+    new_key_for_locating_help_info_placement = "".join(array_that_is_to_be_used_to_craft_a_string[0:(total_measure_of_the_array-1)])
+    retrieved_string = str(new_key_for_locating_help_info_placement)
+    print("The string that will be used to locate the correct software for the help:")
+    print(retrieved_string)
+    return retrieved_string
 
 construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out"
 

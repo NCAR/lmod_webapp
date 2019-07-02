@@ -10,11 +10,14 @@
 
 import re # Imports the regular expression module of Python
 import copy #Imports the copy module of Python for the purpose of making deep copies to maniulate dictionaries in this code
+import help_additions #Imports the help_addtions.py code to be utilized within the dict_to_array_dict.py Python code
 def value_morph_dict(heading_container):# Function value_morph_dict function accepts a dictionary argument. Executes the remainder of the code in this Python file.
+    help_info_container = help_additions.construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out" with the result to be stored in the help_info_container variable
     for key, content_array in heading_container.items():# Iterates through the dictionary
         array_dict_content = [] #Initializes an outer list to wrap around the dictionaries that will be formed
         for element in content_array:# For every indicidual piece of content, a dictionary eill be formed with keys and values
-            element = {"label": element, "value": str(element + "_value")}# Ditionary template for the dictionaries that will be formed
+            modal_help_content = help_additions.attach_help_to_heading_container(help_info_container, key, content_array, heading_container, element)
+            element = {"label": element, "value": str(element + "_value"), "modal_content": modal_help_content}# Ditionary template for the dictionaries that will be formed
             array_dict_content.append(element)# Appends the dictionary to the list arra_dict_content to keep dictionaries of all content contained and managed
         heading_container[key] = array_dict_content #Now each dictionary will store all of dicitonaries contianing the content
     print("heading_container with array of dicts:")# Print statement for debugging purposes
