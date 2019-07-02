@@ -87,6 +87,7 @@ Reference https://www.w3schools.com/css/css_border.asp
 */
 .modal-external
 {
+  background-color: #DCDCDC;
   padding: 5px;
   border-style: solid;
   border-color: black;
@@ -97,6 +98,7 @@ Reference https://www.w3schools.com/css/css_border.asp
 {
   color: black;
   font-size: 15px;
+  background-color: #DCDCDC;
 }
 .modal-hidden
 {
