@@ -97,8 +97,9 @@ Reference https://www.w3schools.com/css/css_border.asp
 .modal-content
 {
   color: black;
-  font-size: 15px;
+  font-size: 16px;
   background-color: #DCDCDC;
+  padding: 5px;
 }
 .modal-hidden
 {

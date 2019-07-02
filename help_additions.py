@@ -8,6 +8,7 @@
 # Reference: https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string
 # Reference: https://stackoverflow.com/questions/41752946/replacing-a-character-from-a-certain-index
 # Reference: https://stackoverflow.com/questions/9483979/is-there-a-difference-between-continue-and-pass-in-a-for-loop-in-python
+# Reference: https://stackoverflow.com/questions/27083445/how-to-join-two-string-with-a-new-line-between-them/27083457
 
 import re #Imports the regular expression module from Python's standard library
 
@@ -87,7 +88,8 @@ def build_container_with_groups_of_arrays(all_of_the_contents, container_of_trac
             #print(all_of_the_contents)# Prints all_of_the_contents, used for debugging purposes.
             first_index_capture = container_of_tracking_indices[index_position]+1 # The beginning index of the new array is stored in first_index_capture
             second_index_capture = container_of_tracking_indices[index_position+1] # The ending index of the new array is stored in second_index_capture
-            temporary_container_for_array = {index_position:all_of_the_contents[first_index_capture:second_index_capture]}# The enumerated key is provided by index_position and the array value is the list comprehension of first_index_capture and second_index_capture of the list all_of_the_contents and srored in the ewly initialized dictionary
+            content_from_array_to_string = turn_all_of_array_content_to_string(all_of_the_contents[first_index_capture:second_index_capture])
+            temporary_container_for_array = {index_position:content_from_array_to_string}# The enumerated key is provided by index_position and the array value is the list comprehension of first_index_capture and second_index_capture of the list all_of_the_contents and srored in the ewly initialized dictionary
             container_of_groupings_of_content.update(temporary_container_for_array) # The dictionary container_of_groupings_of_content is updated by the dictionary temporary_container_for_array to store an enumerated key and array of help content values
             index_position += 1 # Increments the index_postion by 1 as a pair of indices is being utilized in the for loop at any given time.
     #print("container_of_groupings_of_content")#Prints the contents of the container_of_groupings_of_content dictionary to validate key-values were stored correctly.
@@ -210,6 +212,12 @@ def turn_most_of_array_content_to_string(array_that_is_to_be_used_to_craft_a_str
     #print("The string that will be used to locate the correct software for the help:")
     #print(retrieved_string)
     return retrieved_string
+
+def turn_all_of_array_content_to_string(a_few_strings_that_are_currently_in_a_list):
+    complete_measure_of_the_array = len(a_few_strings_that_are_currently_in_a_list)
+    new_content_from_the_array = "\n".join(a_few_strings_that_are_currently_in_a_list[0:complete_measure_of_the_array])
+    received_content_string = str(new_content_from_the_array)
+    return received_content_string
 
 #construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out"
 

@@ -22,9 +22,13 @@ genlist.sh (collects all directory and software components. Provided by Brian Va
 
 This Flask Application has six different python files:
 
+dict_to_array_dict.py (The Python file is used to generate hierarchical list-dict construct using a pre-made dictionary containing headings/directories as keys and lists of associated content as values. Necessary for the current version of the code to be executed.)
+
 dict_to_json.py (Manages converting the final output of reg_expression.py to a json to send to the Javascript of the webpage.)
 
 document.py (Holds the configuration and url patterns for the FLASK application. Currently, only two url patterns of note are stored in document.py. The first is "/" and the second is "/json/". The Flask app is ran using commands specified in comments of document.py. Running this python file with the proper commands will run the other necessary files that are imported.)
+
+help_additions.py (This code is called in the dict_to_array.py Python file to handle module help information. The module help information is parsed, filtered, manipulated and then inserted into the container of the simpletree to be displayed in a modal.)
 
 lists_to_dict_construct.py (Contains the functions necessary to convert the lists containing the content from the target file a hierarchical dictionary that stores sub dictionaries or respective children. Note: Utilizes recursive functions for this process. If altered, please verify the functions are not recursively storing the same dictionary entries over and over.)
 
@@ -33,8 +37,6 @@ reg_expression.py (Where the bulk of text processing and organization of content
 test_js_dict.py (Test code to see what structure could be implemented and accepted as json for the simpletree on the frontend. Can be used for practice runs.)
 
 text_cleaner.py (Used at one point to parse the text. Currently unneeded.)
-
-dict_to_array_dict.py (The Python file is used to generate hierarchical list-dict construct using a pre-made dictionary containing headings/directories as keys and lists of associated content as values. Necessary for the current version of the code to be executed.)
 
 There are currently three html files present:
 

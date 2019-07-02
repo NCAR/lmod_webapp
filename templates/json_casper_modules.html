@@ -4,18 +4,20 @@
 <!-- JavaScript written with the assistance of W3 Schools -->
 <!--Simpletree jQuery plugin Michael Derntl-->
 <head>
- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/viewmodules.css') }}">
  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='js/searchtree/simpleTree.css') }}">
  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <!-- <script type = "text/javascript" src = "{{ url_for('static',filename='js/searchtree/jquery.slim.min.js') }}"></script>-->
 <script type = "text/javascript" src = "{{ url_for('static',filename='js/searchtree/simpleTree.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/viewmodules.css') }}">
 </head>
 <title>Displays Module Information via JavaScript and JQuery Plugin</title>
 <body class="color_body padding_body">
 <h1>Information on Casper Modules</h1>
 <p>Relevant compilers and modules appear below.</p>
  <p>Search for some software in the search bar below.</p>
-<input type="search" id="test">
+ <form>
+<input type="search" class="search-design" id="test">
+</form>
 <div class ="outer-module-block">
   <h2>Module Information</h2>
   <div class="inner-module-block">
