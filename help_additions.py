@@ -197,12 +197,11 @@ def character_replacement_with_colon(inputted_string_for_character_replacement):
 #The function turn_most_of_array_content_to_string() is used to turn most of a list to string, so that the resulting string can be used to match software directory paths used as keys in the simple_tree dictionary
 def turn_most_of_array_content_to_string(array_that_is_to_be_used_to_craft_a_string):# The argument array_that_is_to_be_used_to_craft_a_string is a list submitted to output a string that can be used to partially match the directory path keys of the simpletree dictionary
     total_measure_of_the_array = len(array_that_is_to_be_used_to_craft_a_string) #total_measure_of_the_array is a variable storing the size of array_that_is_to_be_used_to_craft_a_string for making sure not all string elements of the list are utilized to craft the string
-    new_key_for_locating_help_info_placement = "".join(array_that_is_to_be_used_to_craft_a_string[0:(total_measure_of_the_array-1)])
-    retrieved_string = str(new_key_for_locating_help_info_placement)
-    return retrieved_string
+    new_key_for_locating_help_info_placement = "".join(array_that_is_to_be_used_to_craft_a_string[0:(total_measure_of_the_array-1)])# Utilizing list comprehension to combine all but the last index of array_that_is_to_be_used_to_craft_a_string into one cohesive string
+    return new_key_for_locating_help_info_placement #returns new_key_for_locating_help_info_placement to wherever the turn_most_of_array_content_to_string() function is called
 
-def turn_all_of_array_content_to_string(a_few_strings_that_are_currently_in_a_list):
-    complete_measure_of_the_array = len(a_few_strings_that_are_currently_in_a_list)
-    new_content_from_the_array = "\n".join(a_few_strings_that_are_currently_in_a_list[0:complete_measure_of_the_array])
-    received_content_string = str(new_content_from_the_array)
-    return received_content_string
+# The function turn turn_all_of_array_content_to_string() is used to convert all all of the contents of a list to a single, cohesive string
+def turn_all_of_array_content_to_string(a_few_strings_that_are_currently_in_a_list): #The argument a_few_strings_that_are_currently_in_a_list is a variable that holds a list to be completely converted to a string
+    complete_measure_of_the_array = len(a_few_strings_that_are_currently_in_a_list) #complete_measure_of_the_array is a variable that will store the full size of the of list
+    new_content_from_the_array = "\n".join(a_few_strings_that_are_currently_in_a_list[0:complete_measure_of_the_array])# Constructs a string using list comprehension (all elements of the list are used to construct said string)
+    return received_content_string #new_content_from_the_array is returned to where the turn_all_of_array_content_to_string() function is called
