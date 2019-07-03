@@ -28,7 +28,7 @@ dict_to_json.py (Manages converting the final output of reg_expression.py to a j
 
 document.py (Holds the configuration and url patterns for the FLASK application. Currently, only two url patterns of note are stored in document.py. The first is "/" and the second is "/json/". The Flask app is ran using commands specified in comments of document.py. Running this python file with the proper commands will run the other necessary files that are imported.)
 
-help_additions.py (This code is called in the dict_to_array.py Python file to handle module help information. The module help information is parsed, filtered, manipulated and then inserted into the container of the simpletree to be displayed in a modal.)
+help_additions.py (This code is called in the dict_to_array.py Python file to handle module help information. The module help information is parsed, filtered, manipulated and then inserted into the container of the simpletree to be displayed in a modal. The functions are heavily depndent on one another within this file.)
 
 lists_to_dict_construct.py (Contains the functions necessary to convert the lists containing the content from the target file a hierarchical dictionary that stores sub dictionaries or respective children. Note: Utilizes recursive functions for this process. If altered, please verify the functions are not recursively storing the same dictionary entries over and over.)
 
@@ -42,7 +42,9 @@ There are currently three html files present:
 
 view_modules.html (The original HTML file utilized for testing purposes. view_modules.html is the default route for the Flask application.)
 
-json_modules.html (The second HTML file developed. To get to this page json/ must be added to the base URL.)
+json_modules.html (The second HTML file developed. To get to this page json/ must be added to the base URL. Cheyenne is embedded in HTML. The webpage utilizes JavaScript.)
+
+json_casper_modules.html (Third HTML file that is reserved primarily for displaying the Casper software information. Casper is embedded in the HTML tags. The webpage utilizes JavaScript.)
 
 test.html (Unneeded, used for initial experimentation with JavaScript)
 
