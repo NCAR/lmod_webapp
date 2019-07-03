@@ -92,7 +92,7 @@ To see a relatively organized print out of the list-dict construct call the recu
 
 If the simpletree is not properly displaying, be sure to check that the correctly formatted JSON object is being transferred to the JavaScript via Flask and Jinja2. The structure be alternating lists to dictionaries, to more lists to dictionaries. Also, the keys should be label, value and children. If the JSON removed from this structure by any means, the simpletree can be affected and not appear. Ususally checking the console errors in a browser such as Google Chrome can help find the issue.
 
-Ensure that a JSON is being transferred to JavaScript. Otherwise, there can be serious errors that emerge as a result of such not being implemented.
+Ensure that a JSON is being transferred to JavaScript. Otherwise, there can be serious errors that emerge as a result of such not being implemented. JavaScript is implemented heavily an required for this web application.
 
 Ensure that the file that is being read has no extra punctuation such as colons, otherwise such punctuation will have to be removed edited out before the Python scripts can successfully run.
 

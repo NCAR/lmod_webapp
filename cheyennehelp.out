@@ -1,0 +1,4104 @@
+%HELP% gnu/7.4.0
+
+------------------------------------------------ Module Specific Help for "gnu/7.4.0" -------------------------------------------------
+This module loads the GNU 7.4.0 compilers:
+ Fortran: gfortran
+ C: gcc
+ C++: g++
+For more information on the individual compilers and their suboptions,
+refer to the man pages for the individual compilers. Also see
+http://gcc.gnu.org for details.
+
+Software website - https://gcc.gnu.org/
+
+Built on Thu Jun 27 19:50:35 MDT 2019
+
+
+%HELP% gnu/8.3.0
+
+------------------------------------------------ Module Specific Help for "gnu/8.3.0" -------------------------------------------------
+This module loads the GNU 8.3.0 compilers:
+ Fortran: gfortran
+ C: gcc
+ C++: g++
+For more information on the individual compilers and their suboptions,
+refer to the man pages for the individual compilers. Also see
+http://gcc.gnu.org for details.
+
+Software website - https://gcc.gnu.org/
+
+Built on Thu Jun 27 19:53:54 MDT 2019
+
+
+%HELP% gnu/9.1.0
+
+------------------------------------------------ Module Specific Help for "gnu/9.1.0" -------------------------------------------------
+This module loads the GNU 9.1.0 compilers:
+ Fortran: gfortran
+ C: gcc
+ C++: g++
+For more information on the individual compilers and their suboptions,
+refer to the man pages for the individual compilers. Also see
+http://gcc.gnu.org for details.
+
+Software website - https://gcc.gnu.org/
+
+Built on Thu Jun 27 19:51:33 MDT 2019
+
+
+%HELP% intel/17.0.1
+
+----------------------------------------------- Module Specific Help for "intel/17.0.1" -----------------------------------------------
+This module loads the Intel Compilers:
+  C:        icc
+  C++:      icpc
+  Fortran:  ifort
+For more information on the individual compilers and their suboptions
+refer to the man page for the individual compilers.
+
+Website: https://software.intel.com/en-us/parallel-studio-xe
+
+
+%HELP% intel/18.0.5
+
+----------------------------------------------- Module Specific Help for "intel/18.0.5" -----------------------------------------------
+This module loads the Intel Compilers:
+  C:        icc
+  C++:      icpc
+  Fortran:  ifort
+For more information on the individual compilers and their suboptions
+refer to the man page for the individual compilers.
+
+Website: https://software.intel.com/en-us/parallel-studio-xe
+
+
+%HELP% intel/19.0.2
+
+----------------------------------------------- Module Specific Help for "intel/19.0.2" -----------------------------------------------
+This module loads the Intel Compilers:
+  C:        icc
+  C++:      icpc
+  Fortran:  ifort
+For more information on the individual compilers and their suboptions
+refer to the man page for the individual compilers.
+
+Website: https://software.intel.com/en-us/parallel-studio-xe
+
+
+%HELP% pgi/19.3
+
+------------------------------------------------- Module Specific Help for "pgi/19.3" -------------------------------------------------
+PGI Fortran, C and C++ compilers and tools for scientists and
+engineers. New features include V100 Tensor Core support, full C++17
+language support, OpenACC printf(), PCAST directives, LLVM 7.0, Turing
+support, and more.
+
+Software website - https://www.pgroup.com/
+
+Built on Thu Jun 27 19:25:23 MDT 2019
+Modules used:
+
+
+
+%HELP% arm-forge/19.1
+
+---------------------------------------------- Module Specific Help for "arm-forge/19.1" ----------------------------------------------
+Arm Forge is the cross-platform tool suite for software development - with
+everything needed to debug, profile and optimize C, C++ and Fortran/F90
+applications on Linux for high performance
+
+Software website - https://www.arm.com/products/development-tools/hpc-tools/cross-platform/forge
+
+Built on Thu Jun 27 23:13:31 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/19.0.2  
+   impi/2019.2.187
+
+
+%HELP% arm-reports/19.1
+
+--------------------------------------------- Module Specific Help for "arm-reports/19.1" ---------------------------------------------
+Arm Performance Reports are a non-intrusive performance tool for High
+Performance Computing (HPC) and scientific software.
+
+Software website - https://www.arm.com/products/development-tools/hpc-tools/cross-platform/performance-reports
+
+Built on Thu Jun 27 23:13:32 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/19.0.2  
+   impi/2019.2.187
+
+
+%HELP% bbcp/17.12
+
+------------------------------------------------ Module Specific Help for "bbcp/17.12" ------------------------------------------------
+Securely and quickly copy data from source to target.
+
+Software website - http://www.slac.stanford.edu/~abh/bbcp/
+
+Built on Thu Jun 27 20:00:49 MDT 2019
+Modules used:
+   ncarenv/1.3
+
+
+%HELP% cmake/3.14.4
+
+----------------------------------------------- Module Specific Help for "cmake/3.14.4" -----------------------------------------------
+CMake is a cross-platform, open-source build system generator.
+
+Software website - https://cmake.org/
+
+Built on Thu Jun 27 20:00:01 MDT 2019
+Modules used:
+
+
+
+%HELP% cylc/7.8.3
+
+------------------------------------------------ Module Specific Help for "cylc/7.8.3" ------------------------------------------------
+Cylc (“silk”) is a workflow engine for cycling systems - it
+orchestrates distributed suites of interdependent cycling tasks that
+may continue to run indefinitely.
+
+Software website - https://cylc.github.io/
+
+Built on Fri Jun 28 01:08:50 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   python/2.7.16
+
+
+%HELP% diffuse/0.4.8
+
+---------------------------------------------- Module Specific Help for "diffuse/0.4.8" -----------------------------------------------
+Diffuse is a small and simple text merge tool written in Python.
+
+Software website - http://diffuse.sourceforge.net/
+
+Built on Fri Jun 28 01:09:30 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   python/2.7.16
+
+
+%HELP% emacs/26.2
+
+------------------------------------------------ Module Specific Help for "emacs/26.2" ------------------------------------------------
+An extensible, customizable, free/libre text editor — and more.
+
+Software website - https://www.gnu.org/software/emacs/
+
+Built on Thu Jun 27 20:02:06 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% ffmpeg/4.1.3
+
+----------------------------------------------- Module Specific Help for "ffmpeg/4.1.3" -----------------------------------------------
+A complete, cross-platform solution to record, convert and stream audio
+and video.
+
+Software website - https://ffmpeg.org/
+
+Built on Thu Jun 27 20:00:48 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% git/2.9.5
+
+------------------------------------------------ Module Specific Help for "git/2.9.5" -------------------------------------------------
+Git is a free and open source distributed version control system designed
+to handle everything from small to very large projects with speed and
+efficiency.
+
+Software website - https://git-scm.com/
+
+Built on Tue Jul  2 19:07:39 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% grads/2.2.1
+
+----------------------------------------------- Module Specific Help for "grads/2.2.1" ------------------------------------------------
+The Grid Analysis and Display System (GrADS) is an interactive desktop
+tool that is used for easy access, manipulation, and visualization of
+earth science data.
+
+Software website - http://cola.gmu.edu/grads/grads.php
+
+Built on Thu Jun 27 20:00:50 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% graphviz/2.40.1
+
+--------------------------------------------- Module Specific Help for "graphviz/2.40.1" ----------------------------------------------
+Graphviz is open source graph visualization software. Graph visualization
+is a way of representing structural information as diagrams of abstract
+graphs and networks.
+
+Software website - https://www.graphviz.org/
+
+Built on Thu Jun 27 20:02:36 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% grib-bins/1.3
+
+---------------------------------------------- Module Specific Help for "grib-bins/1.3" -----------------------------------------------
+Programs for querying and modifying GRIB/GRIB2 files.
+
+The following programs are included:
+ 1. wgrib 1.8.2
+ 2. wgrib2 2.0.8
+ 3. cnvgrib 3.1.1
+
+Software website - http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/
+
+Built on Thu Jun 27 21:37:26 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   grib-libs/1.2
+
+
+%HELP% idl/8.7.2
+
+------------------------------------------------ Module Specific Help for "idl/8.7.2" -------------------------------------------------
+IDL is the programming language of choice for many scientists and
+engineers because it's easy to learn, easy to use, and requires fewer
+lines of code than other programming languages, making it easier and
+faster to go from data to discovery.
+
+Software website - https://www.harrisgeospatial.com/Software-Technology/IDL
+
+Built on Thu Jun 27 20:01:25 MDT 2019
+Modules used:
+
+
+
+%HELP% matlab/R2019a
+
+---------------------------------------------- Module Specific Help for "matlab/R2019a" -----------------------------------------------
+This module makes MATLAB Version R2019a available to you and
+sets your MATLABPATH environment variable accordingly. You 
+may execute any of the scripts in the $MATLABPATH directory with
+no special action required.
+
+Advanced visualization applications such as MATLAB should be
+launched by TurboVNC using the vncserver_submit command.
+
+You can add the appropriate mexnc and snctools toolboxes by
+running "ncstartup" from the MATLAB command line.
+
+To add the m_map toolbox, run "m_map_startup."
+
+To add the deprecated, unsupported netcdf_toolbox, run 
+"old_netcdf_startup" from the MATLAB command line. Use it
+at your own risk and start migrating to the new,
+supported, native netcdf interface.
+
+See http://www.mathworks.com/products/matlab/ for details.
+
+
+%HELP% ncarenv/1.3
+
+----------------------------------------------- Module Specific Help for "ncarenv/1.3" ------------------------------------------------
+This module sets up default NCAR environment, adding convenience features
+and tailored performance settings
+
+Built on Thu Jun 27 19:54:27 MDT 2019
+
+
+%HELP% nco/4.7.9
+
+------------------------------------------------ Module Specific Help for "nco/4.7.9" -------------------------------------------------
+The NCO toolkit manipulates and analyzes data stored in netCDF-accessible
+formats, including DAP, HDF4, and HDF5.
+
+Software website - http://nco.sourceforge.net
+
+Built on Thu Jun 27 20:05:32 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% ncview/2.1.7
+
+----------------------------------------------- Module Specific Help for "ncview/2.1.7" -----------------------------------------------
+Ncview is a visual browser for netCDF format files.
+
+Software website - http://meteora.ucsd.edu/~pierce/ncview_home_page.html
+
+Built on Thu Jun 27 20:03:26 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% node/10.16.0
+
+----------------------------------------------- Module Specific Help for "node/10.16.0" -----------------------------------------------
+Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+Software website - https://nodejs.org/en/
+
+Built on Thu Jun 27 20:08:06 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% openjdk/12.0.1
+
+---------------------------------------------- Module Specific Help for "openjdk/12.0.1" ----------------------------------------------
+An open-source implementation of the Java Platform.
+
+Software website - https://openjdk.java.net/
+
+Built on Thu Jun 27 20:00:56 MDT 2019
+Modules used:
+
+
+
+%HELP% parallel/20190622
+
+-------------------------------------------- Module Specific Help for "parallel/20190622" ---------------------------------------------
+GNU parallel is a shell tool for executing jobs in parallel using one
+or more computers.
+
+Software website - https://www.gnu.org/software/parallel/
+
+Built on Wed Jul  3 13:03:27 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% pyferret/7.5.0
+
+---------------------------------------------- Module Specific Help for "pyferret/7.5.0" ----------------------------------------------
+PyFerret is a Python module wrapping Ferret.
+
+Software website - https://ferret.pmel.noaa.gov/Ferret/documentation/pyferret
+
+Built on Fri Jun 28 01:17:53 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   python/2.7.16  
+   netcdf/4.6.3
+
+
+%HELP% python/2.7.16
+
+---------------------------------------------- Module Specific Help for "python/2.7.16" -----------------------------------------------
+Python is a programming language that lets you work more quickly and
+integrate your systems more effectively.
+
+Software website - https://www.python.org
+
+Built on Thu Jun 27 20:03:05 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% python/3.6.8
+
+----------------------------------------------- Module Specific Help for "python/3.6.8" -----------------------------------------------
+Python is a programming language that lets you work more quickly and
+integrate your systems more effectively.
+
+Software website - https://www.python.org
+
+Built on Thu Jun 27 20:04:14 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% R/3.6.0
+
+------------------------------------------------- Module Specific Help for "R/3.6.0" --------------------------------------------------
+R is 'GNU S', a freely available language and environment for statistical
+computing and graphics which provides a wide variety of statistical and
+graphical techniques: linear and nonlinear modelling, statistical tests,
+time series analysis, classification, clustering, etc.
+
+Software website - https://cran.r-project.org/
+
+Built on Thu Jun 27 20:05:34 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% tmux/2.9a
+
+------------------------------------------------ Module Specific Help for "tmux/2.9a" -------------------------------------------------
+tmux is a terminal multiplexer: it enables a number of terminals to be
+created, accessed, and controlled from a single screen.
+
+Software website - https://github.com/tmux/tmux
+
+Built on Mon Jul  1 10:15:07 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% vim/8.1
+
+------------------------------------------------- Module Specific Help for "vim/8.1" --------------------------------------------------
+Vim is a highly configurable text editor for efficiently creating and
+changing any kind of text.
+
+Software website - https://www.vim.org/
+
+Built on Thu Jun 27 20:01:08 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% xxdiff/4.0.1
+
+----------------------------------------------- Module Specific Help for "xxdiff/4.0.1" -----------------------------------------------
+A graphical file and directories comparator and merge tool.
+
+Software website - http://furius.ca/xxdiff/
+
+Built on Wed Jul  3 12:14:45 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/eccodes/2.12.5
+
+---------------------------------------------- Module Specific Help for "eccodes/2.12.5" ----------------------------------------------
+ecCodes is an evolution of GRIB-API. It is designed to provide the user
+with a simple set of functions to access data from several formats with
+a key/value approach.
+
+Software website - https://confluence.ecmwf.int/display/ECC
+
+Built on Thu Jun 27 21:34:09 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   intel/18.0.5  
+   cmake/3.14.4
+
+
+%HELP% intel/18.0.5/esmf_libs/7.1.0r
+
+--------------------------------------------- Module Specific Help for "esmf_libs/7.1.0r" ---------------------------------------------
+This module makes ESMF libraries available for loading but does not load
+any of the libraries. After loading this module, run
+
+ module av
+
+to see which ESMF libraries are available for loading, then load as
+needed.
+
+Software website - https://www.earthsystemcog.org/projects/esmf/
+
+Built on Thu Jun 27 23:13:19 MDT 2019
+
+
+%HELP% intel/18.0.5/fftw/3.3.8
+
+------------------------------------------------ Module Specific Help for "fftw/3.3.8" ------------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 20:25:10 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/gdal/2.4.1
+
+------------------------------------------------ Module Specific Help for "gdal/2.4.1" ------------------------------------------------
+GDAL is a translator library for raster and vector geospatial data
+formats that is released under an X/MIT style Open Source license by
+the Open Source Geospatial Foundation.
+
+Software website - http://www.gdal.org/
+
+Built on Thu Jun 27 20:27:43 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/geos/3.7.1
+
+------------------------------------------------ Module Specific Help for "geos/3.7.1" ------------------------------------------------
+GEOS is a C++11 library for performing operations on two-dimensional
+vector geometries.
+
+Software website - https://trac.osgeo.org/geos
+
+Built on Thu Jun 27 20:29:56 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/grib-api/1.28.0
+
+--------------------------------------------- Module Specific Help for "grib-api/1.28.0" ----------------------------------------------
+The ECMWF GRIB-API is an application program interface accessible from
+C, FORTRAN and Python programs developed for encoding and decoding WMO
+FM-92 GRIB edition 1 and edition 2 messages.
+
+Software website - https://confluence.ecmwf.int/display/GRIB/Home
+
+Built on Thu Jun 27 21:34:01 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   intel/18.0.5  
+   cmake/3.14.4
+
+
+%HELP% intel/18.0.5/grib-libs/1.2
+
+---------------------------------------------- Module Specific Help for "grib-libs/1.2" -----------------------------------------------
+NCEP codes for decoding and encoding data in GRIB/GRIB2 formats.
+
+The following libraries are included:
+ 1. GRIB 2.0.6
+ 2. GRIB2-Fortran 3.1.0
+ 3. GRIB2-C 1.6.0
+
+Software website - http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/
+
+Built on Thu Jun 27 20:28:53 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/hdf/4.2.14
+
+------------------------------------------------ Module Specific Help for "hdf/4.2.14" ------------------------------------------------
+HDF4 (also known as HDF) is a library and multi-object file format for
+storing and managing data between machines.
+
+Software website - https://portal.hdfgroup.org/display/HDF4/HDF4
+
+Built on Thu Jun 27 20:28:09 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/hdf5/1.10.5
+
+----------------------------------------------- Module Specific Help for "hdf5/1.10.5" ------------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+serial version of the HDF5 library, including Fortran, C, and C++ APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 20:32:03 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/impi/2018.4.274
+
+--------------------------------------------- Module Specific Help for "impi/2018.4.274" ----------------------------------------------
+Intel® MPI Library is a multifabric message-passing library
+that implements the open-source MPICH specification.
+
+Website: https://software.intel.com/en-us/mpi-library
+
+
+%HELP% intel/18.0.5/mkl/2018.0.5
+
+----------------------------------------------- Module Specific Help for "mkl/2018.0.5" -----------------------------------------------
+Intel® Math Kernel Library (Intel® MKL) optimizes code with minimal
+effort for future generations of Intel® processors.
+
+Software website - https://software.intel.com/en-us/mkl
+
+Built on Thu Jun 27 20:27:31 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/mpt/2.19
+
+------------------------------------------------- Module Specific Help for "mpt/2.19" -------------------------------------------------
+The HPE Message Passing Interface (MPI) is an MPI development environment
+designed to enable the development and optimization of high performance
+computing (HPC) Linux® applications.
+
+Software website - https://www.hpe.com/us/en/product-catalog/detail/pip.hpe-performance-software-message-passing-interface.1010144155.html
+
+Built on Thu Jun 27 22:31:47 MDT 2019
+Modules used:
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/ncarcompilers/0.5.0
+
+------------------------------------------- Module Specific Help for "ncarcompilers/0.5.0" --------------------------------------------
+This module loads the NCAR compiler wrappers, that wraps the usual
+serial and parallel compilers to include all the required libraries and
+header files.
+
+Built on Thu Jun 27 19:54:31 MDT 2019
+
+
+%HELP% intel/18.0.5/ncl/6.6.2
+
+------------------------------------------------ Module Specific Help for "ncl/6.6.2" -------------------------------------------------
+The NCAR Command Language (NCL) is a free interpreted language designed
+specifically for scientific data processing and visualization.
+
+Software website - https://www.ncl.ucar.edu/
+
+Built on Thu Jun 27 22:21:06 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/netcdf/4.6.3
+
+----------------------------------------------- Module Specific Help for "netcdf/4.6.3" -----------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the serial NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 20:32:03 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/openmpi/3.1.4
+
+---------------------------------------------- Module Specific Help for "openmpi/3.1.4" -----------------------------------------------
+The Open MPI Project is an open source Message Passing Interface
+implementation that is developed and maintained by a consortium of
+academic, research, and industry partners.
+
+Software website - https://www.open-mpi.org/
+
+Built on Wed Jul  3 11:57:14 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/proj/5.2.0
+
+------------------------------------------------ Module Specific Help for "proj/5.2.0" ------------------------------------------------
+PROJ is a generic coordinate transformation software that transforms
+geospatial coordinates from one coordinate reference system (CRS)
+to another.
+
+Software website - https://proj4.org/
+
+Built on Thu Jun 27 20:28:29 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/18.0.5/udunits/2.2.26
+
+---------------------------------------------- Module Specific Help for "udunits/2.2.26" ----------------------------------------------
+The UDUNITS package supports units of physical quantities. Its C library
+provides for arithmetic manipulation of units and for conversion of
+numeric values between compatible units.
+
+Software website - https://www.unidata.ucar.edu/software/udunits/
+
+Built on Thu Jun 27 20:27:35 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0
+
+
+%HELP% impi/2018.4.274/intel/18.0.5/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:49:44 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/18.0.5  
+   impi/2018.4.274
+
+
+%HELP% impi/2018.4.274/intel/18.0.5/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:57:29 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/18.0.5  
+   impi/2018.4.274
+
+
+%HELP% impi/2018.4.274/intel/18.0.5/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:57:29 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/18.0.5  
+   impi/2018.4.274
+
+
+%HELP% impi/2018.4.274/intel/18.0.5/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:21 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   impi/2018.4.274   
+   pnetcdf/1.11.1
+   intel/18.0.5         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% impi/2018.4.274/intel/18.0.5/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:39 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   impi/2018.4.274   
+   pnetcdf/1.11.1
+   intel/18.0.5         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% impi/2018.4.274/intel/18.0.5/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 23:00:49 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/18.0.5  
+   impi/2018.4.274
+
+
+%HELP% openmpi/3.1.4/intel/18.0.5/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Wed Jul  3 12:41:03 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/18.0.5/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Wed Jul  3 12:49:37 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/18.0.5/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Wed Jul  3 12:49:37 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/18.0.5/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Wed Jul  3 13:17:29 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   intel/18.0.5         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/intel/18.0.5/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Wed Jul  3 13:17:54 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   intel/18.0.5         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/intel/18.0.5/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Wed Jul  3 12:50:40 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% mpt/2.19/intel/18.0.5/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:51:30 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/18.0.5/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:58:42 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/18.0.5/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:58:42 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/18.0.5/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:44 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   intel/18.0.5         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/intel/18.0.5/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:58 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   intel/18.0.5         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/intel/18.0.5/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 23:02:28 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/18.0.5  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% intel/17.0.1/eccodes/2.12.5
+
+---------------------------------------------- Module Specific Help for "eccodes/2.12.5" ----------------------------------------------
+ecCodes is an evolution of GRIB-API. It is designed to provide the user
+with a simple set of functions to access data from several formats with
+a key/value approach.
+
+Software website - https://confluence.ecmwf.int/display/ECC
+
+Built on Thu Jun 27 21:36:16 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   intel/17.0.1  
+   cmake/3.14.4
+
+
+%HELP% intel/17.0.1/fftw/3.3.8
+
+------------------------------------------------ Module Specific Help for "fftw/3.3.8" ------------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 20:27:22 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/gdal/2.4.1
+
+------------------------------------------------ Module Specific Help for "gdal/2.4.1" ------------------------------------------------
+GDAL is a translator library for raster and vector geospatial data
+formats that is released under an X/MIT style Open Source license by
+the Open Source Geospatial Foundation.
+
+Software website - http://www.gdal.org/
+
+Built on Thu Jun 27 20:36:47 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/geos/3.7.1
+
+------------------------------------------------ Module Specific Help for "geos/3.7.1" ------------------------------------------------
+GEOS is a C++11 library for performing operations on two-dimensional
+vector geometries.
+
+Software website - https://trac.osgeo.org/geos
+
+Built on Thu Jun 27 20:31:50 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/grib-api/1.28.0
+
+--------------------------------------------- Module Specific Help for "grib-api/1.28.0" ----------------------------------------------
+The ECMWF GRIB-API is an application program interface accessible from
+C, FORTRAN and Python programs developed for encoding and decoding WMO
+FM-92 GRIB edition 1 and edition 2 messages.
+
+Software website - https://confluence.ecmwf.int/display/GRIB/Home
+
+Built on Thu Jun 27 21:36:00 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   intel/17.0.1  
+   cmake/3.14.4
+
+
+%HELP% intel/17.0.1/grib-libs/1.2
+
+---------------------------------------------- Module Specific Help for "grib-libs/1.2" -----------------------------------------------
+NCEP codes for decoding and encoding data in GRIB/GRIB2 formats.
+
+The following libraries are included:
+ 1. GRIB 2.0.6
+ 2. GRIB2-Fortran 3.1.0
+ 3. GRIB2-C 1.6.0
+
+Software website - http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/
+
+Built on Thu Jun 27 20:29:52 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/hdf/4.2.14
+
+------------------------------------------------ Module Specific Help for "hdf/4.2.14" ------------------------------------------------
+HDF4 (also known as HDF) is a library and multi-object file format for
+storing and managing data between machines.
+
+Software website - https://portal.hdfgroup.org/display/HDF4/HDF4
+
+Built on Thu Jun 27 20:29:29 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/hdf5/1.10.5
+
+----------------------------------------------- Module Specific Help for "hdf5/1.10.5" ------------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+serial version of the HDF5 library, including Fortran, C, and C++ APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 20:39:06 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/impi/2017.1.132
+
+--------------------------------------------- Module Specific Help for "impi/2017.1.132" ----------------------------------------------
+Intel® MPI Library is a multifabric message-passing library
+that implements the open-source MPICH specification.
+
+Website: https://software.intel.com/en-us/mpi-library
+
+
+%HELP% intel/17.0.1/mkl/2017.0.1
+
+----------------------------------------------- Module Specific Help for "mkl/2017.0.1" -----------------------------------------------
+Intel® Math Kernel Library (Intel® MKL) optimizes code with minimal
+effort for future generations of Intel® processors.
+
+Software website - https://software.intel.com/en-us/mkl
+
+Built on Thu Jun 27 20:32:04 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/mpt/2.19
+
+------------------------------------------------- Module Specific Help for "mpt/2.19" -------------------------------------------------
+The HPE Message Passing Interface (MPI) is an MPI development environment
+designed to enable the development and optimization of high performance
+computing (HPC) Linux® applications.
+
+Software website - https://www.hpe.com/us/en/product-catalog/detail/pip.hpe-performance-software-message-passing-interface.1010144155.html
+
+Built on Thu Jun 27 22:30:28 MDT 2019
+Modules used:
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/ncarcompilers/0.5.0
+
+------------------------------------------- Module Specific Help for "ncarcompilers/0.5.0" --------------------------------------------
+This module loads the NCAR compiler wrappers, that wraps the usual
+serial and parallel compilers to include all the required libraries and
+header files.
+
+Built on Thu Jun 27 19:54:29 MDT 2019
+
+
+%HELP% intel/17.0.1/netcdf/4.6.3
+
+----------------------------------------------- Module Specific Help for "netcdf/4.6.3" -----------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the serial NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 20:39:06 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/openmpi/3.1.4
+
+---------------------------------------------- Module Specific Help for "openmpi/3.1.4" -----------------------------------------------
+The Open MPI Project is an open source Message Passing Interface
+implementation that is developed and maintained by a consortium of
+academic, research, and industry partners.
+
+Software website - https://www.open-mpi.org/
+
+Built on Wed Jul  3 12:13:51 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/proj/5.2.0
+
+------------------------------------------------ Module Specific Help for "proj/5.2.0" ------------------------------------------------
+PROJ is a generic coordinate transformation software that transforms
+geospatial coordinates from one coordinate reference system (CRS)
+to another.
+
+Software website - https://proj4.org/
+
+Built on Thu Jun 27 20:28:51 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/17.0.1/udunits/2.2.26
+
+---------------------------------------------- Module Specific Help for "udunits/2.2.26" ----------------------------------------------
+The UDUNITS package supports units of physical quantities. Its C library
+provides for arithmetic manipulation of units and for conversion of
+numeric values between compatible units.
+
+Software website - https://www.unidata.ucar.edu/software/udunits/
+
+Built on Thu Jun 27 20:27:04 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0
+
+
+%HELP% impi/2017.1.132/intel/17.0.1/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:51:59 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/17.0.1  
+   impi/2017.1.132
+
+
+%HELP% impi/2017.1.132/intel/17.0.1/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 23:03:17 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/17.0.1  
+   impi/2017.1.132
+
+
+%HELP% impi/2017.1.132/intel/17.0.1/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 23:03:17 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/17.0.1  
+   impi/2017.1.132
+
+
+%HELP% impi/2017.1.132/intel/17.0.1/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:38 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   impi/2017.1.132   
+   pnetcdf/1.11.1
+   intel/17.0.1         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% impi/2017.1.132/intel/17.0.1/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:49:14 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   impi/2017.1.132   
+   pnetcdf/1.11.1
+   intel/17.0.1         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% impi/2017.1.132/intel/17.0.1/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 23:02:08 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/17.0.1  
+   impi/2017.1.132
+
+
+%HELP% openmpi/3.1.4/intel/17.0.1/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Wed Jul  3 12:43:31 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/17.0.1/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Wed Jul  3 12:54:20 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/17.0.1/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Wed Jul  3 12:54:20 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/17.0.1/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Wed Jul  3 13:17:46 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   intel/17.0.1         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/intel/17.0.1/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Wed Jul  3 13:18:29 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   intel/17.0.1         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/intel/17.0.1/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Wed Jul  3 12:52:07 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% mpt/2.19/intel/17.0.1/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:53:37 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/17.0.1/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 23:04:26 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/17.0.1/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 23:04:26 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/17.0.1/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:56 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   intel/17.0.1         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/intel/17.0.1/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:49:34 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   intel/17.0.1         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/intel/17.0.1/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 23:03:42 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/17.0.1  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% intel/19.0.2/eccodes/2.12.5
+
+---------------------------------------------- Module Specific Help for "eccodes/2.12.5" ----------------------------------------------
+ecCodes is an evolution of GRIB-API. It is designed to provide the user
+with a simple set of functions to access data from several formats with
+a key/value approach.
+
+Software website - https://confluence.ecmwf.int/display/ECC
+
+Built on Thu Jun 27 21:34:29 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   intel/19.0.2  
+   cmake/3.14.4
+
+
+%HELP% intel/19.0.2/esmf_libs/7.1.0r
+
+--------------------------------------------- Module Specific Help for "esmf_libs/7.1.0r" ---------------------------------------------
+This module makes ESMF libraries available for loading but does not load
+any of the libraries. After loading this module, run
+
+ module av
+
+to see which ESMF libraries are available for loading, then load as
+needed.
+
+Software website - https://www.earthsystemcog.org/projects/esmf/
+
+Built on Wed Jul  3 13:16:44 MDT 2019
+
+
+%HELP% intel/19.0.2/fftw/3.3.8
+
+------------------------------------------------ Module Specific Help for "fftw/3.3.8" ------------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 20:25:13 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/gdal/2.4.1
+
+------------------------------------------------ Module Specific Help for "gdal/2.4.1" ------------------------------------------------
+GDAL is a translator library for raster and vector geospatial data
+formats that is released under an X/MIT style Open Source license by
+the Open Source Geospatial Foundation.
+
+Software website - http://www.gdal.org/
+
+Built on Thu Jun 27 20:27:03 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/geos/3.7.1
+
+------------------------------------------------ Module Specific Help for "geos/3.7.1" ------------------------------------------------
+GEOS is a C++11 library for performing operations on two-dimensional
+vector geometries.
+
+Software website - https://trac.osgeo.org/geos
+
+Built on Thu Jun 27 20:30:22 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/grib-api/1.28.0
+
+--------------------------------------------- Module Specific Help for "grib-api/1.28.0" ----------------------------------------------
+The ECMWF GRIB-API is an application program interface accessible from
+C, FORTRAN and Python programs developed for encoding and decoding WMO
+FM-92 GRIB edition 1 and edition 2 messages.
+
+Software website - https://confluence.ecmwf.int/display/GRIB/Home
+
+Built on Thu Jun 27 21:33:44 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   intel/19.0.2  
+   cmake/3.14.4
+
+
+%HELP% intel/19.0.2/grib-libs/1.2
+
+---------------------------------------------- Module Specific Help for "grib-libs/1.2" -----------------------------------------------
+NCEP codes for decoding and encoding data in GRIB/GRIB2 formats.
+
+The following libraries are included:
+ 1. GRIB 2.0.6
+ 2. GRIB2-Fortran 3.1.0
+ 3. GRIB2-C 1.6.0
+
+Software website - http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/
+
+Built on Thu Jun 27 20:28:48 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/hdf/4.2.14
+
+------------------------------------------------ Module Specific Help for "hdf/4.2.14" ------------------------------------------------
+HDF4 (also known as HDF) is a library and multi-object file format for
+storing and managing data between machines.
+
+Software website - https://portal.hdfgroup.org/display/HDF4/HDF4
+
+Built on Thu Jun 27 20:28:46 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/hdf5/1.10.5
+
+----------------------------------------------- Module Specific Help for "hdf5/1.10.5" ------------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+serial version of the HDF5 library, including Fortran, C, and C++ APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 20:32:04 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/impi/2019.2.187
+
+--------------------------------------------- Module Specific Help for "impi/2019.2.187" ----------------------------------------------
+Intel® MPI Library is a multifabric message-passing library
+that implements the open-source MPICH specification.
+
+Website: https://software.intel.com/en-us/mpi-library
+
+
+%HELP% intel/19.0.2/mkl/2019.0.2
+
+----------------------------------------------- Module Specific Help for "mkl/2019.0.2" -----------------------------------------------
+Intel® Math Kernel Library (Intel® MKL) optimizes code with minimal
+effort for future generations of Intel® processors.
+
+Software website - https://software.intel.com/en-us/mkl
+
+Built on Thu Jun 27 20:27:56 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/mpt/2.19
+
+------------------------------------------------- Module Specific Help for "mpt/2.19" -------------------------------------------------
+The HPE Message Passing Interface (MPI) is an MPI development environment
+designed to enable the development and optimization of high performance
+computing (HPC) Linux® applications.
+
+Software website - https://www.hpe.com/us/en/product-catalog/detail/pip.hpe-performance-software-message-passing-interface.1010144155.html
+
+Built on Thu Jun 27 22:33:05 MDT 2019
+Modules used:
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/ncarcompilers/0.5.0
+
+------------------------------------------- Module Specific Help for "ncarcompilers/0.5.0" --------------------------------------------
+This module loads the NCAR compiler wrappers, that wraps the usual
+serial and parallel compilers to include all the required libraries and
+header files.
+
+Built on Thu Jun 27 19:54:34 MDT 2019
+
+
+%HELP% intel/19.0.2/netcdf/4.6.3
+
+----------------------------------------------- Module Specific Help for "netcdf/4.6.3" -----------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the serial NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 20:32:04 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/openmpi/3.1.4
+
+---------------------------------------------- Module Specific Help for "openmpi/3.1.4" -----------------------------------------------
+The Open MPI Project is an open source Message Passing Interface
+implementation that is developed and maintained by a consortium of
+academic, research, and industry partners.
+
+Software website - https://www.open-mpi.org/
+
+Built on Wed Jul  3 11:56:26 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/proj/5.2.0
+
+------------------------------------------------ Module Specific Help for "proj/5.2.0" ------------------------------------------------
+PROJ is a generic coordinate transformation software that transforms
+geospatial coordinates from one coordinate reference system (CRS)
+to another.
+
+Software website - https://proj4.org/
+
+Built on Thu Jun 27 20:28:55 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% intel/19.0.2/udunits/2.2.26
+
+---------------------------------------------- Module Specific Help for "udunits/2.2.26" ----------------------------------------------
+The UDUNITS package supports units of physical quantities. Its C library
+provides for arithmetic manipulation of units and for conversion of
+numeric values between compatible units.
+
+Software website - https://www.unidata.ucar.edu/software/udunits/
+
+Built on Thu Jun 27 20:27:56 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0
+
+
+%HELP% impi/2019.2.187/intel/19.0.2/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:49:39 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/19.0.2  
+   impi/2019.2.187
+
+
+%HELP% impi/2019.2.187/intel/19.0.2/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:57:09 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/19.0.2  
+   impi/2019.2.187
+
+
+%HELP% impi/2019.2.187/intel/19.0.2/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:57:09 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/19.0.2  
+   impi/2019.2.187
+
+
+%HELP% impi/2019.2.187/intel/19.0.2/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:25 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   impi/2019.2.187   
+   pnetcdf/1.11.1
+   intel/19.0.2         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% impi/2019.2.187/intel/19.0.2/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:40 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   impi/2019.2.187   
+   pnetcdf/1.11.1
+   intel/19.0.2         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% impi/2019.2.187/intel/19.0.2/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 23:00:46 MDT 2019
+Modules used:
+   ncarenv/1.3   
+   ncarcompilers/0.5.0
+   intel/19.0.2  
+   impi/2019.2.187
+
+
+%HELP% openmpi/3.1.4/intel/19.0.2/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Wed Jul  3 12:45:31 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/19.0.2/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Wed Jul  3 12:54:24 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/19.0.2/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Wed Jul  3 12:54:24 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/intel/19.0.2/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Wed Jul  3 13:17:34 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   intel/19.0.2         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/intel/19.0.2/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Wed Jul  3 13:17:50 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   intel/19.0.2         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/intel/19.0.2/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Wed Jul  3 12:50:45 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% mpt/2.19/intel/19.0.2/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:51:44 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/19.0.2/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 23:00:01 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/19.0.2/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 23:00:01 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/intel/19.0.2/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:48 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   intel/19.0.2         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/intel/19.0.2/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:59 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   intel/19.0.2         
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/intel/19.0.2/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 23:02:27 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   intel/19.0.2  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% gnu/9.1.0/eccodes/2.12.5
+
+---------------------------------------------- Module Specific Help for "eccodes/2.12.5" ----------------------------------------------
+ecCodes is an evolution of GRIB-API. It is designed to provide the user
+with a simple set of functions to access data from several formats with
+a key/value approach.
+
+Software website - https://confluence.ecmwf.int/display/ECC
+
+Built on Thu Jun 27 21:28:38 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   gnu/9.1.0    
+   cmake/3.14.4
+
+
+%HELP% gnu/9.1.0/fftw/3.3.8
+
+------------------------------------------------ Module Specific Help for "fftw/3.3.8" ------------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 20:24:12 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/gdal/2.4.1
+
+------------------------------------------------ Module Specific Help for "gdal/2.4.1" ------------------------------------------------
+GDAL is a translator library for raster and vector geospatial data
+formats that is released under an X/MIT style Open Source license by
+the Open Source Geospatial Foundation.
+
+Software website - http://www.gdal.org/
+
+Built on Thu Jun 27 20:23:25 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/geos/3.7.1
+
+------------------------------------------------ Module Specific Help for "geos/3.7.1" ------------------------------------------------
+GEOS is a C++11 library for performing operations on two-dimensional
+vector geometries.
+
+Software website - https://trac.osgeo.org/geos
+
+Built on Thu Jun 27 20:28:04 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/grib-api/1.28.0
+
+--------------------------------------------- Module Specific Help for "grib-api/1.28.0" ----------------------------------------------
+The ECMWF GRIB-API is an application program interface accessible from
+C, FORTRAN and Python programs developed for encoding and decoding WMO
+FM-92 GRIB edition 1 and edition 2 messages.
+
+Software website - https://confluence.ecmwf.int/display/GRIB/Home
+
+Built on Thu Jun 27 21:28:10 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   gnu/9.1.0    
+   cmake/3.14.4
+
+
+%HELP% gnu/9.1.0/hdf/4.2.14
+
+------------------------------------------------ Module Specific Help for "hdf/4.2.14" ------------------------------------------------
+HDF4 (also known as HDF) is a library and multi-object file format for
+storing and managing data between machines.
+
+Software website - https://portal.hdfgroup.org/display/HDF4/HDF4
+
+Built on Thu Jun 27 20:26:24 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/hdf5/1.10.5
+
+----------------------------------------------- Module Specific Help for "hdf5/1.10.5" ------------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+serial version of the HDF5 library, including Fortran, C, and C++ APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 20:28:10 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/mpt/2.19
+
+------------------------------------------------- Module Specific Help for "mpt/2.19" -------------------------------------------------
+The HPE Message Passing Interface (MPI) is an MPI development environment
+designed to enable the development and optimization of high performance
+computing (HPC) Linux® applications.
+
+Software website - https://www.hpe.com/us/en/product-catalog/detail/pip.hpe-performance-software-message-passing-interface.1010144155.html
+
+Built on Thu Jun 27 22:25:45 MDT 2019
+Modules used:
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/ncarcompilers/0.5.0
+
+------------------------------------------- Module Specific Help for "ncarcompilers/0.5.0" --------------------------------------------
+This module loads the NCAR compiler wrappers, that wraps the usual
+serial and parallel compilers to include all the required libraries and
+header files.
+
+Built on Thu Jun 27 19:54:25 MDT 2019
+
+
+%HELP% gnu/9.1.0/netcdf/4.6.3
+
+----------------------------------------------- Module Specific Help for "netcdf/4.6.3" -----------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the serial NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 20:28:10 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/openblas/0.3.6
+
+---------------------------------------------- Module Specific Help for "openblas/0.3.6" ----------------------------------------------
+OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
+
+Software website - http://www.openblas.net/
+
+Built on Thu Jun 27 20:24:34 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/openmpi/3.1.4
+
+---------------------------------------------- Module Specific Help for "openmpi/3.1.4" -----------------------------------------------
+The Open MPI Project is an open source Message Passing Interface
+implementation that is developed and maintained by a consortium of
+academic, research, and industry partners.
+
+Software website - https://www.open-mpi.org/
+
+Built on Thu Jun 27 20:22:46 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/proj/5.2.0
+
+------------------------------------------------ Module Specific Help for "proj/5.2.0" ------------------------------------------------
+PROJ is a generic coordinate transformation software that transforms
+geospatial coordinates from one coordinate reference system (CRS)
+to another.
+
+Software website - https://proj4.org/
+
+Built on Thu Jun 27 20:26:14 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/9.1.0/udunits/2.2.26
+
+---------------------------------------------- Module Specific Help for "udunits/2.2.26" ----------------------------------------------
+The UDUNITS package supports units of physical quantities. Its C library
+provides for arithmetic manipulation of units and for conversion of
+numeric values between compatible units.
+
+Software website - https://www.unidata.ucar.edu/software/udunits/
+
+Built on Thu Jun 27 20:26:03 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% openmpi/3.1.4/gnu/9.1.0/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:54:30 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/9.1.0/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:58:13 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/9.1.0/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:58:13 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/9.1.0/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:49 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   gnu/9.1.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/gnu/9.1.0/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:49:02 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   gnu/9.1.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/gnu/9.1.0/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 22:58:59 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% mpt/2.19/gnu/9.1.0/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:49:24 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/9.1.0/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:52:50 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/9.1.0/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:52:50 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/9.1.0/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:15 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   gnu/9.1.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/gnu/9.1.0/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:29 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   gnu/9.1.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/gnu/9.1.0/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 22:58:22 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/9.1.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% gnu/7.4.0/eccodes/2.12.5
+
+---------------------------------------------- Module Specific Help for "eccodes/2.12.5" ----------------------------------------------
+ecCodes is an evolution of GRIB-API. It is designed to provide the user
+with a simple set of functions to access data from several formats with
+a key/value approach.
+
+Software website - https://confluence.ecmwf.int/display/ECC
+
+Built on Thu Jun 27 21:28:10 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   gnu/7.4.0    
+   cmake/3.14.4
+
+
+%HELP% gnu/7.4.0/fftw/3.3.8
+
+------------------------------------------------ Module Specific Help for "fftw/3.3.8" ------------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 20:15:22 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/gdal/2.4.1
+
+------------------------------------------------ Module Specific Help for "gdal/2.4.1" ------------------------------------------------
+GDAL is a translator library for raster and vector geospatial data
+formats that is released under an X/MIT style Open Source license by
+the Open Source Geospatial Foundation.
+
+Software website - http://www.gdal.org/
+
+Built on Thu Jun 27 20:22:52 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/geos/3.7.1
+
+------------------------------------------------ Module Specific Help for "geos/3.7.1" ------------------------------------------------
+GEOS is a C++11 library for performing operations on two-dimensional
+vector geometries.
+
+Software website - https://trac.osgeo.org/geos
+
+Built on Thu Jun 27 20:26:58 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/grib-api/1.28.0
+
+--------------------------------------------- Module Specific Help for "grib-api/1.28.0" ----------------------------------------------
+The ECMWF GRIB-API is an application program interface accessible from
+C, FORTRAN and Python programs developed for encoding and decoding WMO
+FM-92 GRIB edition 1 and edition 2 messages.
+
+Software website - https://confluence.ecmwf.int/display/GRIB/Home
+
+Built on Thu Jun 27 21:28:03 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   gnu/7.4.0    
+   cmake/3.14.4
+
+
+%HELP% gnu/7.4.0/grib-libs/1.2
+
+---------------------------------------------- Module Specific Help for "grib-libs/1.2" -----------------------------------------------
+NCEP codes for decoding and encoding data in GRIB/GRIB2 formats.
+
+The following libraries are included:
+ 1. GRIB 2.0.6
+ 2. GRIB2-Fortran 3.1.0
+ 3. GRIB2-C 1.6.0
+
+Software website - http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/
+
+Built on Thu Jun 27 20:28:11 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/hdf/4.2.14
+
+------------------------------------------------ Module Specific Help for "hdf/4.2.14" ------------------------------------------------
+HDF4 (also known as HDF) is a library and multi-object file format for
+storing and managing data between machines.
+
+Software website - https://portal.hdfgroup.org/display/HDF4/HDF4
+
+Built on Thu Jun 27 20:25:22 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/hdf5/1.10.5
+
+----------------------------------------------- Module Specific Help for "hdf5/1.10.5" ------------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+serial version of the HDF5 library, including Fortran, C, and C++ APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 20:19:21 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/mpt/2.19
+
+------------------------------------------------- Module Specific Help for "mpt/2.19" -------------------------------------------------
+The HPE Message Passing Interface (MPI) is an MPI development environment
+designed to enable the development and optimization of high performance
+computing (HPC) Linux® applications.
+
+Software website - https://www.hpe.com/us/en/product-catalog/detail/pip.hpe-performance-software-message-passing-interface.1010144155.html
+
+Built on Thu Jun 27 22:23:06 MDT 2019
+Modules used:
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/ncarcompilers/0.5.0
+
+------------------------------------------- Module Specific Help for "ncarcompilers/0.5.0" --------------------------------------------
+This module loads the NCAR compiler wrappers, that wraps the usual
+serial and parallel compilers to include all the required libraries and
+header files.
+
+Built on Thu Jun 27 19:54:21 MDT 2019
+
+
+%HELP% gnu/7.4.0/netcdf/4.6.3
+
+----------------------------------------------- Module Specific Help for "netcdf/4.6.3" -----------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the serial NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 20:19:21 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/openblas/0.3.6
+
+---------------------------------------------- Module Specific Help for "openblas/0.3.6" ----------------------------------------------
+OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
+
+Software website - http://www.openblas.net/
+
+Built on Thu Jun 27 20:20:47 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/openmpi/3.1.4
+
+---------------------------------------------- Module Specific Help for "openmpi/3.1.4" -----------------------------------------------
+The Open MPI Project is an open source Message Passing Interface
+implementation that is developed and maintained by a consortium of
+academic, research, and industry partners.
+
+Software website - https://www.open-mpi.org/
+
+Built on Thu Jun 27 20:22:35 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/proj/5.2.0
+
+------------------------------------------------ Module Specific Help for "proj/5.2.0" ------------------------------------------------
+PROJ is a generic coordinate transformation software that transforms
+geospatial coordinates from one coordinate reference system (CRS)
+to another.
+
+Software website - https://proj4.org/
+
+Built on Thu Jun 27 20:25:07 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/7.4.0/udunits/2.2.26
+
+---------------------------------------------- Module Specific Help for "udunits/2.2.26" ----------------------------------------------
+The UDUNITS package supports units of physical quantities. Its C library
+provides for arithmetic manipulation of units and for conversion of
+numeric values between compatible units.
+
+Software website - https://www.unidata.ucar.edu/software/udunits/
+
+Built on Thu Jun 27 20:24:50 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% openmpi/3.1.4/gnu/7.4.0/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:53:31 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/7.4.0/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:57:16 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/7.4.0/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:57:16 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/7.4.0/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:38 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   gnu/7.4.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/gnu/7.4.0/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:52 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   gnu/7.4.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/gnu/7.4.0/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 22:58:39 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% mpt/2.19/gnu/7.4.0/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:49:15 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/7.4.0/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:52:35 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/7.4.0/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:52:35 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/7.4.0/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:06 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   gnu/7.4.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/gnu/7.4.0/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:20 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   gnu/7.4.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/gnu/7.4.0/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 22:58:17 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/7.4.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% gnu/8.3.0/eccodes/2.12.5
+
+---------------------------------------------- Module Specific Help for "eccodes/2.12.5" ----------------------------------------------
+ecCodes is an evolution of GRIB-API. It is designed to provide the user
+with a simple set of functions to access data from several formats with
+a key/value approach.
+
+Software website - https://confluence.ecmwf.int/display/ECC
+
+Built on Thu Jun 27 21:28:34 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   gnu/8.3.0    
+   cmake/3.14.4
+
+
+%HELP% gnu/8.3.0/esmf_libs/7.1.0r
+
+--------------------------------------------- Module Specific Help for "esmf_libs/7.1.0r" ---------------------------------------------
+This module makes ESMF libraries available for loading but does not load
+any of the libraries. After loading this module, run
+
+ module av
+
+to see which ESMF libraries are available for loading, then load as
+needed.
+
+Software website - https://www.earthsystemcog.org/projects/esmf/
+
+Built on Thu Jun 27 23:13:13 MDT 2019
+
+
+%HELP% gnu/8.3.0/fftw/3.3.8
+
+------------------------------------------------ Module Specific Help for "fftw/3.3.8" ------------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 20:21:36 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/gdal/2.4.1
+
+------------------------------------------------ Module Specific Help for "gdal/2.4.1" ------------------------------------------------
+GDAL is a translator library for raster and vector geospatial data
+formats that is released under an X/MIT style Open Source license by
+the Open Source Geospatial Foundation.
+
+Software website - http://www.gdal.org/
+
+Built on Thu Jun 27 20:23:00 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/geos/3.7.1
+
+------------------------------------------------ Module Specific Help for "geos/3.7.1" ------------------------------------------------
+GEOS is a C++11 library for performing operations on two-dimensional
+vector geometries.
+
+Software website - https://trac.osgeo.org/geos
+
+Built on Thu Jun 27 20:27:37 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/grib-api/1.28.0
+
+--------------------------------------------- Module Specific Help for "grib-api/1.28.0" ----------------------------------------------
+The ECMWF GRIB-API is an application program interface accessible from
+C, FORTRAN and Python programs developed for encoding and decoding WMO
+FM-92 GRIB edition 1 and edition 2 messages.
+
+Software website - https://confluence.ecmwf.int/display/GRIB/Home
+
+Built on Thu Jun 27 21:27:59 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   gnu/8.3.0    
+   cmake/3.14.4
+
+
+%HELP% gnu/8.3.0/grib-libs/1.2
+
+---------------------------------------------- Module Specific Help for "grib-libs/1.2" -----------------------------------------------
+NCEP codes for decoding and encoding data in GRIB/GRIB2 formats.
+
+The following libraries are included:
+ 1. GRIB 2.0.6
+ 2. GRIB2-Fortran 3.1.0
+ 3. GRIB2-C 1.6.0
+
+Software website - http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/
+
+Built on Thu Jun 27 20:28:16 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/hdf/4.2.14
+
+------------------------------------------------ Module Specific Help for "hdf/4.2.14" ------------------------------------------------
+HDF4 (also known as HDF) is a library and multi-object file format for
+storing and managing data between machines.
+
+Software website - https://portal.hdfgroup.org/display/HDF4/HDF4
+
+Built on Thu Jun 27 20:26:08 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/hdf5/1.10.5
+
+----------------------------------------------- Module Specific Help for "hdf5/1.10.5" ------------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+serial version of the HDF5 library, including Fortran, C, and C++ APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 20:25:54 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/mpt/2.19
+
+------------------------------------------------- Module Specific Help for "mpt/2.19" -------------------------------------------------
+The HPE Message Passing Interface (MPI) is an MPI development environment
+designed to enable the development and optimization of high performance
+computing (HPC) Linux® applications.
+
+Software website - https://www.hpe.com/us/en/product-catalog/detail/pip.hpe-performance-software-message-passing-interface.1010144155.html
+
+Built on Thu Jun 27 22:24:34 MDT 2019
+Modules used:
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/ncarcompilers/0.5.0
+
+------------------------------------------- Module Specific Help for "ncarcompilers/0.5.0" --------------------------------------------
+This module loads the NCAR compiler wrappers, that wraps the usual
+serial and parallel compilers to include all the required libraries and
+header files.
+
+Built on Thu Jun 27 19:54:23 MDT 2019
+
+
+%HELP% gnu/8.3.0/ncl/6.6.2
+
+------------------------------------------------ Module Specific Help for "ncl/6.6.2" -------------------------------------------------
+The NCAR Command Language (NCL) is a free interpreted language designed
+specifically for scientific data processing and visualization.
+
+Software website - https://www.ncl.ucar.edu/
+
+Built on Thu Jun 27 22:00:40 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/netcdf/4.6.3
+
+----------------------------------------------- Module Specific Help for "netcdf/4.6.3" -----------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the serial NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 20:25:54 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/openblas/0.3.6
+
+---------------------------------------------- Module Specific Help for "openblas/0.3.6" ----------------------------------------------
+OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
+
+Software website - http://www.openblas.net/
+
+Built on Thu Jun 27 20:24:22 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/openmpi/3.1.4
+
+---------------------------------------------- Module Specific Help for "openmpi/3.1.4" -----------------------------------------------
+The Open MPI Project is an open source Message Passing Interface
+implementation that is developed and maintained by a consortium of
+academic, research, and industry partners.
+
+Software website - https://www.open-mpi.org/
+
+Built on Thu Jun 27 20:22:58 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/proj/5.2.0
+
+------------------------------------------------ Module Specific Help for "proj/5.2.0" ------------------------------------------------
+PROJ is a generic coordinate transformation software that transforms
+geospatial coordinates from one coordinate reference system (CRS)
+to another.
+
+Software website - https://proj4.org/
+
+Built on Thu Jun 27 20:25:48 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% gnu/8.3.0/udunits/2.2.26
+
+---------------------------------------------- Module Specific Help for "udunits/2.2.26" ----------------------------------------------
+The UDUNITS package supports units of physical quantities. Its C library
+provides for arithmetic manipulation of units and for conversion of
+numeric values between compatible units.
+
+Software website - https://www.unidata.ucar.edu/software/udunits/
+
+Built on Thu Jun 27 20:25:28 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
+%HELP% openmpi/3.1.4/gnu/8.3.0/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:53:47 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/8.3.0/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:57:49 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/8.3.0/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:57:49 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/gnu/8.3.0/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:44 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   gnu/8.3.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/gnu/8.3.0/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:58 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   gnu/8.3.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/gnu/8.3.0/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 22:58:43 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% mpt/2.19/gnu/8.3.0/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:49:20 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/8.3.0/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 22:52:44 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/8.3.0/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 22:52:44 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/gnu/8.3.0/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:10 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   gnu/8.3.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/gnu/8.3.0/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:48:25 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   gnu/8.3.0            
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/gnu/8.3.0/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 22:58:20 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% pgi/19.3/eccodes/2.12.5
+
+---------------------------------------------- Module Specific Help for "eccodes/2.12.5" ----------------------------------------------
+ecCodes is an evolution of GRIB-API. It is designed to provide the user
+with a simple set of functions to access data from several formats with
+a key/value approach.
+
+Software website - https://confluence.ecmwf.int/display/ECC
+
+Built on Thu Jun 27 21:37:33 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   pgi/19.3     
+   cmake/3.14.4
+
+
+%HELP% pgi/19.3/fftw/3.3.8
+
+------------------------------------------------ Module Specific Help for "fftw/3.3.8" ------------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 20:25:11 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% pgi/19.3/geos/3.7.1
+
+------------------------------------------------ Module Specific Help for "geos/3.7.1" ------------------------------------------------
+GEOS is a C++11 library for performing operations on two-dimensional
+vector geometries.
+
+Software website - https://trac.osgeo.org/geos
+
+Built on Thu Jun 27 20:35:40 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% pgi/19.3/grib-api/1.28.0
+
+--------------------------------------------- Module Specific Help for "grib-api/1.28.0" ----------------------------------------------
+The ECMWF GRIB-API is an application program interface accessible from
+C, FORTRAN and Python programs developed for encoding and decoding WMO
+FM-92 GRIB edition 1 and edition 2 messages.
+
+Software website - https://confluence.ecmwf.int/display/GRIB/Home
+
+Built on Thu Jun 27 21:37:25 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   ncarcompilers/0.5.0  
+   python/3.6.8
+   pgi/19.3     
+   cmake/3.14.4
+
+
+%HELP% pgi/19.3/grib-libs/1.2
+
+---------------------------------------------- Module Specific Help for "grib-libs/1.2" -----------------------------------------------
+NCEP codes for decoding and encoding data in GRIB/GRIB2 formats.
+
+The following libraries are included:
+ 1. GRIB 2.0.6
+ 2. GRIB2-Fortran 3.1.0
+ 3. GRIB2-C 1.6.0
+
+Software website - http://www.nco.ncep.noaa.gov/pmb/codes/GRIB2/
+
+Built on Thu Jun 27 20:29:36 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% pgi/19.3/hdf/4.2.14
+
+------------------------------------------------ Module Specific Help for "hdf/4.2.14" ------------------------------------------------
+HDF4 (also known as HDF) is a library and multi-object file format for
+storing and managing data between machines.
+
+Software website - https://portal.hdfgroup.org/display/HDF4/HDF4
+
+Built on Thu Jun 27 20:29:33 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% pgi/19.3/hdf5/1.10.5
+
+----------------------------------------------- Module Specific Help for "hdf5/1.10.5" ------------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+serial version of the HDF5 library, including Fortran, C, and C++ APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 20:54:54 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% pgi/19.3/mpt/2.19
+
+------------------------------------------------- Module Specific Help for "mpt/2.19" -------------------------------------------------
+The HPE Message Passing Interface (MPI) is an MPI development environment
+designed to enable the development and optimization of high performance
+computing (HPC) Linux® applications.
+
+Software website - https://www.hpe.com/us/en/product-catalog/detail/pip.hpe-performance-software-message-passing-interface.1010144155.html
+
+Built on Thu Jun 27 21:23:37 MDT 2019
+Modules used:
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% pgi/19.3/ncarcompilers/0.5.0
+
+------------------------------------------- Module Specific Help for "ncarcompilers/0.5.0" --------------------------------------------
+This module loads the NCAR compiler wrappers, that wraps the usual
+serial and parallel compilers to include all the required libraries and
+header files.
+
+Built on Thu Jun 27 19:54:35 MDT 2019
+
+
+%HELP% pgi/19.3/netcdf/4.6.3
+
+----------------------------------------------- Module Specific Help for "netcdf/4.6.3" -----------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the serial NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 20:54:54 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% pgi/19.3/openmpi/3.1.4
+
+---------------------------------------------- Module Specific Help for "openmpi/3.1.4" -----------------------------------------------
+The Open MPI Project is an open source Message Passing Interface
+implementation that is developed and maintained by a consortium of
+academic, research, and industry partners.
+
+Software website - https://www.open-mpi.org/
+
+Built on Thu Jun 27 20:29:01 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% pgi/19.3/udunits/2.2.26
+
+---------------------------------------------- Module Specific Help for "udunits/2.2.26" ----------------------------------------------
+The UDUNITS package supports units of physical quantities. Its C library
+provides for arithmetic manipulation of units and for conversion of
+numeric values between compatible units.
+
+Software website - https://www.unidata.ucar.edu/software/udunits/
+
+Built on Thu Jun 27 20:28:09 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0
+
+
+%HELP% openmpi/3.1.4/pgi/19.3/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:55:25 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/pgi/19.3/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 23:07:03 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/pgi/19.3/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 23:07:03 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% openmpi/3.1.4/pgi/19.3/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:49:45 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   pgi/19.3             
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/pgi/19.3/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:49:37 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   openmpi/3.1.4     
+   pnetcdf/1.11.1
+   pgi/19.3             
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% openmpi/3.1.4/pgi/19.3/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 23:01:27 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0  
+   openmpi/3.1.4
+
+
+%HELP% mpt/2.19/pgi/19.3/fftw-mpi/3.3.8
+
+---------------------------------------------- Module Specific Help for "fftw-mpi/3.3.8" ----------------------------------------------
+FFTW is a C subroutine library for computing the discrete Fourier
+transform (DFT) in one or more dimensions, of arbitrary input size,
+and of both real and complex data (as well as of even/odd data, i.e. the
+discrete cosine/sine transforms or DCT/DST).
+
+This module provides the MPI version of FFTW.
+
+Software website - http://www.fftw.org/
+
+Built on Thu Jun 27 22:53:20 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/pgi/19.3/hdf5-mpi/1.10.5
+
+--------------------------------------------- Module Specific Help for "hdf5-mpi/1.10.5" ----------------------------------------------
+HDF5 is a unique technology suite that makes possible the management
+of extremely large and complex data collections. This module loads the
+parallel version of the HDF5 library, including Fortran and C APIs.
+
+Software website - https://www.hdfgroup.org/solutions/hdf5/
+
+Built on Thu Jun 27 23:04:34 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/pgi/19.3/netcdf-mpi/4.6.3
+
+--------------------------------------------- Module Specific Help for "netcdf-mpi/4.6.3" ---------------------------------------------
+NetCDF is a set of software libraries and self-describing,
+machine-independent data formats that support the creation, access,
+and sharing of array-oriented scientific data.
+
+This module loads the parallel NetCDF interfaces for C (v4.6.1), Fortran
+(v4.4.4), and C++ (v4.3.0).
+
+Software website - http://www.unidata.ucar.edu/software/netcdf/
+
+Built on Thu Jun 27 23:04:34 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+
+%HELP% mpt/2.19/pgi/19.3/pio/1.10.1
+
+------------------------------------------------ Module Specific Help for "pio/1.10.1" ------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:49:19 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   pgi/19.3             
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/pgi/19.3/pio/2.4.3
+
+------------------------------------------------ Module Specific Help for "pio/2.4.3" -------------------------------------------------
+A high-level Parallel I/O Library for structured grid applications
+
+Software website - https://ncar.github.io/ParallelIO/
+
+Built on Sat Jun 29 17:49:12 MDT 2019
+Modules used:
+   ncarenv/1.3          
+   mpt/2.19          
+   pnetcdf/1.11.1
+   pgi/19.3             
+   cmake/3.14.4
+   ncarcompilers/0.5.0  
+   netcdf-mpi/4.6.3
+
+
+%HELP% mpt/2.19/pgi/19.3/pnetcdf/1.11.1
+
+---------------------------------------------- Module Specific Help for "pnetcdf/1.11.1" ----------------------------------------------
+PnetCDF is a high-performance parallel I/O library for accessing files
+in format compatibility with Unidata's NetCDF, specifically the formats
+of CDF-1, 2, and 5.
+
+Software website - https://trac.mcs.anl.gov/projects/parallel-netcdf
+
+Built on Thu Jun 27 23:00:59 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   pgi/19.3  
+   ncarcompilers/0.5.0  
+   mpt/2.19
+
+

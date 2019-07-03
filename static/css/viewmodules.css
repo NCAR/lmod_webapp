@@ -30,6 +30,8 @@
     border-style:solid;
     border-color:cyan;
     border-radius:14px;
+    max-height: 20vh;
+    overflow: scroll;
 }
 
 .search-design

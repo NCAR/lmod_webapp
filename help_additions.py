@@ -20,8 +20,19 @@ def list_clean(array_with_empty_strings):
     #print("End...")
     return array_with_empty_strings
 
+def assign_name_of_file():
+    name_of_file = input("What is the name of your file to submit to the Python scripts? Please type it. ")
+    print("The name of the file is: ",name_of_file)
+    if (name_of_file == "" or name_of_file == None):
+        print("Not a proper file name. Running default file.")
+        defaulted_file_name = "list.out"
+        return defaulted_file_name
+    else:
+        return name_of_file
+
 # The function construct_hunting_items() initiates the code in the Python file, first reading in another file for the rest of the functions to process
-def construct_hunting_items(file_item): #The argument file_item is used to indicate what file should be read by the Python script
+def construct_hunting_items(): #The argument file_item is used to indicate what file should be read by the Python script
+    file_item = assign_name_of_file() #Calls the assign_name_of_file() function for user to input the file name
     open_target_file = open(file_item,"r")# Opens a file object that is stored in the variable open_target_file
     output_contents = open_target_file.read()# Reads the contents of the file object open_target_file into a variable output_contents
     open_target_file.close() # The file object open_target_file is now closed
@@ -165,7 +176,7 @@ def attach_help_to_heading_container(container_possessing_help_info, target_dire
                 return compiler_dependent_modal_content# Returns the compiler_modal_content to where the attach_help_to_heading_container() function is called
             else:
                 pass# When if statement is not satisfied, pass
-            if top_level_software_help_information == target_software and top_level_software_help_information +":" not in list(container_possessing_help_info.keys()): #If statement that checks if the top_level_software_help_information string is the exact same as the target_software string, and that top_level_software_help_information is not one of the indicated software paths within the container_possessing_help_info
+            if top_level_software_help_information == target_software and top_level_software_help_information + ":" not in list(container_possessing_help_info.keys()): #If statement that checks if the top_level_software_help_information string is the exact same as the target_software string, and that top_level_software_help_information is not one of the indicated software paths within the container_possessing_help_info
                 compiler_modal_content = container_possessing_help_info[top_level_software_help_information] #The module help content extracted using container_possessing_help_info dictionary and top_level_software_help_information as the key is assigned to the variable compiler_modal_content
                 print("Am I running?")#Print statement used for debugging purposes to ensure that the portion of the code runs
                 return compiler_modal_content #Returns the compiler_modal_content to where the attach_help_to_heading_container() function is called
@@ -203,5 +214,5 @@ def turn_most_of_array_content_to_string(array_that_is_to_be_used_to_craft_a_str
 # The function turn turn_all_of_array_content_to_string() is used to convert all all of the contents of a list to a single, cohesive string
 def turn_all_of_array_content_to_string(a_few_strings_that_are_currently_in_a_list): #The argument a_few_strings_that_are_currently_in_a_list is a variable that holds a list to be completely converted to a string
     complete_measure_of_the_array = len(a_few_strings_that_are_currently_in_a_list) #complete_measure_of_the_array is a variable that will store the full size of the of list
-    new_content_from_the_array = "\n".join(a_few_strings_that_are_currently_in_a_list[0:complete_measure_of_the_array])# Constructs a string using list comprehension (all elements of the list are used to construct said string)
-    return received_content_string #new_content_from_the_array is returned to where the turn_all_of_array_content_to_string() function is called
+    new_content_from_the_array = "<br>".join(a_few_strings_that_are_currently_in_a_list[0:complete_measure_of_the_array])# Constructs a string using list comprehension (all elements of the list are used to construct said string), HTML <br> is for formatting when the modal is displayed.
+    return new_content_from_the_array #new_content_from_the_array is returned to where the turn_all_of_array_content_to_string() function is called
