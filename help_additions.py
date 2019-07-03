@@ -118,15 +118,15 @@ def build_help_information_containing_dict(container_possessing_directories, con
 # separate_the_siginificant_parts_of_the_path() fucntion is used to sparate the software path into separate pieces to work with
 def separate_the_siginificant_parts_of_the_path(the_path_to_be_partitioned):# The argument the_path_to_be_partitioned is the referring to the key of the help_info_container that has currently been added as an argument
     temp_array_hold = re.split("/",the_path_to_be_partitioned)# The temp_array_hold variable is used to store the result of the split methd using re module of Python
-    measure_of_arr = len(temp_array_hold)
+    measure_of_arr = len(temp_array_hold) # Storing the value of the complete size of the array for usage later within the function for modifying the last portion of the path
     temp_array_path_holder = [edited_path + "/" for edited_path in temp_array_hold] #using list comprehension, temp_array_path_holder variable is used to append the forward slash to the end of each string element that is in the list pointed to temp_array_hold
-    current_end_index = temp_array_path_holder[measure_of_arr-1]
-    new_replacement_index = current_end_index.replace("/","")
-    temp_array_path_holder.remove(current_end_index)
-    temp_array_path_holder.append(new_replacement_index)
+    current_end_index = temp_array_path_holder[measure_of_arr-1] #current_end_index stores the last index of the array so that it can be modified (paths to software do not end with "/")
+    new_replacement_index = current_end_index.replace("/","")#new_replacement_index stores a new string that is a modified string of current_end_index
+    temp_array_path_holder.remove(current_end_index)#Removes the element that was in the position of the final index of the list
+    temp_array_path_holder.append(new_replacement_index)# Replaces the element removed in the previous line with the modified version of that same string
     #print("Observe the elements in the array.")
     #print(temp_array_path_holder) #Print statement used for debugging purposes
-    separated_path_items = transform_the_array_of_regex(temp_array_path_holder)
+    separated_path_items = transform_the_array_of_regex(temp_array_path_holder) # Calls the transform_the_array_of_regex() function to concatenate the elements of the list of path elements so that future lines of code will not have to compensate with specifying two indices to make up one portion of the path
     return separated_path_items # Returns the array formed by the seperated_path_items variable
 
 # transform_the_array_of_regex() is used to piece together the path_items into an easier to utilize list of elements. Otherwise, the elements would be used where they end with the forward slash.
@@ -209,8 +209,6 @@ def turn_most_of_array_content_to_string(array_that_is_to_be_used_to_craft_a_str
     total_measure_of_the_array = len(array_that_is_to_be_used_to_craft_a_string)
     new_key_for_locating_help_info_placement = "".join(array_that_is_to_be_used_to_craft_a_string[0:(total_measure_of_the_array-1)])
     retrieved_string = str(new_key_for_locating_help_info_placement)
-    #print("The string that will be used to locate the correct software for the help:")
-    #print(retrieved_string)
     return retrieved_string
 
 def turn_all_of_array_content_to_string(a_few_strings_that_are_currently_in_a_list):
@@ -218,7 +216,3 @@ def turn_all_of_array_content_to_string(a_few_strings_that_are_currently_in_a_li
     new_content_from_the_array = "\n".join(a_few_strings_that_are_currently_in_a_list[0:complete_measure_of_the_array])
     received_content_string = str(new_content_from_the_array)
     return received_content_string
-
-#construct_hunting_items("help.out")# Executes the construct_hunting_items() function with the argument hile name "help.out"
-
-#def add_help_information(directory_key, content_target):
