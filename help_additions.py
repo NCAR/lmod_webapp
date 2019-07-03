@@ -178,10 +178,10 @@ def attach_help_to_heading_container(container_possessing_help_info, target_dire
             else:
                 pass# Will pass if the the if statement is not satisfied
         else:
-            path_matching_key_in_heading_container = turn_most_of_array_content_to_string(vessel_containing_help_path_items) #calls the turn_most_of_array_content_to_string() function with the argument vessel_containing_help_path_items to craft a string that is capable of pulling directories 
-            path_matching_key_in_heading_container_colon = character_replacement_with_colon(path_matching_key_in_heading_container)
-            pinpoint_software = vessel_containing_help_path_items[(len(vessel_containing_help_path_items)-1)]
-            if path_matching_key_in_heading_container_colon == target_directory_key and pinpoint_software == target_software:
+            path_matching_key_in_heading_container = turn_most_of_array_content_to_string(vessel_containing_help_path_items) #calls the turn_most_of_array_content_to_string() function with the argument vessel_containing_help_path_items to craft a string that is capable of matching to long directory paths.
+            path_matching_key_in_heading_container_colon = character_replacement_with_colon(path_matching_key_in_heading_container)# Replaces the end charcter of the generated sting path_matching_key_in_heading_container to ensure that the string can match the string used in the keys of the container_of_simple_tree
+            pinpoint_software = vessel_containing_help_path_items[(len(vessel_containing_help_path_items)-1)]# The variable pinpoint_software is assigned the value of the last index in the vessel_containing_help_path_items list
+            if path_matching_key_in_heading_container_colon == target_directory_key and pinpoint_software == target_software: # the if statement examines whether the sting stored in path_matching_key_in_heading_container_colon is equivalent to the string stored in target_directory_key, then checks if pinpoint_software is equivalent to target_software
                 print("Is the if statement being satisfied?")
                 print("\n The help software path for the simpletree: ", path_matching_key_in_heading_container_colon)
                 print("\n The directory_key within the simpletree: ", target_directory_key)
