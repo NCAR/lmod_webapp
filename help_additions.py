@@ -157,19 +157,18 @@ def attach_help_to_heading_container(container_possessing_help_info, target_dire
         print(target_software)
         print("This is the directory we are in at the moment:") #Print statement for debugging purposes, ensure that a directory is being submitted from the container_of_simple_tree
         print(target_directory_key)
-        if vessel_containing_help_path_items[0] == target_software and vessel_containing_help_path_items[0] +":" not in list(container_possessing_help_info.keys()): #If statement 
-            located_case_of_software = vessel_containing_help_path_items[0]
-            compiler_modal_content = container_possessing_help_info[located_case_of_software]
-            print("Am I running?")
-            return compiler_modal_content
-        else:
-            pass
         if len(vessel_containing_help_path_items) == 1:
             top_level_software_help_information = vessel_containing_help_path_items[0]
             if top_level_software_help_information in container_of_simple_tree["compilers:"] and top_level_software_help_information == target_software:
                 compiler_dependent_modal_content = container_possessing_help_info[top_level_software_help_information]
                 print(".....")
                 return compiler_dependent_modal_content
+            else:
+                pass
+            if top_level_software_help_information == target_software and top_level_software_help_information +":" not in list(container_possessing_help_info.keys()): #If statement that checks if the
+                compiler_modal_content = container_possessing_help_info[top_level_software_help_information]
+                print("Am I running?")
+                return compiler_modal_content
             else:
                 pass
             if top_level_software_help_information in container_of_simple_tree["idep:"] and top_level_software_help_information == target_software:
