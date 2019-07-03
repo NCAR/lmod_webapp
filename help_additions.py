@@ -157,39 +157,30 @@ def attach_help_to_heading_container(container_possessing_help_info, target_dire
         print(target_software)
         print("This is the directory we are in at the moment:") #Print statement for debugging purposes, ensure that a directory is being submitted from the container_of_simple_tree
         print(target_directory_key)
-        if len(vessel_containing_help_path_items) == 1:
-            top_level_software_help_information = vessel_containing_help_path_items[0]
-            if top_level_software_help_information in container_of_simple_tree["compilers:"] and top_level_software_help_information == target_software:
-                compiler_dependent_modal_content = container_possessing_help_info[top_level_software_help_information]
-                print(".....")
-                return compiler_dependent_modal_content
+        if len(vessel_containing_help_path_items) == 1: #If statement that measures the size of the list that is pointed to by vessel_containing_help_path_items and will only activate if len(vessel_containing_help_path_items) equals 1
+            top_level_software_help_information = vessel_containing_help_path_items[0]# Assigns the first index of vessel_containing_help_path_items to top_level_software_help_information variable
+            if top_level_software_help_information in container_of_simple_tree["compilers:"] and top_level_software_help_information == target_software:#Another if statement checking whether the string stored in top_level_software_help_information is within the compilers list of the container_of_simple_tree as well as ensuring said string in top_level_software_help_information matches the current software content string stored in target_software
+                compiler_dependent_modal_content = container_possessing_help_info[top_level_software_help_information] ## the variable compiler_dependent_modal_content is assigned the module help string retrieved from container_possessing_help_info using the string of top_level_software_help_information as the key
+                print(".....")# Print statement for debugging to test to see if the code is running.
+                return compiler_dependent_modal_content# Returns the compiler_modal_content to where the attach_help_to_heading_container() function is called
             else:
-                pass
-            if top_level_software_help_information == target_software and top_level_software_help_information +":" not in list(container_possessing_help_info.keys()): #If statement that checks if the
-                compiler_modal_content = container_possessing_help_info[top_level_software_help_information]
-                print("Am I running?")
-                return compiler_modal_content
+                pass# When if statement is not satisfied, pass
+            if top_level_software_help_information == target_software and top_level_software_help_information +":" not in list(container_possessing_help_info.keys()): #If statement that checks if the top_level_software_help_information string is the exact same as the target_software string, and that top_level_software_help_information is not one of the indicated software paths within the container_possessing_help_info
+                compiler_modal_content = container_possessing_help_info[top_level_software_help_information] #The module help content extracted using container_possessing_help_info dictionary and top_level_software_help_information as the key is assigned to the variable compiler_modal_content
+                print("Am I running?")#Print statement used for debugging purposes to ensure that the portion of the code runs
+                return compiler_modal_content #Returns the compiler_modal_content to where the attach_help_to_heading_container() function is called
             else:
-                pass
-            if top_level_software_help_information in container_of_simple_tree["idep:"] and top_level_software_help_information == target_software:
-                compiler_independent_modal_content = container_possessing_help_info[top_level_software_help_information]
-                print("....!")
-                return compiler_independent_modal_content
+                pass #Will simply pass  when the if statement is not satisfied
+            if top_level_software_help_information in container_of_simple_tree["idep:"] and top_level_software_help_information == target_software: #Checks if the string pointed to by top_level_software_help_information is in the list of values container_of_simple_tree using the "idep:" key, top_level_software_help_information string is then checked to ensure it matches the target_software string
+                compiler_independent_modal_content = container_possessing_help_info[top_level_software_help_information] # assigns the module help obtained from container_possessing_help_info dictionary using the string stored in top_level_software_help_information as the key. Said modal help information is in turn stored in compiler_independent_modal_content
+                print("....!")#Print statement utilized for debugging purposes to track whether the code is running or not
+                return compiler_independent_modal_content # Returns the module help content that was stored in compiler_independent_modal_content
             else:
-                pass
+                pass# Will pass if the the if statement is not satisfied
         else:
-            path_matching_key_in_heading_container = turn_most_of_array_content_to_string(vessel_containing_help_path_items)
+            path_matching_key_in_heading_container = turn_most_of_array_content_to_string(vessel_containing_help_path_items) #calls the turn_most_of_array_content_to_string() function with the argument vessel_containing_help_path_items to craft a string that is capable of pulling directories 
             path_matching_key_in_heading_container_colon = character_replacement_with_colon(path_matching_key_in_heading_container)
             pinpoint_software = vessel_containing_help_path_items[(len(vessel_containing_help_path_items)-1)]
-            if "cuda" in path_matching_key_in_heading_container_colon:
-                print("Viewing the string to observe the target container:")
-                print(path_matching_key_in_heading_container_colon)
-                print("Directory being looked at:")
-                print(target_directory_key)
-                print("Looking at the formatting of the software:")
-                print(pinpoint_software)
-                print("Looking at the formatting of the compared software:")
-                print(target_software)
             if path_matching_key_in_heading_container_colon == target_directory_key and pinpoint_software == target_software:
                 print("Is the if statement being satisfied?")
                 print("\n The help software path for the simpletree: ", path_matching_key_in_heading_container_colon)
