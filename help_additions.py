@@ -182,21 +182,21 @@ def attach_help_to_heading_container(container_possessing_help_info, target_dire
             path_matching_key_in_heading_container_colon = character_replacement_with_colon(path_matching_key_in_heading_container)# Replaces the end charcter of the generated sting path_matching_key_in_heading_container to ensure that the string can match the string used in the keys of the container_of_simple_tree
             pinpoint_software = vessel_containing_help_path_items[(len(vessel_containing_help_path_items)-1)]# The variable pinpoint_software is assigned the value of the last index in the vessel_containing_help_path_items list
             if path_matching_key_in_heading_container_colon == target_directory_key and pinpoint_software == target_software: # the if statement examines whether the sting stored in path_matching_key_in_heading_container_colon is equivalent to the string stored in target_directory_key, then checks if pinpoint_software is equivalent to target_software
-                print("Is the if statement being satisfied?")
-                print("\n The help software path for the simpletree: ", path_matching_key_in_heading_container_colon)
-                print("\n The directory_key within the simpletree: ", target_directory_key)
-                software_help_information = container_possessing_help_info[help_path]
-                return software_help_information
+                print("Is the if statement being satisfied?") # Print statement to look and examine whether the if statement is being printed for debugging purposes
+                print("\n The help software path for the simpletree: ", path_matching_key_in_heading_container_colon) #Print statement for debugging purposes to ensure that there is a string stored in the variable path_matching_key_in_heading_container_colon
+                print("\n The directory_key within the simpletree: ", target_directory_key) #Print statement for debugging purposes to ensure that there is a string stored in the variable target_directory_key
+                software_help_information = container_possessing_help_info[help_path] # stored the module help information obtained from container_possessing_help_info using the key help_path to be stored in software_help_information
+                return software_help_information # Returns the software_help_information to where the attach_help_to_heading_container() function is being called.
 
+#The function character_replacement_with_colon() is to replace te final character of a string with a colon for the purpose of making said string acceptable for the purpose of seeing if their are any equivalent instances within keys of the container_of_simple_tree
+def character_replacement_with_colon(inputted_string_for_character_replacement): # The argument inputted_string_for_character_replacement is a string that has been submitted for changing the last index of said string to a colon
+    measure_of_the_size_of_the_string = len(inputted_string_for_character_replacement) #measure_of_the_size_of_the_string is a variable containing the size of the string to accuratey locate the position of the last index
+    colon_replacement_string = inputted_string_for_character_replacement[:(measure_of_the_size_of_the_string-1)] + ":" # Replaces the last index of the string with a colon utilizing list comprehension and stores the result to a new string called colon_replacement_string
+    return colon_replacement_string #returns the string that has been stored in the variable colon_replacement_string
 
-def character_replacement_with_colon(inputted_string_for_character_replacement):
-    measure_of_the_size_of_the_string = len(inputted_string_for_character_replacement)
-    colon_replacement_string = inputted_string_for_character_replacement[:(measure_of_the_size_of_the_string-1)] + ":"
-    return colon_replacement_string
-
-
-def turn_most_of_array_content_to_string(array_that_is_to_be_used_to_craft_a_string):
-    total_measure_of_the_array = len(array_that_is_to_be_used_to_craft_a_string)
+#The function turn_most_of_array_content_to_string() is used to turn most of a list to string, so that the resulting string can be used to match software directory paths used as keys in the simple_tree dictionary
+def turn_most_of_array_content_to_string(array_that_is_to_be_used_to_craft_a_string):# The argument array_that_is_to_be_used_to_craft_a_string is a list submitted to output a string that can be used to partially match the directory path keys of the simpletree dictionary
+    total_measure_of_the_array = len(array_that_is_to_be_used_to_craft_a_string) #total_measure_of_the_array is a variable storing the size of array_that_is_to_be_used_to_craft_a_string for making sure not all string elements of the list are utilized to craft the string
     new_key_for_locating_help_info_placement = "".join(array_that_is_to_be_used_to_craft_a_string[0:(total_measure_of_the_array-1)])
     retrieved_string = str(new_key_for_locating_help_info_placement)
     return retrieved_string
