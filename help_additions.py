@@ -146,7 +146,9 @@ def transform_the_array_of_regex(regex_result_array): # The regex_result_array a
     #print(separated_joined_path_items)
     return separated_joined_path_items # Returns the separated_joined_path_items to where the transform_the_array_of_regex() function is called
 
-def attach_help_to_heading_container(container_possessing_help_info, target_directory_key, target_directory_array_of_content, container_of_simple_tree, target_software):
+
+# attach_help_to_heading_container() function, when executed, it will extract the help module information and return said help module information to be stored in a variable in dict_to_array.py
+def attach_help_to_heading_container(container_possessing_help_info, target_directory_key, target_directory_array_of_content, container_of_simple_tree, target_software): #five arguments are accepted here: container_possessing_help_info is a dictionary that stores the paths of the help module information as keys and the help module information itself as values,target_directory_key is the directory from the container_of_simple_tree that the for loop outside this file is currently on, target_directory_array_of_content is the list of content that from container_of_simple_tree that the for loop in dict_to_array.py is currently on, container_of_simple_tree is dictionary directories as keys and lists of software content as values, target_software is the current software that the for loop in dict_to-array.py is currently attempting to build a dictionary for within the for loop
     for help_path,help_contents in container_possessing_help_info.items(): #for loop initialized to iterate the paths to the help information (keys) in the container_possessing_help_info
         vessel_containing_help_path_items = separate_the_siginificant_parts_of_the_path(help_path)
         print("Printing the help_path:")
