@@ -145,6 +145,22 @@ Modules used:
    ncarenv/1.3
 
 
+%HELP% cdo/1.9.7.1
+
+----------------------------------------------- Module Specific Help for "cdo/1.9.7.1" ------------------------------------------------
+CDO is a collection of command line Operators to manipulate and analyse
+Climate and NWP model Data.
+
+Software website - https://code.mpimet.mpg.de/projects/cdo/
+
+Built on Fri Jul  5 11:28:24 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0  
+   cmake/3.14.4
+
+
 %HELP% cmake/3.14.4
 
 ----------------------------------------------- Module Specific Help for "cmake/3.14.4" -----------------------------------------------
@@ -323,6 +339,23 @@ supported, native netcdf interface.
 See http://www.mathworks.com/products/matlab/ for details.
 
 
+%HELP% nano/4.3
+
+------------------------------------------------- Module Specific Help for "nano/4.3" -------------------------------------------------
+GNU nano was designed to be a free replacement for the Pico text editor,
+part of the Pine email suite from The University of Washington. It
+aimed to "emulate Pico as closely as is reasonable and then include
+extra functionality".
+
+Software website - https://www.nano-editor.org/
+
+Built on Wed Jul  3 14:29:41 MDT 2019
+Modules used:
+   ncarenv/1.3  
+   gnu/8.3.0  
+   ncarcompilers/0.5.0
+
+
 %HELP% ncarenv/1.3
 
 ----------------------------------------------- Module Specific Help for "ncarenv/1.3" ------------------------------------------------
@@ -400,6 +433,17 @@ Modules used:
    ncarenv/1.3  
    gnu/8.3.0  
    ncarcompilers/0.5.0
+
+
+%HELP% peak_memusage/2.0.1
+
+------------------------------------------- Module Specific Help for "peak_memusage/2.0.1" --------------------------------------------
+This module loads the peak_memusage tool version v2.0.1
+Use it like this:
+  - sequential: job_memusage.exe program_name
+  - parallel batch jobs: <mpi_launcher> job_memusage.exe program_name
+See "Checking memory use" in the Yellowstone documentation:
+https://www2.cisl.ucar.edu/resources/yellowstone/using_resources/runningjobs/check_memory
 
 
 %HELP% pyferret/7.5.0
