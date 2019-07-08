@@ -11,8 +11,9 @@
 import re # Imports the regular expression module of Python
 import copy #Imports the copy module of Python for the purpose of making deep copies to maniulate dictionaries in this code
 import help_additions #Imports the help_addtions.py code to be utilized within the dict_to_array_dict.py Python code
-def value_morph_dict(heading_container):# Function value_morph_dict function accepts a dictionary argument. Executes the remainder of the code in this Python file.
-    help_info_container = help_additions.construct_hunting_items()# Executes the construct_hunting_items() function with the argument hile name "help.out" with the result to be stored in the help_info_container variable
+def value_morph_dict(heading_container, corresponding_system_file):# Function value_morph_dict function accepts a dictionary argument. Executes the remainder of the code in this Python file.
+    stored_system_help_file = file_system_identification(corresponding_system_file)
+    help_info_container = help_additions.construct_hunting_items(stored_system_help_file)# Executes the construct_hunting_items() function with the argument hile name "help.out" with the result to be stored in the help_info_container variable
     for key, content_array in heading_container.items():# Iterates through the dictionary
         array_dict_content = [] #Initializes an outer list to wrap around the dictionaries that will be formed
         for element in content_array:# For every indicidual piece of content, a dictionary eill be formed with keys and values
@@ -26,6 +27,13 @@ def value_morph_dict(heading_container):# Function value_morph_dict function acc
     full_compiler_container_complete = search_dict_children_from_target(heading_container) #Returns the complete list-dict construct to be stored in a variable for further usage
     return full_compiler_container_complete#Returns the list-dict construct to reg_expression.py
 
+def file_system_identification(file_name_containing_system_name):
+    if "cheyenne" in file_name_containing_system_name:
+        return "cheyenne-help.out"
+    elif "dav" in file_name_containing_system_name:
+        return "dav-help.out"
+    else:
+        print("There is an error. Please check code.")
 # search_dict_children_from_target fucntion has an argument of heading_container, will search for children of the given dictionary
 def search_dict_children_from_target(heading_container): # The function argument is already a heaing_container
     array_of_headings = list(heading_container.keys()) # Creates a list of headings for tracking purposes

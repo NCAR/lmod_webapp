@@ -190,7 +190,7 @@ def text_to_json_list(list_of_headings, full_list_of_content):
     #return content_containing_dict
 
 # text_to_dict function constructs a dictionary of headings and a list of associated content
-def text_to_dict(list_of_headings, full_list_of_content,heading_container): #Arguments are an array of the headings, an array of the associated content, and a dictionary of headings as keys and arrays of content as the values
+def text_to_dict(list_of_headings, full_list_of_content,heading_container, system_identifier): #Arguments are an array of the headings, an array of the associated content, and a dictionary of headings as keys and arrays of content as the values
     track_list = [] #Initializes the track_list which will store the indexes of content in between headings
     content_containing_dict = {} #Constructs a dictionary that will use the headings as keys and the lists containing content as the values
     print_heading_and_full_content_lists(list_of_headings, full_list_of_content) # Prints the list_of_headings and full_list_of_content lists for debugging purposes
@@ -202,17 +202,17 @@ def text_to_dict(list_of_headings, full_list_of_content,heading_container): #Arg
     #view_content_containing_dict(content_containing_dict) #the function prints the dictionary, content_containing_dict, printing both keys and their associated values
     #resulting_array_dict = lists_to_dict_construct.start_build_top_dict(list_of_headings, list_of_lists,heading_container) #From second iteration of the code that builds heavily on reg_expression.py's functions to develop a hierachical list-dict construct using list comprehension mainly. This code requires lists_to_dict_construct.py file and its functions to be executed.
     print("\n")
-    full_content_vessel = heading_point_to_list(heading_container,list_of_lists,list_of_headings)# From the third version of the code. Reorganizes a pre-designed dictionary of headings/directories as keys and lists of content as values to generate a hierarchical list-dict construct. This code depends heavily on the file dict_to_array_dict.py and its associated functions to be executed.
+    full_content_vessel = heading_point_to_list(heading_container,list_of_lists,list_of_headings, system_identifier)# From the third version of the code. Reorganizes a pre-designed dictionary of headings/directories as keys and lists of content as values to generate a hierarchical list-dict construct. This code depends heavily on the file dict_to_array_dict.py and its associated functions to be executed.
     return full_content_vessel, content_containing_dict #returns two separate variables full_content_vessel being obtained by the dict_to_array_dict.py code and content_containing_dict being obtained by the original code, both variables are being tilized in the FLASK application
 
 #For calling dict_to_array_dict.py functions for generating a hierarchical list-dict construct
-def heading_point_to_list(heading_construct, arrays_of_content,list_of_headings): # The function heading_point_to_list calls on code from the dict_to_array_dict.py and uses its functions to rearrange a dictionary of heading/directory and values of associated lists of content into a hierarchical list-dict construct. Has the arguments heading_construct, arrays_of_content,list_of_headings for building a new dictionary.
+def heading_point_to_list(heading_construct, arrays_of_content,list_of_headings, system_file_identification): # The function heading_point_to_list calls on code from the dict_to_array_dict.py and uses its functions to rearrange a dictionary of heading/directory and values of associated lists of content into a hierarchical list-dict construct. Has the arguments heading_construct, arrays_of_content,list_of_headings for building a new dictionary.
     for heading,content in zip(list_of_headings,arrays_of_content):# For loop iterating through the headings/directory, associated lists of content, this constructs a ditionary to avoid using parallel arrays any further
         heading_construct[heading] = content # The list containing headings is to make sure each key is paired with the cuorrect value (value being the list of associated content)
     print("\n Heading dictionary printed")
     for key, value in heading_construct.items():# Iterates the dictionary heading_construct to check the key, value pairs
         print("\n",key,value)
-    full_compiler_construct = dict_to_array_dict.value_morph_dict(heading_construct) #The python file dict_to_array_dict.py with function value_morph_dict being called to return a hierarchical list-dict construct to be stored in the variable full_compiler_construct
+    full_compiler_construct = dict_to_array_dict.value_morph_dict(heading_construct, system_file_identification) #The python file dict_to_array_dict.py with function value_morph_dict being called to return a hierarchical list-dict construct to be stored in the variable full_compiler_construct
     return full_compiler_construct # Returns the hierarchical list-dict construct
 
 def assign_module_level_dict(list_of_content, heading):#Ignore, being used for text_to_json_list function for test purposes (arguments are headings and list of associated content)
@@ -243,6 +243,14 @@ def assign_name_of_file():
     else:
         return name_of_file
 
+def cheyenne_file_obtain():
+    cheyenne_out_file = "cheyenne-list.out"
+    return cheyenne_out_file
+
+def casper_file_obtain():
+    casper_out_file = "dav-list.out"
+    return casper_out_file
+
 def main():#Initial main function that is the first version of the code implementation
     stored_content = content_extract("result_module_output.txt")# Content extraction to obtain the strings of the content
     stored_heading_content,heading_container = text_to_heading_list(stored_content) #test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
@@ -271,6 +279,31 @@ def main_array_dict():#Third main fucntion for the third version of the code imp
     full_clean_content = list_clean(full_content)
     print("This is the full_contenttt:", full_clean_content)
     array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container)#returns the array_dict_containing_content as well as content_containing_dict
+    return array_dict_containing_content #Returns the array_dict_containing_content
+
+
+def cheyenne_array_dict():#Fourth main fucntion for the third version of the code implementation
+    system_file_name = cheyenne_file_obtain()
+    stored_content = content_extract(cheyenne_file_obtain())# Content extraction to obtain the strings of the content
+    stored_heading_content,heading_container = text_to_heading_list(stored_content)#test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
+    stored_module_content = text_to_point(stored_heading_content, stored_content)#The function test_to_point is called to return the content of the extracted content
+    stored_module_content = list_clean(stored_module_content)# Cleans the content list of empy strings
+    full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
+    full_clean_content = list_clean(full_content)
+    print("This is the full_contenttt:", full_clean_content)
+    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container, system_file_name)#returns the array_dict_containing_content as well as content_containing_dict
+    return array_dict_containing_content #Returns the array_dict_containing_content
+
+def casper_array_dict():#Fifth main fucntion for the third version of the code implementation
+    system_file_name = casper_file_obtain()
+    stored_content = content_extract(casper_file_obtain())# Content extraction to obtain the strings of the content
+    stored_heading_content,heading_container = text_to_heading_list(stored_content)#test_to_heading function is called returning the stored_heading content and the heading_container that uses the headings/directories as keys
+    stored_module_content = text_to_point(stored_heading_content, stored_content)#The function test_to_point is called to return the content of the extracted content
+    stored_module_content = list_clean(stored_module_content)# Cleans the content list of empy strings
+    full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
+    full_clean_content = list_clean(full_content)
+    print("This is the full_contenttt:", full_clean_content)
+    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container, system_file_name)#returns the array_dict_containing_content as well as content_containing_dict
     return array_dict_containing_content #Returns the array_dict_containing_content
 #def test():
 #    stored_content = content_extract("result_module_output.txt")

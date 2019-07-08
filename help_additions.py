@@ -31,8 +31,8 @@ def assign_name_of_file():
         return name_of_file
 
 # The function construct_hunting_items() initiates the code in the Python file, first reading in another file for the rest of the functions to process
-def construct_hunting_items(): #The argument file_item is used to indicate what file should be read by the Python script
-    file_item = assign_name_of_file() #Calls the assign_name_of_file() function for user to input the file name
+def construct_hunting_items(system_help_file_name): #The argument file_item is used to indicate what file should be read by the Python script
+    file_item = system_help_file_name #Calls the assign_name_of_file() function for user to input the file name
     open_target_file = open(file_item,"r")# Opens a file object that is stored in the variable open_target_file
     output_contents = open_target_file.read()# Reads the contents of the file object open_target_file into a variable output_contents
     open_target_file.close() # The file object open_target_file is now closed

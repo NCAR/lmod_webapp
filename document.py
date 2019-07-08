@@ -31,14 +31,14 @@ def display(): #For rendering the template and sending the necessary data to sai
 @app.route("/json/")# Add json/ to default  URL route to go to json_modules.html
 def display_json_tree():#Function initialized to display the webpage that will in turn render the jQuery simpletree
     #dictionary_content = reg_expression.main()
-    javascript_content = dict_to_json.array_dict_to_json(reg_expression.main_array_dict())# converts the list-dictionary construct returned by main_array_dict() from the file reg_expression to be converted to JSON by the array_dict_to_json function from the dict_to_json Python file
+    javascript_content = dict_to_json.array_dict_to_json(reg_expression.cheyenne_array_dict())# converts the list-dictionary construct returned by main_array_dict() from the file reg_expression to be converted to JSON by the array_dict_to_json function from the dict_to_json Python file
     #javascript_content = test_js_dict.commence_test()#dict_to_json.dictionary_to_json(dictionary_content)#javascript_content now stores a JSON object of dictionary_content
     return flask.render_template("json_modules.html", tree_content = javascript_content)#Renders the HTML file and passes the javascript_content variable to be utilized by Jinja2 or JavaScript
 
 @app.route("/casperjson/")# Add casperjson/ to default  URL route to go to json_modules.html
 def display_json_casper_tree():#Function initialized to display the webpage that will in turn render the jQuery simpletree
     #dictionary_content = reg_expression.main()
-    javascript_content = dict_to_json.array_dict_to_json(reg_expression.main_array_dict())# converts the list-dictionary construct returned by main_array_dict() from the file reg_expression to be converted to JSON by the array_dict_to_json function from the dict_to_json Python file
+    javascript_content = dict_to_json.array_dict_to_json(reg_expression.casper_array_dict())# converts the list-dictionary construct returned by main_array_dict() from the file reg_expression to be converted to JSON by the array_dict_to_json function from the dict_to_json Python file
     #javascript_content = test_js_dict.commence_test()#dict_to_json.dictionary_to_json(dictionary_content)#javascript_content now stores a JSON object of dictionary_content
     return flask.render_template("json_casper_modules.html", tree_content = javascript_content)#Renders the HTML file and passes the javascript_content variable to be utilized by Jinja2 or JavaScript
 
