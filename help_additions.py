@@ -20,15 +20,16 @@ def list_clean(array_with_empty_strings):
     #print("End...")
     return array_with_empty_strings
 
-def assign_name_of_file():
-    name_of_file = input("What is the name of your file to submit to the Python scripts? Please type it. ")
-    print("The name of the file is: ",name_of_file)
-    if (name_of_file == "" or name_of_file == None):
-        print("Not a proper file name. Running default file.")
-        defaulted_file_name = "list.out"
-        return defaulted_file_name
-    else:
-        return name_of_file
+# the function assign_name_of_file() allows user input for the purpose of assigning a file to use.
+def assign_name_of_file(): # Has no arguments, is ran when called in code.
+    name_of_file = input("What is the name of your file to submit to the Python scripts? Please type it. ") #Accepts the raw input from keyboard to determine what file is to be selected.
+    print("The name of the file is: ",name_of_file) # Verifies wht the user has typed is the string that will be used to determine the file name.
+    if (name_of_file == "" or name_of_file == None):# if statement makes sure empty string or nonetype are not submitted.
+        print("Not a proper file name. Running default file.") # Print statement indicating default file will run
+        defaulted_file_name = "list.out" # "list.out" string is a file name that is assigned to defaulted_file_name
+        return defaulted_file_name #returns the value of defaulted_file_name
+    else: # runs if the the if statement is not satisfied
+        return name_of_file #returns the value of name_of_file
 
 # The function construct_hunting_items() initiates the code in the Python file, first reading in another file for the rest of the functions to process
 def construct_hunting_items(system_help_file_name): #The argument file_item is used to indicate what file should be read by the Python script

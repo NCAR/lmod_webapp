@@ -12,7 +12,7 @@ import re # Imports the regular expression module of Python
 import copy #Imports the copy module of Python for the purpose of making deep copies to maniulate dictionaries in this code
 import help_additions #Imports the help_addtions.py code to be utilized within the dict_to_array_dict.py Python code
 def value_morph_dict(heading_container, corresponding_system_file):# Function value_morph_dict function accepts a dictionary argument. Executes the remainder of the code in this Python file.
-    stored_system_help_file = file_system_identification(corresponding_system_file)
+    stored_system_help_file = file_system_identification(corresponding_system_file) #retrieves the repective help file for the system being currently accessed
     help_info_container = help_additions.construct_hunting_items(stored_system_help_file)# Executes the construct_hunting_items() function with the argument hile name "help.out" with the result to be stored in the help_info_container variable
     for key, content_array in heading_container.items():# Iterates through the dictionary
         array_dict_content = [] #Initializes an outer list to wrap around the dictionaries that will be formed
@@ -27,13 +27,15 @@ def value_morph_dict(heading_container, corresponding_system_file):# Function va
     full_compiler_container_complete = search_dict_children_from_target(heading_container) #Returns the complete list-dict construct to be stored in a variable for further usage
     return full_compiler_container_complete#Returns the list-dict construct to reg_expression.py
 
-def file_system_identification(file_name_containing_system_name):
-    if "cheyenne" in file_name_containing_system_name:
-        return "cheyenne-help.out"
-    elif "dav" in file_name_containing_system_name:
-        return "dav-help.out"
-    else:
-        print("There is an error. Please check code.")
+#The function file_system_identification() identifies which help file is needed to load the module help info
+def file_system_identification(file_name_containing_system_name): # The argument file_name_containing_system_name is a string that contains the name of the system that will in turn be used to identify the system
+    if "cheyenne" in file_name_containing_system_name: #If statement that uses the string "cheyenne" to examine if "cheyenne" is a substring of the file name
+        return "cheyenne-help.out" # Returns the file named "cheyenne-help.out"
+    elif "dav" in file_name_containing_system_name:# Elif statement if the file name does not contain the substring "cheyenne", see if it contains the substring "dav"
+        return "dav-help.out" # Returns the file named "dav-help.out"
+    else:# Else statement to catch anything escaping the preceding if and elif statements
+        print("There is an error. Please check code.") #Prints this message indicating it is time to debug
+
 # search_dict_children_from_target fucntion has an argument of heading_container, will search for children of the given dictionary
 def search_dict_children_from_target(heading_container): # The function argument is already a heaing_container
     array_of_headings = list(heading_container.keys()) # Creates a list of headings for tracking purposes
