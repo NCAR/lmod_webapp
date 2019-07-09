@@ -54,15 +54,23 @@ array_dict.json (Example of the format that the jQuery simpletree will accept. S
 
 array_dict_list.json (The JSON generated from the lmod_webapp. You can use this file to verify whether the contents are in a proper JSON format. Also allows for checking to see if there are any unnecessary processing details in the code itself.)
 
-There are also two .out files present in the repository.
+There are also multiple .out files present in the repository.
 
-listcheyenne.out (The software headings/directories and their respective contents that are available on Cheyenne HPC system. This file, and listcasper.out, are the files currently being processed for the web application. To switch the files being processed, simply reload the tab that displays the webpage and specify the alternate file within the terminal. The default route for this file is localhost/json/ using the template json_modules.html.)
+casperhelp.out (Old version of the Casper module help information.)
 
-listcasper.out (The software headings/directories and their respective contents that are available on the Casper HPC system. This file, along with list.out, are the files currently being processed for the web application. To switch the files being processed, simply reload the tab that displays the webpage and specify the alternate file within the terminal. The default route for this file is localhost/ using the template json_casper_modules.html.)
+cheyennehelp.out (Old version of the Cheyenne module help information.)
 
-cheyennehelp.out (The paths for and relevant information regarding the software that is available for Cheyenne. Supplies the content for the modals that appear when clicking on specific software components in the simpleTree.)
+listcasper.out (The old software headings/directories and their respective directories for Casper.)
 
-casperhelp.out (The paths for and relevant information regarding the software that is available for Casper. Supplies the content for the modals that appear when clicking on specific software components in the simpleTree.)
+listcheyenne.out (The old software headings/directories and their respective directories for Cheyenne.)
+
+cheyenne-list.out (The software headings/directories and their respective contents that are available on Cheyenne HPC system. This file, and listcasper.out, are the files currently being processed for the web application. To switch the files being processed, simply reload the tab that displays the webpage and specify the alternate file within the terminal. The default route for this file is localhost/json/ using the template json_modules.html.)
+
+dav-list.out (The software headings/directories and their respective contents that are available on the Casper HPC system. This file, along with list.out, are the files currently being processed for the web application. To switch the files being processed, simply reload the tab that displays the webpage and specify the alternate file within the terminal. The default route for this file is localhost/ using the template json_casper_modules.html.)
+
+cheyenne-help.out (The paths for and relevant information regarding the software that is available for Cheyenne. Supplies the content for the modals that appear when clicking on specific software components in the simpleTree.)
+
+dav-help.out (The paths for and relevant information regarding the software that is available for Casper. Supplies the content for the modals that appear when clicking on specific software components in the simpleTree.)
 
 ## Directions
 To run this application:
