@@ -8,10 +8,11 @@ To run this application:
 1. export FLASK_APP=document.py
 2. flask run
 3. Enter the DEFAULT_URL with the correct extension /cheyennejson/ or /casperjson/
+(DEFAULT_URL will be http://127.0.0.1:5000/ or a similar URL on Cheyenne)
 
 then navigate to the specified url in a web browser to see the webpage to get to the default page with HTML and CSS. To get the Javascript and Jquery simpletree implementation, add /json/ after the DEFAULT_URL.
 
-Ex: DEFAULT_URL/cheyennejson/
+Ex: DEFAULT_URL/cheyennejson/ where DEFAULT_URL would be
 
 To input the file name, input the DEFAULT_URL and add /json/ after the DEFAULT_URL. Then, when the printed prompt is displayed, enter the name of the file you wish to use. After that, the webpage should fully load. Note: loading will remain indefinite while there is no given input.
 
@@ -54,7 +55,7 @@ lists_to_dict_construct.py (Contains the functions necessary to convert the list
 
 reg_expression.py (Where the bulk of text processing and organization of content is handled. Handles a bulk of the initial processing.)
 
-test_js_dict.py (Test code to see what structure could be implemented and accepted as json for the simpletree on the frontend. Can be used for practice runs.)
+test_js_dict.py (Test code to see what structure could be implemented and accepted as json for the simpletree on the frontend. Can be used for practice runs. Stored i the test subdirectory.)
 
 There are currently three html files present:
 
@@ -67,8 +68,6 @@ json_casper_modules.html (Third HTML file that is reserved primarily for display
 test.html (Unneeded, used for initial experimentation with JavaScript)
 
 There can be multiple JSON files present: (currently deleted)
-
-array_dict.json (Example of the format that the jQuery simpletree will accept. Short summary: the data must be contained in lists that contain dictionaries so that the JavaScript can interpret the JSON as the correct JavaScript object.)
 
 array_dict_list.json (The JSON generated from the lmod_webapp. You can use this file to verify whether the contents are in a proper JSON format. Also allows for checking to see if there are any unnecessary processing details in the code itself.)
 
