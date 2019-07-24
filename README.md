@@ -3,6 +3,20 @@ A web application to interactively display Lmod trees
 
 Web application built primarily using Python Flask. This web application also makes use of Python's regular expression, json, and copy modules.
 
+## Directions
+To run this application:
+1. export FLASK_APP=document.py
+2. flask run
+3. Enter the DEFAULT_URL with the correct extension /cheyennejson/ or /casperjson/
+
+then navigate to the specified url in a web browser to see the webpage to get to the default page with HTML and CSS. To get the Javascript and Jquery simpletree implementation, add /json/ after the DEFAULT_URL.
+
+Ex: DEFAULT_URL/cheyennejson/
+
+To input the file name, input the DEFAULT_URL and add /json/ after the DEFAULT_URL. Then, when the printed prompt is displayed, enter the name of the file you wish to use. After that, the webpage should fully load. Note: loading will remain indefinite while there is no given input.
+
+The path /casperjson/ works in a similar process to the path /json/, the difference being that /casperjson/ is added to the end of the DEFAULT_URL.
+
 Currently there are multiple txt files in the repository main directory:
 
 References.txt (For any useful or necessary references that have not been inserted in comments in the available code. Will likely contain all necessary references throughout the code as a central file to store such information. Update to keep track use of useful or necessary references.)
@@ -42,13 +56,11 @@ reg_expression.py (Where the bulk of text processing and organization of content
 
 test_js_dict.py (Test code to see what structure could be implemented and accepted as json for the simpletree on the frontend. Can be used for practice runs.)
 
-text_cleaner.py (Used at one point to parse the text. Currently unneeded.)
-
 There are currently three html files present:
 
 view_modules.html (The original HTML file utilized for testing purposes. view_modules.html is the default route for the Flask application.)
 
-json_modules.html (The second HTML file developed. To get to this page json/ must be added to the base URL. Cheyenne is embedded in HTML. The webpage utilizes JavaScript.)
+json_modules.html (The second HTML file developed. To get to this page json/ must be added to the DEFAULT_URL. Cheyenne is embedded in HTML. The webpage utilizes JavaScript.)
 
 json_casper_modules.html (Third HTML file that is reserved primarily for displaying the Casper software information. Casper is embedded in the HTML tags. The webpage utilizes JavaScript.)
 
@@ -62,14 +74,6 @@ array_dict_list.json (The JSON generated from the lmod_webapp. You can use this 
 
 There are also multiple .out files present in the repository.
 
-casperhelp.out (Old version of the Casper module help information.)
-
-cheyennehelp.out (Old version of the Cheyenne module help information.)
-
-listcasper.out (The old software headings/directories and their respective directories for Casper.)
-
-listcheyenne.out (The old software headings/directories and their respective directories for Cheyenne.)
-
 cheyenne-list.out (The software headings/directories and their respective contents that are available on Cheyenne HPC system. This file, and listcasper.out, are the files currently being processed for the web application. To switch the files being processed, simply reload the tab that displays the webpage and specify the alternate file within the terminal. The default route for this file is localhost/json/ using the template json_modules.html.)
 
 dav-list.out (The software headings/directories and their respective contents that are available on the Casper HPC system. This file, along with list.out, are the files currently being processed for the web application. To switch the files being processed, simply reload the tab that displays the webpage and specify the alternate file within the terminal. The default route for this file is localhost/ using the template json_casper_modules.html.)
@@ -77,20 +81,6 @@ dav-list.out (The software headings/directories and their respective contents th
 cheyenne-help.out (The paths for and relevant information regarding the software that is available for Cheyenne. Supplies the content for the modals that appear when clicking on specific software components in the simpleTree.)
 
 dav-help.out (The paths for and relevant information regarding the software that is available for Casper. Supplies the content for the modals that appear when clicking on specific software components in the simpleTree.)
-
-## Directions
-To run this application:
-1. export FLASK_APP=document.py
-2. flask run
-3.
-
-then navigate to the specified url in a web browser to see the webpage to get to the default opage with HTML and CSS. To get the Javascript and Jquery simpletree implementation, add /json/ after the default url.
-
-Ex: DEFAULT_URL/json/
-
-To input the file name, input the base URL and add /json/ after the base URL. Then, when the printed prompt is displayed, enter the name of the file you wish to use. After that, the webpage should fully load. Note: loading will remain indefinite while there is no given input.
-
-The path /casperjson/ works in a similar process to the path /json/, the difference being that /casperjson/ is added to the end of the default url.
 
 Limitations:
 1. The data must be loaded when the page initializes for the simpletree. Data cannot be added after the page has loaded.

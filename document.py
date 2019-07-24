@@ -22,11 +22,11 @@ app = Flask("document") #Name of the Flask app
 # Code will be ran when the page is loading. If there is any printed information in the Terminal,
 # feel free to read said information for the purpose of ensuring that the code is running correctly.
 
-@app.route("/")# Default url route for app
-def display(): #For rendering the template and sending the necessary data to said template
-    dictionary_content = reg_expression.main_dict() # saves the dictionary content of the compilers and the modules
-    html_content = dictionary_content #html_content now stores the value of dictionary_content
-    return flask.render_template("view_modules.html", text_html = html_content) #Renders the template and passes the data to the webpage
+#@app.route("/")# Default url route for app
+#def display(): #For rendering the template and sending the necessary data to said template
+#    dictionary_content = reg_expression.main_dict() # saves the dictionary content of the compilers and the modules
+#    html_content = dictionary_content #html_content now stores the value of dictionary_content
+#    return flask.render_template("view_modules.html", text_html = html_content) #Renders the template and passes the data to the webpage
 
 @app.route("/cheyennejson/")# Add json/ to default  URL route to go to json_modules.html
 def display_json_tree():#Function initialized to display the webpage that will in turn render the jQuery simpletree
