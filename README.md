@@ -18,7 +18,13 @@ Currently there is one bash script in the repository as well:
 module_collect.sh (Collects the relevant compiler and module information)
 ->module_collect.sh will output a file with the relevant module information. The most recent version was developed using regular expressions provided by Brian Vanderwende. Subject to further modification.
 
-genlist.sh (collects all directory and software components. Provided by Brian Vanderwende. Generates the file list.out. Do not change .out extension to .txt or else it will miss some of the information that is gathered.)
+genlist.sh (Collects all directory and software components of the given HPC system. Provided by Brian Vanderwende. Generates the file list.out. Do not change .out extension to .txt or else it will miss some of the information that is gathered.)
+
+genhelp.sh (Collects all the relevant module help information for the directories and software components of the given HPC system. Provided by Brian Vanderwende. Generates the file help.out. Do not change .out extension to .txt or else it will miss some of the information that is gathered.)
+
+update.sh (Script to be ran in a CRON job for updating Lmod page for the Drupal front end.)
+
+driver.sh (Collects the software and module help information both Cheyenne and CAsper and outputs them to respectively named files. It also runs the flask application based on which system is currently logged into at the moment.)
 
 This Flask Application has six different python files:
 

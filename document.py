@@ -28,7 +28,7 @@ def display(): #For rendering the template and sending the necessary data to sai
     html_content = dictionary_content #html_content now stores the value of dictionary_content
     return flask.render_template("view_modules.html", text_html = html_content) #Renders the template and passes the data to the webpage
 
-@app.route("/json/")# Add json/ to default  URL route to go to json_modules.html
+@app.route("/cheyennejson/")# Add json/ to default  URL route to go to json_modules.html
 def display_json_tree():#Function initialized to display the webpage that will in turn render the jQuery simpletree
     #dictionary_content = reg_expression.main()
     javascript_content = dict_to_json.array_dict_to_json(reg_expression.cheyenne_array_dict())# converts the list-dictionary construct returned by main_array_dict() from the file reg_expression to be converted to JSON by the array_dict_to_json function from the dict_to_json Python file

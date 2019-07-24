@@ -59,14 +59,12 @@ def remove_list_clones(primary_list, reference_list):
 
 # list_clean function is utilized to remove empty strings from a list that is the argument of the function
 def list_clean(list_with_empty_strings):
-    for index in list_with_empty_strings: #For loop to iterate through the list that contains empty strings
-        #print(index) #Prints the index value
-        if index == "": # checks if the index value is an empty string
-            list_with_empty_strings.remove(index) # Removes the empty string if found
-        else:
-            continue #If an empty string is not found, just continue
-    print("No more empty strings:") #Prints the list with no empty strings present
+    print("list with empty strings is being printed:")
     print(list_with_empty_strings)
+    list_without_empty_strings = list(filter(None,list_with_empty_strings))
+    print("No more empty strings:") #Prints the list with no empty strings present
+    print(list_without_empty_strings)
+    return list_without_empty_strings
 
 # The array_clean_colons() function is used to clean out colons from the string elements of a provided list argument
 def array_clean_colons(array_with_colons):# The argument can be any list with string elements
@@ -279,7 +277,7 @@ def main_array_dict():#Third main fucntion for the third version of the code imp
     full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
     full_clean_content = list_clean(full_content)
     print("This is the full_contenttt:", full_clean_content)
-    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container)#returns the array_dict_containing_content as well as content_containing_dict
+    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_clean_content,heading_container)#returns the array_dict_containing_content as well as content_containing_dict
     return array_dict_containing_content #Returns the array_dict_containing_content
 
 
@@ -292,7 +290,7 @@ def cheyenne_array_dict():#Fourth main fucntion for the third version of the cod
     full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
     full_clean_content = list_clean(full_content)
     print("This is the full_contenttt:", full_clean_content)
-    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container, system_file_name)#returns the array_dict_containing_content as well as content_containing_dict
+    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_clean_content,heading_container, system_file_name)#returns the array_dict_containing_content as well as content_containing_dict
     return array_dict_containing_content #Returns the array_dict_containing_content
 
 def casper_array_dict():#Fifth main fucntion for the third version of the code implementation
@@ -304,7 +302,7 @@ def casper_array_dict():#Fifth main fucntion for the third version of the code i
     full_content = full_list(stored_content)#Calls the full_list fucntion for the purpose of gaining a list of all content
     full_clean_content = list_clean(full_content)
     print("This is the full_contenttt:", full_clean_content)
-    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_content,heading_container, system_file_name)#returns the array_dict_containing_content as well as content_containing_dict
+    array_dict_containing_content, content_containing_dict = text_to_dict(stored_heading_content, full_clean_content,heading_container, system_file_name)#returns the array_dict_containing_content as well as content_containing_dict
     return array_dict_containing_content #Returns the array_dict_containing_content
 #def test():
 #    stored_content = content_extract("result_module_output.txt")
