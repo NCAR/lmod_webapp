@@ -16,7 +16,6 @@ from flask import Flask #Importing the flask module, which is necessary for a Fl
 import flask
 import reg_expression # Imports reg_expression.py to allow reg_expression.py's functions to be utilized. Necessary for the app.
 import dict_to_json # Imports dict_to_json.py to allow dict_to_json.py's functions to be utilized.
-import test_js_dict # Imports test_js_dict.py to allow test_js_dict.py's functions to be utilized.
 app = Flask("document") #Name of the Flask app
 
 # Code will be ran when the page is loading. If there is any printed information in the Terminal,
